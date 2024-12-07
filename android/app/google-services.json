@@ -54,17 +54,17 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:321496637481:android:f5e2eea37e68195e4f3c38",
+        "mobilesdk_app_id": "1:321496637481:android:3dcad5ca86b311624f3c38",
         "android_client_info": {
-          "package_name": "com.queloque.app.chat"
+          "package_name": "com.quita.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "321496637481-bvd17313nc37b2ib3p7950t3ndh5j883.apps.googleusercontent.com",
+          "client_id": "321496637481-5pb1orluad593ohgd3hhpoglcpc2dfs5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.queloque.app.chat",
+            "package_name": "com.quita.app",
             "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },

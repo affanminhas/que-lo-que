@@ -161,6 +161,11 @@ class IndividualUserRecord extends FirestoreRecord {
   DocumentReference? get userRef => _userRef;
   bool hasUserRef() => _userRef != null;
 
+  // "astrologicalSign" field.
+  String? _astrologicalSign;
+  String get astrologicalSign => _astrologicalSign ?? '';
+  bool hasAstrologicalSign() => _astrologicalSign != null;
+
   void _initializeFields() {
     _username = snapshotData['username'] as String?;
     _firstName = snapshotData['firstName'] as String?;
@@ -191,6 +196,7 @@ class IndividualUserRecord extends FirestoreRecord {
     _tattoo = snapshotData['tattoo'] as String?;
     _birthday = snapshotData['birthday'] as String?;
     _userRef = snapshotData['userRef'] as DocumentReference?;
+    _astrologicalSign = snapshotData['astrologicalSign'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -255,6 +261,7 @@ Map<String, dynamic> createIndividualUserRecordData({
   String? tattoo,
   String? birthday,
   DocumentReference? userRef,
+  String? astrologicalSign,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -285,6 +292,7 @@ Map<String, dynamic> createIndividualUserRecordData({
       'tattoo': tattoo,
       'birthday': birthday,
       'userRef': userRef,
+      'astrologicalSign': astrologicalSign,
     }.withoutNulls,
   );
 
@@ -326,7 +334,8 @@ class IndividualUserRecordDocumentEquality
         e1?.occupation == e2?.occupation &&
         e1?.tattoo == e2?.tattoo &&
         e1?.birthday == e2?.birthday &&
-        e1?.userRef == e2?.userRef;
+        e1?.userRef == e2?.userRef &&
+        e1?.astrologicalSign == e2?.astrologicalSign;
   }
 
   @override
@@ -359,7 +368,8 @@ class IndividualUserRecordDocumentEquality
         e?.occupation,
         e?.tattoo,
         e?.birthday,
-        e?.userRef
+        e?.userRef,
+        e?.astrologicalSign
       ]);
 
   @override

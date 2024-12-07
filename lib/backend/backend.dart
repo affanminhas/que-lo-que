@@ -11,6 +11,7 @@ import 'schema/chat_messages_record.dart';
 import 'schema/chats_record.dart';
 import 'schema/business_owner_record.dart';
 import 'schema/individual_user_record.dart';
+import 'schema/user_activity_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -27,6 +28,7 @@ export 'schema/chat_messages_record.dart';
 export 'schema/chats_record.dart';
 export 'schema/business_owner_record.dart';
 export 'schema/individual_user_record.dart';
+export 'schema/user_activity_record.dart';
 
 /// Functions to query UserNamesRecords (as a Stream and as a Future).
 Future<int> queryUserNamesRecordCount({
@@ -477,6 +479,84 @@ Future<FFFirestorePage<IndividualUserRecord>> queryIndividualUserRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<IndividualUserRecord> data) {
+          for (var item in data) {
+            final itemIndexes = controller.itemList!
+                .asMap()
+                .map((k, v) => MapEntry(v.reference.id, k));
+            final index = itemIndexes[item.reference.id];
+            final items = controller.itemList!;
+            if (index != null) {
+              items.replaceRange(index, index + 1, [item]);
+              controller.itemList = {
+                for (var item in items) item.reference: item
+              }.values.toList();
+            }
+          }
+        });
+        streamSubscriptions?.add(streamSubscription);
+      }
+      return page;
+    });
+
+/// Functions to query UserActivityRecords (as a Stream and as a Future).
+Future<int> queryUserActivityRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      UserActivityRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<UserActivityRecord>> queryUserActivityRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      UserActivityRecord.collection,
+      UserActivityRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<UserActivityRecord>> queryUserActivityRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      UserActivityRecord.collection,
+      UserActivityRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+Future<FFFirestorePage<UserActivityRecord>> queryUserActivityRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+  required PagingController<DocumentSnapshot?, UserActivityRecord> controller,
+  List<StreamSubscription?>? streamSubscriptions,
+}) =>
+    queryCollectionPage(
+      UserActivityRecord.collection,
+      UserActivityRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    ).then((page) {
+      controller.appendPage(
+        page.data,
+        page.nextPageMarker,
+      );
+      if (isStream) {
+        final streamSubscription =
+            (page.dataStream)?.listen((List<UserActivityRecord> data) {
           for (var item in data) {
             final itemIndexes = controller.itemList!
                 .asMap()

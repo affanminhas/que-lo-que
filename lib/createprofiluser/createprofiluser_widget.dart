@@ -1767,6 +1767,54 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                               ],
                             ),
                             FlutterFlowDropDown<String>(
+                              controller: _model.signDropDownValueController ??=
+                                  FormFieldController<String>(null),
+                              options: const [
+                                'Aries',
+                                'Taurus',
+                                'Gemini',
+                                'Cancer',
+                                'Leo',
+                                'Virgo',
+                                'Libra',
+                                'Scorpio',
+                                'Sagittarius',
+                                'Capricorn',
+                                'Aquarius',
+                                'Pisces'
+                              ],
+                              onChanged: (val) => safeSetState(
+                                  () => _model.signDropDownValue = val),
+                              width: double.infinity,
+                              height: 50.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Select sign',
+                              icon: Icon(
+                                Icons.keyboard_arrow_down_rounded,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              elevation: 2.0,
+                              borderColor:
+                                  FlutterFlowTheme.of(context).alternate,
+                              borderWidth: 0.0,
+                              borderRadius: 8.0,
+                              margin: const EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 12.0, 0.0),
+                              hidesUnderline: true,
+                              isOverButton: false,
+                              isSearchable: false,
+                              isMultiSelect: false,
+                            ),
+                            FlutterFlowDropDown<String>(
                               controller:
                                   _model.relationDropDownValueController ??=
                                       FormFieldController<String>(null),
@@ -2006,7 +2054,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                           description: _model.textController11.text,
                           privateProfile: _model.switchValue1,
                           hideFriends: _model.switchValue2,
-                          relationship: _model.relationDropDownValue,
+                          relationship: _model.signDropDownValue,
                           status: _model.childrenDropDownValue,
                           drivingLicense: _model.switchValue3,
                           occupation: _model.occupationDropDownValue,
@@ -2014,6 +2062,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                           birthday:
                               '${_model.textController5.text}/${_model.textController6.text}/${_model.textController7.text}',
                           userRef: currentUserReference,
+                          astrologicalSign: _model.signDropDownValue,
                         ),
                         ...mapToFirestore(
                           {
@@ -2047,7 +2096,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                           description: _model.textController11.text,
                           privateProfile: _model.switchValue1,
                           hideFriends: _model.switchValue2,
-                          relationship: _model.relationDropDownValue,
+                          relationship: _model.signDropDownValue,
                           status: _model.childrenDropDownValue,
                           drivingLicense: _model.switchValue3,
                           occupation: _model.occupationDropDownValue,
@@ -2055,6 +2104,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                           birthday:
                               '${_model.textController5.text}/${_model.textController6.text}/${_model.textController7.text}',
                           userRef: currentUserReference,
+                          astrologicalSign: _model.signDropDownValue,
                         ),
                         ...mapToFirestore(
                           {

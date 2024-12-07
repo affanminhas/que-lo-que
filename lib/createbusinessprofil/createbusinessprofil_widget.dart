@@ -1,7 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -35,7 +37,10 @@ class _CreatebusinessprofilWidgetState
     _model.companyNameTextController ??= TextEditingController();
     _model.companyNameFocusNode ??= FocusNode();
 
-    _model.textController2 ??= TextEditingController();
+    _model.companyUsernameTextController ??= TextEditingController();
+    _model.companyUsernameFocusNode ??= FocusNode();
+
+    _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -217,6 +222,198 @@ class _CreatebusinessprofilWidgetState
                               validator: _model
                                   .companyNameTextControllerValidator
                                   .asValidator(context),
+                            ),
+                            TextFormField(
+                              controller: _model.companyUsernameTextController,
+                              focusNode: _model.companyUsernameFocusNode,
+                              autofocus: false,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Company Username',
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      letterSpacing: 0.0,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                              minLines: 1,
+                              validator: _model
+                                  .companyUsernameTextControllerValidator
+                                  .asValidator(context),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Upload Profile Picture',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: 'Plus Jakarta Sans',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                                if (_model.uploadedFileUrl1 == '')
+                                  FlutterFlowIconButton(
+                                    borderColor: Colors.transparent,
+                                    borderRadius: 24.0,
+                                    buttonSize: 48.0,
+                                    fillColor:
+                                        FlutterFlowTheme.of(context).primary,
+                                    icon: Icon(
+                                      Icons.camera_alt,
+                                      color: FlutterFlowTheme.of(context).info,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      final selectedMedia =
+                                          await selectMediaWithSourceBottomSheet(
+                                        context: context,
+                                        allowPhoto: true,
+                                      );
+                                      if (selectedMedia != null &&
+                                          selectedMedia.every((m) =>
+                                              validateFileFormat(
+                                                  m.storagePath, context))) {
+                                        safeSetState(() =>
+                                            _model.isDataUploading1 = true);
+                                        var selectedUploadedFiles =
+                                            <FFUploadedFile>[];
+
+                                        var downloadUrls = <String>[];
+                                        try {
+                                          selectedUploadedFiles = selectedMedia
+                                              .map((m) => FFUploadedFile(
+                                                    name: m.storagePath
+                                                        .split('/')
+                                                        .last,
+                                                    bytes: m.bytes,
+                                                    height:
+                                                        m.dimensions?.height,
+                                                    width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
+                                                  ))
+                                              .toList();
+
+                                          downloadUrls = (await Future.wait(
+                                            selectedMedia.map(
+                                              (m) async => await uploadData(
+                                                  m.storagePath, m.bytes),
+                                            ),
+                                          ))
+                                              .where((u) => u != null)
+                                              .map((u) => u!)
+                                              .toList();
+                                        } finally {
+                                          _model.isDataUploading1 = false;
+                                        }
+                                        if (selectedUploadedFiles.length ==
+                                                selectedMedia.length &&
+                                            downloadUrls.length ==
+                                                selectedMedia.length) {
+                                          safeSetState(() {
+                                            _model.uploadedLocalFile1 =
+                                                selectedUploadedFiles.first;
+                                            _model.uploadedFileUrl1 =
+                                                downloadUrls.first;
+                                          });
+                                        } else {
+                                          safeSetState(() {});
+                                          return;
+                                        }
+                                      }
+                                    },
+                                  ),
+                                if (_model.uploadedFileUrl1 != '')
+                                  Stack(
+                                    alignment: const AlignmentDirectional(1.5, -1.5),
+                                    children: [
+                                      Container(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            _model.uploadedFileUrl1,
+                                            'https://firebasestorage.googleapis.com/v0/b/que-lo-que-2-05vr7v.firebasestorage.app/o/AppAssets%2Fbusiness_default.png?alt=media&token=207f8b4a-4179-4e52-8793-d0fe20fa5196',
+                                          ),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          safeSetState(() {
+                                            _model.isDataUploading1 = false;
+                                            _model.uploadedLocalFile1 =
+                                                FFUploadedFile(
+                                                    bytes:
+                                                        Uint8List.fromList([]));
+                                            _model.uploadedFileUrl1 = '';
+                                          });
+                                        },
+                                        child: Icon(
+                                          Icons.delete,
+                                          color: FlutterFlowTheme.of(context)
+                                              .error,
+                                          size: 24.0,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                              ],
                             ),
                             Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
@@ -419,7 +616,7 @@ class _CreatebusinessprofilWidgetState
                               ),
                             ),
                             TextFormField(
-                              controller: _model.textController2,
+                              controller: _model.textController3,
                               focusNode: _model.textFieldFocusNode,
                               autofocus: false,
                               obscureText: false,
@@ -477,7 +674,7 @@ class _CreatebusinessprofilWidgetState
                                     letterSpacing: 0.0,
                                   ),
                               minLines: 1,
-                              validator: _model.textController2Validator
+                              validator: _model.textController3Validator
                                   .asValidator(context),
                             ),
                             Container(
@@ -519,7 +716,7 @@ class _CreatebusinessprofilWidgetState
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                    if ((_model.uploadedLocalFile1.bytes
+                                    if ((_model.uploadedLocalFile2.bytes
                                                 ?.isEmpty ??
                                             true))
                                       FFButtonWidget(
@@ -531,7 +728,7 @@ class _CreatebusinessprofilWidgetState
                                           );
                                           if (selectedFiles != null) {
                                             safeSetState(() =>
-                                                _model.isDataUploading1 = true);
+                                                _model.isDataUploading2 = true);
                                             var selectedUploadedFiles =
                                                 <FFUploadedFile>[];
 
@@ -555,12 +752,12 @@ class _CreatebusinessprofilWidgetState
                                             } finally {
                                               ScaffoldMessenger.of(context)
                                                   .hideCurrentSnackBar();
-                                              _model.isDataUploading1 = false;
+                                              _model.isDataUploading2 = false;
                                             }
                                             if (selectedUploadedFiles.length ==
                                                 selectedFiles.length) {
                                               safeSetState(() {
-                                                _model.uploadedLocalFile1 =
+                                                _model.uploadedLocalFile2 =
                                                     selectedUploadedFiles.first;
                                               });
                                               showUploadMessage(
@@ -610,7 +807,7 @@ class _CreatebusinessprofilWidgetState
                                               BorderRadius.circular(25.0),
                                         ),
                                       ),
-                                    if ((_model.uploadedLocalFile1.bytes
+                                    if ((_model.uploadedLocalFile2.bytes
                                                 ?.isNotEmpty ??
                                             false))
                                       Container(
@@ -654,9 +851,9 @@ class _CreatebusinessprofilWidgetState
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   safeSetState(() {
-                                                    _model.isDataUploading1 =
+                                                    _model.isDataUploading2 =
                                                         false;
-                                                    _model.uploadedLocalFile1 =
+                                                    _model.uploadedLocalFile2 =
                                                         FFUploadedFile(
                                                             bytes: Uint8List
                                                                 .fromList([]));
@@ -748,9 +945,9 @@ class _CreatebusinessprofilWidgetState
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   safeSetState(() {
-                                                    _model.isDataUploading2 =
+                                                    _model.isDataUploading3 =
                                                         false;
-                                                    _model.uploadedLocalFile2 =
+                                                    _model.uploadedLocalFile3 =
                                                         FFUploadedFile(
                                                             bytes: Uint8List
                                                                 .fromList([]));
@@ -767,7 +964,7 @@ class _CreatebusinessprofilWidgetState
                                                               m.storagePath,
                                                               context))) {
                                                     safeSetState(() => _model
-                                                            .isDataUploading2 =
+                                                            .isDataUploading3 =
                                                         true);
                                                     var selectedUploadedFiles =
                                                         <FFUploadedFile>[];
@@ -803,14 +1000,14 @@ class _CreatebusinessprofilWidgetState
                                                       ScaffoldMessenger.of(
                                                               context)
                                                           .hideCurrentSnackBar();
-                                                      _model.isDataUploading2 =
+                                                      _model.isDataUploading3 =
                                                           false;
                                                     }
                                                     if (selectedUploadedFiles
                                                             .length ==
                                                         selectedMedia.length) {
                                                       safeSetState(() {
-                                                        _model.uploadedLocalFile2 =
+                                                        _model.uploadedLocalFile3 =
                                                             selectedUploadedFiles
                                                                 .first;
                                                       });
@@ -825,12 +1022,12 @@ class _CreatebusinessprofilWidgetState
                                                   }
 
                                                   if ((_model
-                                                              .uploadedLocalFile2
+                                                              .uploadedLocalFile3
                                                               .bytes
                                                               ?.isNotEmpty ??
                                                           false)) {
                                                     _model.addToMedias(_model
-                                                        .uploadedLocalFile2);
+                                                        .uploadedLocalFile3);
                                                     safeSetState(() {});
                                                   }
                                                 },
@@ -893,7 +1090,7 @@ class _CreatebusinessprofilWidgetState
                               onPressed: () async {
                                 _model.businessDocAction =
                                     await actions.uploadMediaToCustomFolder(
-                                  _model.uploadedLocalFile1,
+                                  _model.uploadedLocalFile2,
                                   '/businessDocuments/',
                                 );
                                 _model.businessMediaURLS =
@@ -913,9 +1110,12 @@ class _CreatebusinessprofilWidgetState
                                     region: _model.regionPickerValue.state,
                                     city: _model.cityPickerValue.city,
                                     businessAddress:
-                                        _model.textController2.text,
+                                        _model.textController3.text,
                                     businessDocument: _model.businessDocAction,
                                     userRef: currentUserReference,
+                                    companyUsername: _model
+                                        .companyUsernameTextController.text,
+                                    profileUrl: _model.uploadedFileUrl1,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -933,9 +1133,12 @@ class _CreatebusinessprofilWidgetState
                                     region: _model.regionPickerValue.state,
                                     city: _model.cityPickerValue.city,
                                     businessAddress:
-                                        _model.textController2.text,
+                                        _model.textController3.text,
                                     businessDocument: _model.businessDocAction,
                                     userRef: currentUserReference,
+                                    companyUsername: _model
+                                        .companyUsernameTextController.text,
+                                    profileUrl: _model.uploadedFileUrl1,
                                   ),
                                   ...mapToFirestore(
                                     {

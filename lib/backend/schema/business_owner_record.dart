@@ -61,6 +61,16 @@ class BusinessOwnerRecord extends FirestoreRecord {
   List<String> get media => _media ?? const [];
   bool hasMedia() => _media != null;
 
+  // "companyUsername" field.
+  String? _companyUsername;
+  String get companyUsername => _companyUsername ?? '';
+  bool hasCompanyUsername() => _companyUsername != null;
+
+  // "profile_url" field.
+  String? _profileUrl;
+  String get profileUrl => _profileUrl ?? '';
+  bool hasProfileUrl() => _profileUrl != null;
+
   void _initializeFields() {
     _companyName = snapshotData['companyName'] as String?;
     _planet = snapshotData['planet'] as String?;
@@ -71,6 +81,8 @@ class BusinessOwnerRecord extends FirestoreRecord {
     _businessDocument = snapshotData['businessDocument'] as String?;
     _userRef = snapshotData['userRef'] as DocumentReference?;
     _media = getDataList(snapshotData['media']);
+    _companyUsername = snapshotData['companyUsername'] as String?;
+    _profileUrl = snapshotData['profile_url'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -116,6 +128,8 @@ Map<String, dynamic> createBusinessOwnerRecordData({
   String? businessAddress,
   String? businessDocument,
   DocumentReference? userRef,
+  String? companyUsername,
+  String? profileUrl,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -127,6 +141,8 @@ Map<String, dynamic> createBusinessOwnerRecordData({
       'businessAddress': businessAddress,
       'businessDocument': businessDocument,
       'userRef': userRef,
+      'companyUsername': companyUsername,
+      'profile_url': profileUrl,
     }.withoutNulls,
   );
 
@@ -148,7 +164,9 @@ class BusinessOwnerRecordDocumentEquality
         e1?.businessAddress == e2?.businessAddress &&
         e1?.businessDocument == e2?.businessDocument &&
         e1?.userRef == e2?.userRef &&
-        listEquality.equals(e1?.media, e2?.media);
+        listEquality.equals(e1?.media, e2?.media) &&
+        e1?.companyUsername == e2?.companyUsername &&
+        e1?.profileUrl == e2?.profileUrl;
   }
 
   @override
@@ -161,7 +179,9 @@ class BusinessOwnerRecordDocumentEquality
         e?.businessAddress,
         e?.businessDocument,
         e?.userRef,
-        e?.media
+        e?.media,
+        e?.companyUsername,
+        e?.profileUrl
       ]);
 
   @override

@@ -23,6 +23,16 @@ class CreatebusinessprofilModel
   FocusNode? companyNameFocusNode;
   TextEditingController? companyNameTextController;
   String? Function(BuildContext, String?)? companyNameTextControllerValidator;
+  // State field(s) for companyUsername widget.
+  FocusNode? companyUsernameFocusNode;
+  TextEditingController? companyUsernameTextController;
+  String? Function(BuildContext, String?)?
+      companyUsernameTextControllerValidator;
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl1 = '';
+
   // State field(s) for PlanetDropDown widget.
   String? planetDropDownValue;
   FormFieldController<String>? planetDropDownValueController;
@@ -34,14 +44,14 @@ class CreatebusinessprofilModel
   FFPlace cityPickerValue = const FFPlace();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-
+  TextEditingController? textController3;
+  String? Function(BuildContext, String?)? textController3Validator;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // Stores action output result for [Custom Action - uploadMediaToCustomFolder] action in Button widget.
@@ -59,7 +69,10 @@ class CreatebusinessprofilModel
     companyNameFocusNode?.dispose();
     companyNameTextController?.dispose();
 
+    companyUsernameFocusNode?.dispose();
+    companyUsernameTextController?.dispose();
+
     textFieldFocusNode?.dispose();
-    textController2?.dispose();
+    textController3?.dispose();
   }
 }

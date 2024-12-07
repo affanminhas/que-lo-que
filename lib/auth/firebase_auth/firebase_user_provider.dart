@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class QueLoQue2FirebaseUser extends BaseAuthUser {
-  QueLoQue2FirebaseUser(this.user);
+class QuitaFirebaseUser extends BaseAuthUser {
+  QuitaFirebaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -59,18 +59,17 @@ class QueLoQue2FirebaseUser extends BaseAuthUser {
 
   static BaseAuthUser fromUserCredential(UserCredential userCredential) =>
       fromFirebaseUser(userCredential.user);
-  static BaseAuthUser fromFirebaseUser(User? user) =>
-      QueLoQue2FirebaseUser(user);
+  static BaseAuthUser fromFirebaseUser(User? user) => QuitaFirebaseUser(user);
 }
 
-Stream<BaseAuthUser> queLoQue2FirebaseUserStream() => FirebaseAuth.instance
+Stream<BaseAuthUser> quitaFirebaseUserStream() => FirebaseAuth.instance
         .authStateChanges()
         .debounce((user) => user == null && !loggedIn
             ? TimerStream(true, const Duration(seconds: 1))
             : Stream.value(user))
         .map<BaseAuthUser>(
       (user) {
-        currentUser = QueLoQue2FirebaseUser(user);
+        currentUser = QuitaFirebaseUser(user);
         return currentUser!;
       },
     );

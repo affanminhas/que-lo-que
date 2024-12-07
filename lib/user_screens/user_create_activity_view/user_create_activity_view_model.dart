@@ -11,40 +11,49 @@ class UserCreateActivityViewModel
   // State field(s) for PlanetDropDown widget.
   String? planetDropDownValue;
   FormFieldController<String>? planetDropDownValueController;
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue1 = const FFPlace();
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue2 = const FFPlace();
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue3 = const FFPlace();
+  // State field(s) for CountryPicker widget.
+  FFPlace countryPickerValue = const FFPlace();
+  // State field(s) for RegionPicker widget.
+  FFPlace regionPickerValue = const FFPlace();
+  // State field(s) for CityPicker widget.
+  FFPlace cityPickerValue = const FFPlace();
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for Switch widget.
-  bool? switchValue1;
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue4 = const FFPlace();
-  // State field(s) for ChoiceChips widget.
-  FormFieldController<List<String>>? choiceChipsValueController;
-  String? get choiceChipsValue =>
-      choiceChipsValueController?.value?.firstOrNull;
-  set choiceChipsValue(String? val) =>
-      choiceChipsValueController?.value = val != null ? [val] : [];
+  DateTime? datePicked1;
+  DateTime? datePicked2;
+  // State field(s) for IsActivityFree widget.
+  bool? isActivityFreeValue;
+  // State field(s) for CategoryDropDown widget.
+  String? categoryDropDownValue;
+  FormFieldController<String>? categoryDropDownValueController;
+  // State field(s) for PrivacyChips widget.
+  FormFieldController<List<String>>? privacyChipsValueController;
+  String? get privacyChipsValue =>
+      privacyChipsValueController?.value?.firstOrNull;
+  set privacyChipsValue(String? val) =>
+      privacyChipsValueController?.value = val != null ? [val] : [];
+  // State field(s) for ParticipantsNumber widget.
+  FocusNode? participantsNumberFocusNode;
+  TextEditingController? participantsNumberTextController;
+  String? Function(BuildContext, String?)?
+      participantsNumberTextControllerValidator;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
   // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
-  // State field(s) for Switch widget.
-  bool? switchValue2;
+  // State field(s) for PromoteActivity widget.
+  bool? promoteActivityValue;
 
   @override
   void initState(BuildContext context) {}
@@ -54,13 +63,13 @@ class UserCreateActivityViewModel
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    participantsNumberFocusNode?.dispose();
+    participantsNumberTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
+    textFieldFocusNode2?.dispose();
     textController3?.dispose();
 
-    textFieldFocusNode4?.dispose();
+    textFieldFocusNode3?.dispose();
     textController4?.dispose();
   }
 }

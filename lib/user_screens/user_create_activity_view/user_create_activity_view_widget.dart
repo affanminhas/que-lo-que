@@ -1,10 +1,16 @@
+import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_video_player.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'user_create_activity_view_model.dart';
 export 'user_create_activity_view_model.dart';
@@ -35,17 +41,17 @@ class _UserCreateActivityViewWidgetState
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
 
-    _model.switchValue1 = true;
-    _model.textController2 ??= TextEditingController();
-    _model.textFieldFocusNode2 ??= FocusNode();
+    _model.isActivityFreeValue = true;
+    _model.participantsNumberTextController ??= TextEditingController();
+    _model.participantsNumberFocusNode ??= FocusNode();
 
     _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
+    _model.textFieldFocusNode2 ??= FocusNode();
 
     _model.textController4 ??= TextEditingController();
-    _model.textFieldFocusNode4 ??= FocusNode();
+    _model.textFieldFocusNode3 ??= FocusNode();
 
-    _model.switchValue2 = true;
+    _model.promoteActivityValue = true;
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -213,7 +219,7 @@ class _UserCreateActivityViewWidgetState
                                   'AIzaSyCD7valhGeAqpijAjNTgji5BEuw7B2UUbY',
                               onSelect: (place) async {
                                 safeSetState(
-                                    () => _model.placePickerValue1 = place);
+                                    () => _model.countryPickerValue = place);
                               },
                               defaultText: 'Select Country',
                               icon: Icon(
@@ -249,7 +255,7 @@ class _UserCreateActivityViewWidgetState
                                   'AIzaSyCD7valhGeAqpijAjNTgji5BEuw7B2UUbY',
                               onSelect: (place) async {
                                 safeSetState(
-                                    () => _model.placePickerValue2 = place);
+                                    () => _model.regionPickerValue = place);
                               },
                               defaultText: 'Select Region',
                               icon: Icon(
@@ -283,7 +289,7 @@ class _UserCreateActivityViewWidgetState
                                   'AIzaSyCD7valhGeAqpijAjNTgji5BEuw7B2UUbY',
                               onSelect: (place) async {
                                 safeSetState(
-                                    () => _model.placePickerValue3 = place);
+                                    () => _model.cityPickerValue = place);
                               },
                               defaultText: 'Select City',
                               icon: Icon(
@@ -441,28 +447,110 @@ class _UserCreateActivityViewWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.calendar_today,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 24.0,
-                                                ),
-                                                Text(
-                                                  'Select Date',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ].divide(const SizedBox(width: 8.0)),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                final datePicked1Date =
+                                                    await showDatePicker(
+                                                  context: context,
+                                                  initialDate:
+                                                      getCurrentTimestamp,
+                                                  firstDate:
+                                                      getCurrentTimestamp,
+                                                  lastDate: DateTime(2050),
+                                                  builder: (context, child) {
+                                                    return wrapInMaterialDatePickerTheme(
+                                                      context,
+                                                      child!,
+                                                      headerBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      headerForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      headerTextStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize: 32.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                      pickerBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                      pickerForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      selectedDateTimeBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      selectedDateTimeForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      actionButtonForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      iconSize: 24.0,
+                                                    );
+                                                  },
+                                                );
+
+                                                if (datePicked1Date != null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked1 =
+                                                        DateTime(
+                                                      datePicked1Date.year,
+                                                      datePicked1Date.month,
+                                                      datePicked1Date.day,
+                                                    );
+                                                  });
+                                                }
+                                              },
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.calendar_today,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 24.0,
+                                                  ),
+                                                  Text(
+                                                    _model.datePicked1 == null
+                                                        ? 'Select Date'
+                                                        : dateTimeFormat(
+                                                            "MMMEd",
+                                                            _model.datePicked1),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ].divide(const SizedBox(width: 8.0)),
+                                              ),
                                             ),
                                           ].divide(const SizedBox(height: 8.0)),
                                         ),
@@ -502,28 +590,108 @@ class _UserCreateActivityViewWidgetState
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                Icon(
-                                                  Icons.access_time,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 24.0,
-                                                ),
-                                                Text(
-                                                  'Select Time',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ].divide(const SizedBox(width: 8.0)),
+                                            InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                final datePicked2Time =
+                                                    await showTimePicker(
+                                                  context: context,
+                                                  initialTime:
+                                                      TimeOfDay.fromDateTime(
+                                                          getCurrentTimestamp),
+                                                  builder: (context, child) {
+                                                    return wrapInMaterialTimePickerTheme(
+                                                      context,
+                                                      child!,
+                                                      headerBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      headerForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      headerTextStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .headlineLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                fontSize: 32.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                      pickerBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryBackground,
+                                                      pickerForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      selectedDateTimeBackgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      selectedDateTimeForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .info,
+                                                      actionButtonForegroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      iconSize: 24.0,
+                                                    );
+                                                  },
+                                                );
+                                                if (datePicked2Time != null) {
+                                                  safeSetState(() {
+                                                    _model.datePicked2 =
+                                                        DateTime(
+                                                      getCurrentTimestamp.year,
+                                                      getCurrentTimestamp.month,
+                                                      getCurrentTimestamp.day,
+                                                      datePicked2Time.hour,
+                                                      datePicked2Time.minute,
+                                                    );
+                                                  });
+                                                }
+                                              },
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Icon(
+                                                    Icons.access_time,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 24.0,
+                                                  ),
+                                                  Text(
+                                                    _model.datePicked2 == null
+                                                        ? 'Select Time'
+                                                        : dateTimeFormat("jm",
+                                                            _model.datePicked2),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ].divide(const SizedBox(width: 8.0)),
+                                              ),
                                             ),
                                           ].divide(const SizedBox(height: 8.0)),
                                         ),
@@ -547,10 +715,10 @@ class _UserCreateActivityViewWidgetState
                                       ),
                                 ),
                                 Switch(
-                                  value: _model.switchValue1!,
+                                  value: _model.isActivityFreeValue!,
                                   onChanged: (newValue) async {
-                                    safeSetState(
-                                        () => _model.switchValue1 = newValue);
+                                    safeSetState(() =>
+                                        _model.isActivityFreeValue = newValue);
                                   },
                                   activeColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -564,28 +732,18 @@ class _UserCreateActivityViewWidgetState
                                 ),
                               ],
                             ),
-                            FlutterFlowPlacePicker(
-                              iOSGoogleMapsApiKey:
-                                  'AIzaSyBxyS9PadPdIndFq4-DH9xKBAgrN_lB_hI',
-                              androidGoogleMapsApiKey:
-                                  'AIzaSyC3twTtbkt-6kr_YdQgOyiZZC9xnIredbE',
-                              webGoogleMapsApiKey:
-                                  'AIzaSyCD7valhGeAqpijAjNTgji5BEuw7B2UUbY',
-                              onSelect: (place) async {
-                                safeSetState(
-                                    () => _model.placePickerValue4 = place);
-                              },
-                              defaultText: 'Select Activity Category',
-                              icon: Icon(
-                                Icons.category,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 24.0,
-                              ),
-                              buttonOptions: FFButtonOptions(
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: FlutterFlowDropDown<String>(
+                                controller:
+                                    _model.categoryDropDownValueController ??=
+                                        FormFieldController<String>(null),
+                                options: const ['Party', 'Wedding', 'Event'],
+                                onChanged: (val) => safeSetState(
+                                    () => _model.categoryDropDownValue = val),
                                 width: double.infinity,
                                 height: 50.0,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -594,8 +752,25 @@ class _UserCreateActivityViewWidgetState
                                           .primaryText,
                                       letterSpacing: 0.0,
                                     ),
-                                elevation: 0.0,
-                                borderRadius: BorderRadius.circular(8.0),
+                                hintText: 'Select category  ',
+                                icon: Icon(
+                                  Icons.keyboard_arrow_down_rounded,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  size: 24.0,
+                                ),
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 2.0,
+                                borderColor: Colors.transparent,
+                                borderWidth: 0.0,
+                                borderRadius: 8.0,
+                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                    12.0, 0.0, 12.0, 0.0),
+                                hidesUnderline: true,
+                                isOverButton: false,
+                                isSearchable: false,
+                                isMultiSelect: false,
                               ),
                             ),
                             FlutterFlowChoiceChips(
@@ -605,7 +780,7 @@ class _UserCreateActivityViewWidgetState
                                 ChipData('Private')
                               ],
                               onChanged: (val) => safeSetState(() =>
-                                  _model.choiceChipsValue = val?.firstOrNull),
+                                  _model.privacyChipsValue = val?.firstOrNull),
                               selectedChipStyle: ChipStyle(
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).primary,
@@ -613,7 +788,7 @@ class _UserCreateActivityViewWidgetState
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: FlutterFlowTheme.of(context).info,
+                                      color: Colors.black,
                                       letterSpacing: 0.0,
                                     ),
                                 iconColor:
@@ -643,15 +818,16 @@ class _UserCreateActivityViewWidgetState
                               rowSpacing: 8.0,
                               multiselect: false,
                               alignment: WrapAlignment.start,
-                              controller: _model.choiceChipsValueController ??=
+                              controller: _model.privacyChipsValueController ??=
                                   FormFieldController<List<String>>(
                                 [],
                               ),
                               wrapped: false,
                             ),
                             TextFormField(
-                              controller: _model.textController2,
-                              focusNode: _model.textFieldFocusNode2,
+                              controller:
+                                  _model.participantsNumberTextController,
+                              focusNode: _model.participantsNumberFocusNode,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -709,7 +885,8 @@ class _UserCreateActivityViewWidgetState
                                   ),
                               minLines: 1,
                               keyboardType: TextInputType.number,
-                              validator: _model.textController2Validator
+                              validator: _model
+                                  .participantsNumberTextControllerValidator
                                   .asValidator(context),
                             ),
                           ].divide(const SizedBox(height: 16.0)),
@@ -749,7 +926,7 @@ class _UserCreateActivityViewWidgetState
                             ),
                             TextFormField(
                               controller: _model.textController3,
-                              focusNode: _model.textFieldFocusNode3,
+                              focusNode: _model.textFieldFocusNode2,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -820,64 +997,181 @@ class _UserCreateActivityViewWidgetState
                               ),
                               child: Stack(
                                 children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1544636112-21c984350985?w=500&h=500',
-                                      width: MediaQuery.sizeOf(context).width *
-                                          1.0,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              1.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
-                                    height:
-                                        MediaQuery.sizeOf(context).height * 1.0,
-                                    decoration: const BoxDecoration(
-                                      color: Color(0x33000000),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(16.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Icon(
-                                            Icons.add_a_photo,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 40.0,
-                                          ),
-                                          Text(
-                                            'Add Photo/Video',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                          ),
-                                        ],
+                                  if (_model.uploadedFileUrl != '')
+                                    FlutterFlowMediaDisplay(
+                                      path: _model.uploadedFileUrl,
+                                      imageBuilder: (path) => ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.network(
+                                          path,
+                                          width: 300.0,
+                                          height: 300.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      videoPlayerBuilder: (path) =>
+                                          FlutterFlowVideoPlayer(
+                                        path: path,
+                                        width: 300.0,
+                                        autoPlay: false,
+                                        looping: true,
+                                        showControls: true,
+                                        allowFullScreen: true,
+                                        allowPlaybackSpeedMenu: false,
                                       ),
                                     ),
-                                  ),
+                                  if (_model.uploadedFileUrl == '')
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        final selectedMedia =
+                                            await selectMediaWithSourceBottomSheet(
+                                          context: context,
+                                          allowPhoto: true,
+                                        );
+                                        if (selectedMedia != null &&
+                                            selectedMedia.every((m) =>
+                                                validateFileFormat(
+                                                    m.storagePath, context))) {
+                                          safeSetState(() =>
+                                              _model.isDataUploading = true);
+                                          var selectedUploadedFiles =
+                                              <FFUploadedFile>[];
+
+                                          var downloadUrls = <String>[];
+                                          try {
+                                            showUploadMessage(
+                                              context,
+                                              'Uploading file...',
+                                              showLoading: true,
+                                            );
+                                            selectedUploadedFiles =
+                                                selectedMedia
+                                                    .map((m) => FFUploadedFile(
+                                                          name: m.storagePath
+                                                              .split('/')
+                                                              .last,
+                                                          bytes: m.bytes,
+                                                          height: m.dimensions
+                                                              ?.height,
+                                                          width: m.dimensions
+                                                              ?.width,
+                                                          blurHash: m.blurHash,
+                                                        ))
+                                                    .toList();
+
+                                            downloadUrls = (await Future.wait(
+                                              selectedMedia.map(
+                                                (m) async => await uploadData(
+                                                    m.storagePath, m.bytes),
+                                              ),
+                                            ))
+                                                .where((u) => u != null)
+                                                .map((u) => u!)
+                                                .toList();
+                                          } finally {
+                                            ScaffoldMessenger.of(context)
+                                                .hideCurrentSnackBar();
+                                            _model.isDataUploading = false;
+                                          }
+                                          if (selectedUploadedFiles.length ==
+                                                  selectedMedia.length &&
+                                              downloadUrls.length ==
+                                                  selectedMedia.length) {
+                                            safeSetState(() {
+                                              _model.uploadedLocalFile =
+                                                  selectedUploadedFiles.first;
+                                              _model.uploadedFileUrl =
+                                                  downloadUrls.first;
+                                            });
+                                            showUploadMessage(
+                                                context, 'Success!');
+                                          } else {
+                                            safeSetState(() {});
+                                            showUploadMessage(context,
+                                                'Failed to upload data');
+                                            return;
+                                          }
+                                        }
+                                      },
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                1.0,
+                                        decoration: const BoxDecoration(
+                                          color: Color(0x33000000),
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(16.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.add_a_photo,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 40.0,
+                                              ),
+                                              Text(
+                                                'Add Photo',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if (_model.uploadedFileUrl != '')
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        safeSetState(() {
+                                          _model.isDataUploading = false;
+                                          _model.uploadedLocalFile =
+                                              FFUploadedFile(
+                                                  bytes:
+                                                      Uint8List.fromList([]));
+                                          _model.uploadedFileUrl = '';
+                                        });
+                                      },
+                                      child: Icon(
+                                        Icons.delete,
+                                        color:
+                                            FlutterFlowTheme.of(context).error,
+                                        size: 24.0,
+                                      ),
+                                    ),
                                 ],
                               ),
                             ),
                             TextFormField(
                               controller: _model.textController4,
-                              focusNode: _model.textFieldFocusNode4,
+                              focusNode: _model.textFieldFocusNode3,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
@@ -987,10 +1281,10 @@ class _UserCreateActivityViewWidgetState
                                       ),
                                 ),
                                 Switch(
-                                  value: _model.switchValue2!,
+                                  value: _model.promoteActivityValue!,
                                   onChanged: (newValue) async {
-                                    safeSetState(
-                                        () => _model.switchValue2 = newValue);
+                                    safeSetState(() => _model
+                                        .promoteActivityValue = newValue);
                                   },
                                   activeColor:
                                       FlutterFlowTheme.of(context).primary,
@@ -1025,6 +1319,28 @@ class _UserCreateActivityViewWidgetState
                         const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 60.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        await UserActivityRecord.collection
+                            .doc()
+                            .set(createUserActivityRecordData(
+                              planet: _model.planetDropDownValue,
+                              country: _model.countryPickerValue.country,
+                              region: _model.regionPickerValue.state,
+                              city: _model.cityPickerValue.city,
+                              activityAddress: _model.textController1.text,
+                              startDate: _model.datePicked1,
+                              startTime: _model.datePicked2,
+                              isFree: _model.isActivityFreeValue,
+                              category: _model.categoryDropDownValue,
+                              privacy: _model.privacyChipsValue,
+                              description: _model.textController3.text,
+                              locationLink: _model.textController4.text,
+                              activityImage: _model.uploadedFileUrl,
+                              activityVideo: '',
+                              promoteActivity: _model.promoteActivityValue,
+                              noOfParticipants: int.tryParse(
+                                  _model.participantsNumberTextController.text),
+                            ));
+
                         context.pushNamed('usecreateactivitycongratspage');
                       },
                       text: 'Create Activity',

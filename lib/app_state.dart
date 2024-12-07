@@ -22,6 +22,12 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  bool _isActivityPhoto = true;
+  bool get isActivityPhoto => _isActivityPhoto;
+  set isActivityPhoto(bool value) {
+    _isActivityPhoto = value;
+  }
+
   final _userDocQueryManager = FutureRequestManager<UsersRecord>();
   Future<UsersRecord> userDocQuery({
     String? uniqueQueryKey,

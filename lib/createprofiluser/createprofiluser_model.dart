@@ -112,6 +112,9 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
   bool? switchValue1;
   // State field(s) for Switch widget.
   bool? switchValue2;
+  // State field(s) for SignDropDown widget.
+  String? signDropDownValue;
+  FormFieldController<String>? signDropDownValueController;
   // State field(s) for RelationDropDown widget.
   String? relationDropDownValue;
   FormFieldController<String>? relationDropDownValueController;
