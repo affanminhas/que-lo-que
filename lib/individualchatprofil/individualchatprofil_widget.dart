@@ -37,7 +37,10 @@ class _IndividualchatprofilWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -131,7 +134,9 @@ class _IndividualchatprofilWidgetState
                             ),
                           ),
                           Text(
-                            'Sofia Rodriguez',
+                            FFLocalizations.of(context).getText(
+                              'ibl6y9ce' /* Sofia Rodriguez */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
@@ -142,7 +147,9 @@ class _IndividualchatprofilWidgetState
                                 ),
                           ),
                           Text(
-                            '@sofia_creates',
+                            FFLocalizations.of(context).getText(
+                              '4v1fx5er' /* @sofia_creates */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -170,7 +177,9 @@ class _IndividualchatprofilWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '1.2K',
+                                    FFLocalizations.of(context).getText(
+                                      '8egdieyt' /* 1.2K */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -180,7 +189,9 @@ class _IndividualchatprofilWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Followers',
+                                    FFLocalizations.of(context).getText(
+                                      '54x7b8po' /* Followers */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -196,7 +207,9 @@ class _IndividualchatprofilWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '3.5K',
+                                    FFLocalizations.of(context).getText(
+                                      'u099uvms' /* 3.5K */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -206,7 +219,9 @@ class _IndividualchatprofilWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Following',
+                                    FFLocalizations.of(context).getText(
+                                      '1ozmi072' /* Following */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -222,7 +237,9 @@ class _IndividualchatprofilWidgetState
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '28',
+                                    FFLocalizations.of(context).getText(
+                                      'hqyn3koy' /* 28 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -232,7 +249,9 @@ class _IndividualchatprofilWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Posts',
+                                    FFLocalizations.of(context).getText(
+                                      'hh59oozi' /* Posts */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -266,7 +285,9 @@ class _IndividualchatprofilWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'About Me',
+                                FFLocalizations.of(context).getText(
+                                  '6gshjymb' /* About Me */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -277,7 +298,9 @@ class _IndividualchatprofilWidgetState
                                     ),
                               ),
                               Text(
-                                'Creative soul with a passion for photography and design. Always seeking new inspirations and connections. Let\'s create something beautiful together!',
+                                FFLocalizations.of(context).getText(
+                                  'f4816uzk' /* Creative soul with a passion f... */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -318,7 +341,10 @@ class _IndividualchatprofilWidgetState
                                               size: 32.0,
                                             ),
                                             Text(
-                                              'Chat',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'jedo52b8' /* Chat */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -363,7 +389,10 @@ class _IndividualchatprofilWidgetState
                                               size: 32.0,
                                             ),
                                             Text(
-                                              'Creativity',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'dzcvscuv' /* Creativity */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -408,7 +437,10 @@ class _IndividualchatprofilWidgetState
                                               size: 32.0,
                                             ),
                                             Text(
-                                              'Promote',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '2tja627d' /* Promote */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

@@ -36,7 +36,10 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -79,7 +82,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                         },
                       ),
                       Text(
-                        'Upload Intro Video',
+                        FFLocalizations.of(context).getText(
+                          '44q3wmr6' /* Upload Intro Video */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -109,7 +114,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Company Logo Intro',
+                              FFLocalizations.of(context).getText(
+                                'dy17m32q' /* Company Logo Intro */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -175,7 +182,10 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 0.0),
                                             child: Text(
-                                              'Tap to upload video',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'io9219ap' /* Tap to upload video */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -205,7 +215,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Upload Video',
+                                  text: FFLocalizations.of(context).getText(
+                                    '5ofjemrd' /* Upload Video */,
+                                  ),
                                   icon: const Icon(
                                     Icons.file_upload,
                                     size: 20.0,
@@ -234,7 +246,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Record Video',
+                                  text: FFLocalizations.of(context).getText(
+                                    '3pc13gnr' /* Record Video */,
+                                  ),
                                   icon: const Icon(
                                     Icons.videocam,
                                     size: 20.0,
@@ -286,7 +300,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Video Requirements',
+                              FFLocalizations.of(context).getText(
+                                'v8jdv2rk' /* Video Requirements */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -305,7 +321,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Duration: 5-15 seconds',
+                                  FFLocalizations.of(context).getText(
+                                    'ewl2mm8c' /* Duration: 5-15 seconds */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -324,7 +342,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Resolution: 1080p or higher',
+                                  FFLocalizations.of(context).getText(
+                                    's1fwpqen' /* Resolution: 1080p or higher */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -343,7 +363,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Aspect Ratio: 16:9',
+                                  FFLocalizations.of(context).getText(
+                                    'esli2zxa' /* Aspect Ratio: 16:9 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -362,7 +384,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                   size: 24.0,
                                 ),
                                 Text(
-                                  'Format: MP4 or MOV',
+                                  FFLocalizations.of(context).getText(
+                                    'qg4xhr2z' /* Format: MP4 or MOV */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -396,7 +420,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Video Preview',
+                              FFLocalizations.of(context).getText(
+                                'x3i6h7zd' /* Video Preview */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -454,7 +480,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'intro_video.mp4',
+                                  FFLocalizations.of(context).getText(
+                                    'fjjhvion' /* intro_video.mp4 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -463,7 +491,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                                       ),
                                 ),
                                 Text(
-                                  '00:12',
+                                  FFLocalizations.of(context).getText(
+                                    'agjjejgk' /* 00:12 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -484,7 +514,9 @@ class _IntrologovideoWidgetState extends State<IntrologovideoWidget> {
                     onPressed: () {
                       print('Button pressed ...');
                     },
-                    text: 'Save and Continue',
+                    text: FFLocalizations.of(context).getText(
+                      '3f7mfyx1' /* Save and Continue */,
+                    ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 56.0,

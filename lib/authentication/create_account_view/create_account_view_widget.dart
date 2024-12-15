@@ -53,7 +53,10 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -157,7 +160,9 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Create an Account',
+                                  FFLocalizations.of(context).getText(
+                                    'ejvbi3kl' /* Create an Account */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -167,7 +172,9 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Enter details below to sign up',
+                                  FFLocalizations.of(context).getText(
+                                    'e1ce2da4' /* Enter details below to sign up */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -186,7 +193,10 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                     autofillHints: const [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Email',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        '8fjrf7sa' /* Email */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -254,7 +264,10 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                     autofillHints: const [AutofillHints.password],
                                     obscureText: !_model.passwordVisibility,
                                     decoration: InputDecoration(
-                                      labelText: 'Password',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        '78k236t0' /* Password */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -339,7 +352,10 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                     obscureText:
                                         !_model.confirmpasswordVisibility,
                                     decoration: InputDecoration(
-                                      labelText: 'Confirm Password',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'v9p3s3rz' /* Confirm Password */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -454,7 +470,9 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                             context.mounted);
                                       }
                                     },
-                                    text: 'Sign Up',
+                                    text: FFLocalizations.of(context).getText(
+                                      '5rtspgwj' /* Sign Up */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 44.0,
@@ -482,7 +500,9 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                   ),
                                 ),
                                 Text(
-                                  'Or sign up with',
+                                  FFLocalizations.of(context).getText(
+                                    'fmzk9hr0' /* Or sign up with */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -514,7 +534,9 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                           context.mounted);
                                     }
                                   },
-                                  text: 'Continue with Google',
+                                  text: FFLocalizations.of(context).getText(
+                                    'dm312a9z' /* Continue with Google */,
+                                  ),
                                   icon: const Icon(
                                     Icons.toggle_on,
                                     size: 20.0,
@@ -573,7 +595,10 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                                   context.mounted);
                                             }
                                           },
-                                          text: 'Continue with Apple',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'rnjaml8l' /* Continue with Apple */,
+                                          ),
                                           icon: const Icon(
                                             Icons.apple,
                                             size: 20.0,
@@ -625,12 +650,18 @@ class _CreateAccountViewWidgetState extends State<CreateAccountViewWidget> {
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
-                                          text: 'Already have an account? ',
-                                          style: TextStyle(),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'yzvm4dqr' /* Already have an account?  */,
+                                          ),
+                                          style: const TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Log In',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'qlotvi9c' /* Log In */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

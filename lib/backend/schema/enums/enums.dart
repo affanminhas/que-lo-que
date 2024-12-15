@@ -10,6 +10,12 @@ enum MediaType {
   Video,
 }
 
+enum ContentType {
+  Flyer,
+  Photo,
+  Video,
+}
+
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -25,6 +31,8 @@ T? deserializeEnum<T>(String? value) {
       return UserRole.values.deserialize(value) as T?;
     case (MediaType):
       return MediaType.values.deserialize(value) as T?;
+    case (ContentType):
+      return ContentType.values.deserialize(value) as T?;
     default:
       return null;
   }

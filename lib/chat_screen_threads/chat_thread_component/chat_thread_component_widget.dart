@@ -1,7 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/components/chat_thread_update_widget.dart';
+import '/chat_screen_threads/chat_thread/chat_thread_widget.dart';
+import '/chat_screen_threads/empty_state_simple/empty_state_simple_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_media_display.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -104,15 +105,12 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                 // Customize what your widget looks like when it's loading.
                 if (!snapshot.hasData) {
                   return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: SizedBox(
-                        width: 50.0,
-                        height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
-                          ),
+                    child: SizedBox(
+                      width: 50.0,
+                      height: 50.0,
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          FlutterFlowTheme.of(context).primary,
                         ),
                       ),
                     ),
@@ -120,6 +118,17 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                 }
                 List<ChatMessagesRecord> listViewChatMessagesRecordList =
                     snapshot.data!;
+                if (listViewChatMessagesRecordList.isEmpty) {
+                  return EmptyStateSimpleWidget(
+                    icon: Icon(
+                      Icons.forum_outlined,
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 90.0,
+                    ),
+                    title: 'No Messages',
+                    body: 'You have not sent any messages in this chat yet.',
+                  );
+                }
 
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(
@@ -137,15 +146,15 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                     return Container(
                       decoration: const BoxDecoration(),
                       child: wrapWithModel(
-                        model: _model.chatThreadUpdateModels.getModel(
+                        model: _model.chatThreadModels.getModel(
                           listViewChatMessagesRecord.reference.id,
                           listViewIndex,
                         ),
                         updateCallback: () => safeSetState(() {}),
                         updateOnChange: true,
-                        child: ChatThreadUpdateWidget(
+                        child: ChatThreadWidget(
                           key: Key(
-                            'Keyr90_${listViewChatMessagesRecord.reference.id}',
+                            'Key393_${listViewChatMessagesRecord.reference.id}',
                           ),
                           chatMessagesRef: listViewChatMessagesRecord,
                         ),
@@ -374,7 +383,7 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                         timestamp: getCurrentTimestamp,
                                         image: _model.uploadedFileUrl,
                                       ));
-                                      _model.newChatMessage = ChatMessagesRecord
+                                      _model.newChatCopy = ChatMessagesRecord
                                           .getDocumentFromData(
                                               createChatMessagesRecordData(
                                                 user: currentUserReference,
@@ -411,8 +420,6 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                           },
                                         ),
                                       });
-                                      // clearUsers
-                                      _model.lastSeenBy = [];
                                       safeSetState(() {
                                         _model.textController?.clear();
                                       });
@@ -441,7 +448,10 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                             fontFamily: 'Outfit',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'Start typing here...',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'tqrihuvy' /* Start typing here... */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
@@ -594,8 +604,6 @@ class _ChatThreadComponentWidgetState extends State<ChatThreadComponentWidget> {
                                             },
                                           ),
                                         });
-                                        // clearUsers
-                                        _model.lastSeenBy = [];
                                         safeSetState(() {
                                           _model.textController?.clear();
                                         });

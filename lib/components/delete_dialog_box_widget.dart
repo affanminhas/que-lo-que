@@ -86,7 +86,9 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Delete Account',
+                        FFLocalizations.of(context).getText(
+                          'bfm55k8i' /* Delete Account */,
+                        ),
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
@@ -99,7 +101,9 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
-                          'Are you sure you wanna delete this aacount?',
+                          FFLocalizations.of(context).getText(
+                            'e4zn6nui' /* Are you sure you wanna delete ... */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Outfit',
@@ -124,7 +128,9 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                           onPressed: () async {
                             context.safePop();
                           },
-                          text: 'Cancel',
+                          text: FFLocalizations.of(context).getText(
+                            '92x85frf' /* Cancel */,
+                          ),
                           options: FFButtonOptions(
                             height: 40.0,
                             padding: const EdgeInsetsDirectional.fromSTEB(
@@ -156,7 +162,9 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
 
                           context.goNamed('loginView');
                         },
-                        text: 'Delete',
+                        text: FFLocalizations.of(context).getText(
+                          'y8673rbs' /* Delete */,
+                        ),
                         options: FFButtonOptions(
                           height: 40.0,
                           padding: const EdgeInsetsDirectional.fromSTEB(

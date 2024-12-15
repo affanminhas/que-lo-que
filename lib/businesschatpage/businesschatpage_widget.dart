@@ -38,7 +38,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -70,7 +73,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Chat',
+                        FFLocalizations.of(context).getText(
+                          '1qchux6g' /* Chat */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
                                   fontFamily: 'Outfit',
@@ -80,7 +85,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                 ),
                       ),
                       Text(
-                        'Connect with friends and colleagues',
+                        FFLocalizations.of(context).getText(
+                          'rp3dm7tp' /* Connect with friends and colle... */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Plus Jakarta Sans',
                               color: FlutterFlowTheme.of(context).info,
@@ -141,7 +148,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       hintText:
-                                          'Search friends or conversations...',
+                                          FFLocalizations.of(context).getText(
+                                        '1gv013zw' /* Search friends or conversation... */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -189,7 +198,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Friend Requests',
+                                  FFLocalizations.of(context).getText(
+                                    '6smm476r' /* Friend Requests */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -234,7 +245,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'John Doe',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'q49rnbpt' /* John Doe */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -247,7 +261,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                       ),
                                             ),
                                             Text(
-                                              'Wants to connect',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '28xprkw2' /* Wants to connect */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -272,7 +289,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                           onPressed: () {
                                             print('Button pressed ...');
                                           },
-                                          text: 'Accept',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'stoqd9de' /* Accept */,
+                                          ),
                                           options: FFButtonOptions(
                                             width: 80.0,
                                             height: 36.0,
@@ -305,7 +325,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                           onPressed: () {
                                             print('Button pressed ...');
                                           },
-                                          text: 'Decline',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '3x6z2z47' /* Decline */,
+                                          ),
                                           options: FFButtonOptions(
                                             width: 80.0,
                                             height: 36.0,
@@ -368,7 +391,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Recent Chats',
+                                  FFLocalizations.of(context).getText(
+                                    'pi3horbt' /* Recent Chats */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -451,7 +476,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Alice Smith',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'vi1gqa2w' /* Alice Smith */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -464,7 +492,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Hey, how\'s it going?',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4qx0arbp' /* Hey, how's it going? */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -488,7 +519,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                               CrossAxisAlignment.end,
                                           children: [
                                             Text(
-                                              '2m ago',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9oxjjj38' /* 2m ago */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -515,7 +549,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                               child: Padding(
                                                 padding: const EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  '2',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'trnmwcxx' /* 2 */,
+                                                  ),
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -599,7 +636,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Marketing Team',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'o7lxazm0' /* Marketing Team */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -612,7 +652,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Sarah: Meeting at 3 PM',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'cvu23yo7' /* Sarah: Meeting at 3 PM */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -636,7 +679,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                               CrossAxisAlignment.end,
                                           children: [
                                             Text(
-                                              '1h ago',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'bhjlhoik' /* 1h ago */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -681,7 +727,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Stories',
+                                  FFLocalizations.of(context).getText(
+                                    'h2ykahnf' /* Stories */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -745,7 +793,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Add Story',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '060l3vyg' /* Add Story */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -800,7 +851,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Your Story',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ckso334s' /* Your Story */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -855,7 +909,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Emma',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'xe89hhb4' /* Emma */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -910,7 +967,10 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Mike',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'a7c6reu5' /* Mike */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -961,7 +1021,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Home',
+                              FFLocalizations.of(context).getText(
+                                '6165zjee' /* Home */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -983,7 +1045,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Chat',
+                              FFLocalizations.of(context).getText(
+                                'qq1rqozs' /* Chat */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -1004,7 +1068,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Search',
+                              FFLocalizations.of(context).getText(
+                                'hf77gggn' /* Search */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -1026,7 +1092,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Create',
+                              FFLocalizations.of(context).getText(
+                                '3buns0iz' /* Create */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -1048,7 +1116,9 @@ class _BusinesschatpageWidgetState extends State<BusinesschatpageWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Promote',
+                              FFLocalizations.of(context).getText(
+                                'fkmaznuz' /* Promote */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(

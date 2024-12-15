@@ -1,9 +1,9 @@
-import '/components/chat_thread_component_widget.dart';
+import '/chat_screen_threads/chat_thread_component/chat_thread_component_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'chat2_details_widget.dart' show Chat2DetailsWidget;
+import 'chat_detail_view_widget.dart' show ChatDetailViewWidget;
 import 'package:flutter/material.dart';
 
-class Chat2DetailsModel extends FlutterFlowModel<Chat2DetailsWidget> {
+class ChatDetailViewModel extends FlutterFlowModel<ChatDetailViewWidget> {
   ///  Local state fields for this page.
 
   List<String> uploadedImages = [];

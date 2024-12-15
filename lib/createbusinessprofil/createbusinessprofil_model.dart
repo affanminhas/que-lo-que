@@ -17,17 +17,58 @@ class CreatebusinessprofilModel
   void updateMediasAtIndex(int index, Function(FFUploadedFile) updateFn) =>
       medias[index] = updateFn(medias[index]);
 
+  String? businessDocument;
+
+  List<String> businessMediaURLSLocal = [];
+  void addToBusinessMediaURLSLocal(String item) =>
+      businessMediaURLSLocal.add(item);
+  void removeFromBusinessMediaURLSLocal(String item) =>
+      businessMediaURLSLocal.remove(item);
+  void removeAtIndexFromBusinessMediaURLSLocal(int index) =>
+      businessMediaURLSLocal.removeAt(index);
+  void insertAtIndexInBusinessMediaURLSLocal(int index, String item) =>
+      businessMediaURLSLocal.insert(index, item);
+  void updateBusinessMediaURLSLocalAtIndex(
+          int index, Function(String) updateFn) =>
+      businessMediaURLSLocal[index] = updateFn(businessMediaURLSLocal[index]);
+
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for companyName widget.
   FocusNode? companyNameFocusNode;
   TextEditingController? companyNameTextController;
   String? Function(BuildContext, String?)? companyNameTextControllerValidator;
+  String? _companyNameTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'x8y1ti1w' /* company name is required */,
+      );
+    }
+
+    return null;
+  }
+
   // State field(s) for companyUsername widget.
   FocusNode? companyUsernameFocusNode;
   TextEditingController? companyUsernameTextController;
   String? Function(BuildContext, String?)?
       companyUsernameTextControllerValidator;
+  String? _companyUsernameTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '7yhfeipk' /* username is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorUsernameRegex).hasMatch(val)) {
+      return 'Must start with a letter and can only contain letters, digits and - or _.';
+    }
+    return null;
+  }
+
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -42,10 +83,27 @@ class CreatebusinessprofilModel
   FFPlace regionPickerValue = const FFPlace();
   // State field(s) for CityPicker widget.
   FFPlace cityPickerValue = const FFPlace();
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
+  // State field(s) for BusinessNumber widget.
+  FocusNode? businessNumberFocusNode;
+  TextEditingController? businessNumberTextController;
+  String? Function(BuildContext, String?)?
+      businessNumberTextControllerValidator;
+  String? _businessNumberTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'yuezruah' /* business number is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for BusinessAddress widget.
+  FocusNode? businessAddressFocusNode;
+  TextEditingController? businessAddressTextController;
+  String? Function(BuildContext, String?)?
+      businessAddressTextControllerValidator;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -62,7 +120,13 @@ class CreatebusinessprofilModel
   BusinessOwnerRecord? businessOwner;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    companyNameTextControllerValidator = _companyNameTextControllerValidator;
+    companyUsernameTextControllerValidator =
+        _companyUsernameTextControllerValidator;
+    businessNumberTextControllerValidator =
+        _businessNumberTextControllerValidator;
+  }
 
   @override
   void dispose() {
@@ -72,7 +136,10 @@ class CreatebusinessprofilModel
     companyUsernameFocusNode?.dispose();
     companyUsernameTextController?.dispose();
 
-    textFieldFocusNode?.dispose();
-    textController3?.dispose();
+    businessNumberFocusNode?.dispose();
+    businessNumberTextController?.dispose();
+
+    businessAddressFocusNode?.dispose();
+    businessAddressTextController?.dispose();
   }
 }

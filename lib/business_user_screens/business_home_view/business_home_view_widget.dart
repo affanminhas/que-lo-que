@@ -193,7 +193,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '256',
+                                    columnBusinessOwnerRecord.following.length
+                                        .toString(),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -203,7 +204,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Following',
+                                    FFLocalizations.of(context).getText(
+                                      'li1ol5fk' /* Following */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -219,7 +222,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    '1.2K',
+                                    columnBusinessOwnerRecord.followers.length
+                                        .toString(),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -229,7 +233,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Followers',
+                                    FFLocalizations.of(context).getText(
+                                      'ptebco2o' /* Followers */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -295,7 +301,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Upcoming Event',
+                                        FFLocalizations.of(context).getText(
+                                          'wz8qg4qa' /* Upcoming Event */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -315,7 +323,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     ],
                                   ),
                                   Text(
-                                    'Tech Expo 2023',
+                                    FFLocalizations.of(context).getText(
+                                      'ird9qo9m' /* Tech Expo 2023 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -324,7 +334,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Join us at the annual Tech Expo on July 15th, 2023. Showcase your latest innovations!',
+                                    FFLocalizations.of(context).getText(
+                                      'cr611500' /* Join us at the annual Tech Exp... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -364,7 +376,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'New Messages',
+                                        FFLocalizations.of(context).getText(
+                                          'sijemxrq' /* New Messages */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -384,7 +398,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     ],
                                   ),
                                   Text(
-                                    '3 new messages from potential clients',
+                                    FFLocalizations.of(context).getText(
+                                      'qrb2p0r9' /* 3 new messages from potential ... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -393,7 +409,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Check your inbox to respond promptly.',
+                                    FFLocalizations.of(context).getText(
+                                      '1gldrvqo' /* Check your inbox to respond pr... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -433,7 +451,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'New Follower',
+                                        FFLocalizations.of(context).getText(
+                                          '4c8yqy1z' /* New Follower */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
@@ -453,7 +473,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     ],
                                   ),
                                   Text(
-                                    'InnovateTech Corp is now following you',
+                                    FFLocalizations.of(context).getText(
+                                      'uxo9l4us' /* InnovateTech Corp is now follo... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -462,7 +484,9 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         ),
                                   ),
                                   Text(
-                                    'Expand your network and explore collaboration opportunities.',
+                                    FFLocalizations.of(context).getText(
+                                      't8yjz5jl' /* Expand your network and explor... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

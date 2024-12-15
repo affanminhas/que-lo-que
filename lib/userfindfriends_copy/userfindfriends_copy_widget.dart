@@ -42,7 +42,10 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -74,7 +77,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Find Friends',
+                        FFLocalizations.of(context).getText(
+                          'txzh8gqo' /* Find Friends */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
                                   fontFamily: 'Outfit',
@@ -84,7 +89,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                 ),
                       ),
                       Text(
-                        'Discover new connections',
+                        FFLocalizations.of(context).getText(
+                          'x7ykkub3' /* Discover new connections */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Plus Jakarta Sans',
                               color: const Color(0xFFE0E0E0),
@@ -133,7 +140,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText:
-                                        'Search friends, companies, or activities...',
+                                        FFLocalizations.of(context).getText(
+                                      '0lrcfssf' /* Search friends, companies, or ... */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -181,7 +190,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Filter Options',
+                                FFLocalizations.of(context).getText(
+                                  'duwqjiv5' /* Filter Options */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -202,10 +213,19 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                 clipBehavior: Clip.none,
                                 children: [
                                   FlutterFlowChoiceChips(
-                                    options: const [
-                                      ChipData('Male'),
-                                      ChipData('Female'),
-                                      ChipData('Any')
+                                    options: [
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'l5g67kv1' /* Male */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        '3kopb5n4' /* Female */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        '0x32su20' /* Any */,
+                                      ))
                                     ],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.choiceChipsValue =
@@ -261,7 +281,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Location',
+                                    FFLocalizations.of(context).getText(
+                                      '6f6ff996' /* Location */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -284,7 +306,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Age Range',
+                                    FFLocalizations.of(context).getText(
+                                      'tnit0a8b' /* Age Range */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -295,7 +319,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '18 - 200',
+                                    FFLocalizations.of(context).getText(
+                                      'ohbtxjs1' /* 18 - 200 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -313,7 +339,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Nationality',
+                                    FFLocalizations.of(context).getText(
+                                      'cs2md3k9' /* Nationality */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -336,7 +364,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Height',
+                                    FFLocalizations.of(context).getText(
+                                      '5gkn9r8e' /* Height */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -359,7 +389,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Weight',
+                                    FFLocalizations.of(context).getText(
+                                      'n5rla67z' /* Weight */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -382,7 +414,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Ethnicity',
+                                    FFLocalizations.of(context).getText(
+                                      '1psf5z0a' /* Ethnicity */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -405,7 +439,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Eye Color',
+                                    FFLocalizations.of(context).getText(
+                                      'l5dm6qba' /* Eye Color */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -428,7 +464,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Hair Color',
+                                    FFLocalizations.of(context).getText(
+                                      'yslfs9rb' /* Hair Color */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -451,7 +489,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Language',
+                                    FFLocalizations.of(context).getText(
+                                      'e0vvanc8' /* Language */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -474,7 +514,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Religion',
+                                    FFLocalizations.of(context).getText(
+                                      '2c7g0g5v' /* Religion */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -497,7 +539,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Astrological Sign',
+                                    FFLocalizations.of(context).getText(
+                                      'ipahdsyx' /* Astrological Sign */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -518,7 +562,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Apply Filters',
+                                text: FFLocalizations.of(context).getText(
+                                  'hh3byyvx' /* Apply Filters */,
+                                ),
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 50.0,
@@ -544,7 +590,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                       ),
                     ),
                     Text(
-                      'Suggested Profiles',
+                      FFLocalizations.of(context).getText(
+                        'ic5988pu' /* Suggested Profiles */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
@@ -603,7 +651,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'John Doe',
+                                          FFLocalizations.of(context).getText(
+                                            'zrecwma4' /* John Doe */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -613,7 +663,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'New York, USA • 28 years',
+                                          FFLocalizations.of(context).getText(
+                                            'd8ht3dmf' /* New York, USA • 28 years */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -710,7 +762,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Jane Smith',
+                                          FFLocalizations.of(context).getText(
+                                            '17br273v' /* Jane Smith */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -720,7 +774,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'London, UK • 32 years',
+                                          FFLocalizations.of(context).getText(
+                                            'fidddkrl' /* London, UK • 32 years */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -821,7 +877,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'TechCorp Inc.',
+                            FFLocalizations.of(context).getText(
+                              'c3vcg93o' /* TechCorp Inc. */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -830,7 +888,9 @@ class _UserfindfriendsCopyWidgetState extends State<UserfindfriendsCopyWidget> {
                                     ),
                           ),
                           Text(
-                            'Technology Company',
+                            FFLocalizations.of(context).getText(
+                              'lp7opmdn' /* Technology Company */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',

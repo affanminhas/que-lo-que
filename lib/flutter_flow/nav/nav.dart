@@ -151,37 +151,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CreatebusinessprofilWidget(),
         ),
         FFRoute(
-          name: 'chat_2_Details',
-          path: '/chat2Details',
-          asyncParams: {
-            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
-          },
-          builder: (context, params) => Chat2DetailsWidget(
-            chatRef: params.getParam(
-              'chatRef',
-              ParamType.Document,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'chat_2_main',
-          path: '/chat2Main',
-          builder: (context, params) => const Chat2MainWidget(),
-        ),
-        FFRoute(
-          name: 'chat_2_InviteUsers',
-          path: '/chat2InviteUsers',
-          asyncParams: {
-            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
-          },
-          builder: (context, params) => Chat2InviteUsersWidget(
-            chatRef: params.getParam(
-              'chatRef',
-              ParamType.Document,
-            ),
-          ),
-        ),
-        FFRoute(
           name: 'userfindfriends',
           path: '/userfindfriends',
           builder: (context, params) => const UserfindfriendsWidget(),
@@ -341,6 +310,82 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AuthCheckView',
           path: '/authCheckView',
           builder: (context, params) => const AuthCheckViewWidget(),
+        ),
+        FFRoute(
+          name: 'ChatDetailView',
+          path: '/chatDetailView',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => ChatDetailViewWidget(
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_2_main',
+          path: '/chat2Main',
+          builder: (context, params) => const Chat2MainWidget(),
+        ),
+        FFRoute(
+          name: 'ChatInviteUsers',
+          path: '/chatInviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+            'chats': getDocList(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => ChatInviteUsersWidget(
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
+            chats: params.getParam<ChatsRecord>(
+              'chats',
+              ParamType.Document,
+              isList: true,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'image_Details',
+          path: '/imageDetails',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetailsWidget(
+            chatMessage: params.getParam(
+              'chatMessage',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'ChangePassword',
+          path: '/changePassword',
+          builder: (context, params) => const ChangePasswordWidget(),
+        ),
+        FFRoute(
+          name: 'FriendsView',
+          path: '/friendsView',
+          builder: (context, params) => const FriendsViewWidget(),
+        ),
+        FFRoute(
+          name: 'BlockUsersView',
+          path: '/blockUsersView',
+          builder: (context, params) => const BlockUsersViewWidget(),
+        ),
+        FFRoute(
+          name: 'ContactSupport',
+          path: '/contactSupport',
+          builder: (context, params) => const ContactSupportWidget(),
+        ),
+        FFRoute(
+          name: 'EditUserProfile',
+          path: '/editUserProfile',
+          builder: (context, params) => const EditUserProfileWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

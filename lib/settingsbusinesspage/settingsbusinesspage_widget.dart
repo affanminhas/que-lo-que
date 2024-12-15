@@ -68,7 +68,10 @@ class _SettingsbusinesspageWidgetState
           final settingsbusinesspageBusinessOwnerRecord = snapshot.data!;
 
           return GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
+            onTap: () {
+              FocusScope.of(context).unfocus();
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
             child: Scaffold(
               key: scaffoldKey,
               backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -114,7 +117,9 @@ class _SettingsbusinesspageWidgetState
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Settings',
+                              FFLocalizations.of(context).getText(
+                                'b39strv8' /* Settings */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -226,7 +231,9 @@ class _SettingsbusinesspageWidgetState
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Edit Profile',
+                                  text: FFLocalizations.of(context).getText(
+                                    'cj295m03' /* Edit Profile */,
+                                  ),
                                   options: FFButtonOptions(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
@@ -276,7 +283,9 @@ class _SettingsbusinesspageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Account Settings',
+                                  FFLocalizations.of(context).getText(
+                                    'i8f51a9v' /* Account Settings */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -301,7 +310,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Change Password',
+                                          FFLocalizations.of(context).getText(
+                                            'i09xbabq' /* Change Password */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -334,7 +345,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Notification Preferences',
+                                          FFLocalizations.of(context).getText(
+                                            'ranq5ujl' /* Notification Preferences */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -367,7 +380,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Language',
+                                          FFLocalizations.of(context).getText(
+                                            'xrr48004' /* Language */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -414,7 +429,9 @@ class _SettingsbusinesspageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Business Settings',
+                                  FFLocalizations.of(context).getText(
+                                    'czqvns29' /* Business Settings */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -439,7 +456,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Business Information',
+                                          FFLocalizations.of(context).getText(
+                                            'voccon9z' /* Business Information */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -472,7 +491,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Payment Methods',
+                                          FFLocalizations.of(context).getText(
+                                            'avamy83k' /* Payment Methods */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -505,7 +526,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Manage Team',
+                                          FFLocalizations.of(context).getText(
+                                            'f9dd77bj' /* Manage Team */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -552,7 +575,9 @@ class _SettingsbusinesspageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Privacy & Security',
+                                  FFLocalizations.of(context).getText(
+                                    'skstuwg2' /* Privacy & Security */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -577,7 +602,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Blocked Users',
+                                          FFLocalizations.of(context).getText(
+                                            't14mol3o' /* Blocked Users */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -610,7 +637,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Privacy Settings',
+                                          FFLocalizations.of(context).getText(
+                                            'tbgxjjzl' /* Privacy Settings */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -643,7 +672,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Two-Factor Authentication',
+                                          FFLocalizations.of(context).getText(
+                                            'bgsp9iqa' /* Two-Factor Authentication */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -705,7 +736,9 @@ class _SettingsbusinesspageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Support',
+                                  FFLocalizations.of(context).getText(
+                                    '9dmlnpws' /* Support */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -730,7 +763,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Help Center',
+                                          FFLocalizations.of(context).getText(
+                                            '9epiht9c' /* Help Center */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -763,7 +798,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Contact Support',
+                                          FFLocalizations.of(context).getText(
+                                            '3nfiu127' /* Contact Support */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -796,7 +833,9 @@ class _SettingsbusinesspageWidgetState
                                           size: 24.0,
                                         ),
                                         Text(
-                                          'Send Feedback',
+                                          FFLocalizations.of(context).getText(
+                                            'buifpgsi' /* Send Feedback */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -843,7 +882,9 @@ class _SettingsbusinesspageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Account Actions',
+                                  FFLocalizations.of(context).getText(
+                                    's2swr6wy' /* Account Actions */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -861,9 +902,11 @@ class _SettingsbusinesspageWidgetState
                                         .clearRedirectLocation();
 
                                     context.goNamedAuth(
-                                        'WelcomeVideoView', context.mounted);
+                                        'loginView', context.mounted);
                                   },
-                                  text: 'Log Out',
+                                  text: FFLocalizations.of(context).getText(
+                                    'wlbj8v8p' /* Log Out */,
+                                  ),
                                   options: FFButtonOptions(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
@@ -900,9 +943,13 @@ class _SettingsbusinesspageWidgetState
                                                 .resolve(
                                                     Directionality.of(context)),
                                             child: GestureDetector(
-                                              onTap: () =>
-                                                  FocusScope.of(dialogContext)
-                                                      .unfocus(),
+                                              onTap: () {
+                                                FocusScope.of(dialogContext)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
                                               child: const SizedBox(
                                                 height: 300.0,
                                                 width: 300.0,
@@ -915,7 +962,9 @@ class _SettingsbusinesspageWidgetState
                                         },
                                       );
                                     },
-                                    text: 'Delete Account',
+                                    text: FFLocalizations.of(context).getText(
+                                      '19glv2cx' /* Delete Account */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -956,7 +1005,9 @@ class _SettingsbusinesspageWidgetState
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Text(
-                          'App Version 1.0.0',
+                          FFLocalizations.of(context).getText(
+                            'h92vu2qt' /* App Version 1.0.0 */,
+                          ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .bodySmall

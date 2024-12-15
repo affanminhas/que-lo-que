@@ -85,7 +85,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -132,7 +135,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                           ),
                         ),
                         Text(
-                          'flow.io',
+                          FFLocalizations.of(context).getText(
+                            'usad1njk' /* flow.io */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
@@ -175,7 +180,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Get Started',
+                              FFLocalizations.of(context).getText(
+                                '8l1u05y6' /* Get Started */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -188,7 +195,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 8.0, 0.0, 24.0),
                               child: Text(
-                                'Create an account by using the form below.',
+                                FFLocalizations.of(context).getText(
+                                  'f5x1lqa8' /* Create an account by using the... */,
+                                ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
@@ -210,7 +219,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   autofillHints: const [AutofillHints.email],
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '43cs4s4t' /* Email */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -280,7 +292,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   autofillHints: const [AutofillHints.password],
                                   obscureText: !_model.passwordVisibility,
                                   decoration: InputDecoration(
-                                    labelText: 'Password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'd5u2fsn0' /* Password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -357,7 +372,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   0.0, 0.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {},
-                                text: 'Create Account',
+                                text: FFLocalizations.of(context).getText(
+                                  'fc62i8vh' /* Create Account */,
+                                ),
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 44.0,
@@ -388,7 +405,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
-                                  'Or sign up with',
+                                  FFLocalizations.of(context).getText(
+                                    'lir41aih' /* Or sign up with */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelLarge
@@ -414,7 +433,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   context.goNamedAuth(
                                       'AuthCheckView', context.mounted);
                                 },
-                                text: 'Continue with Google',
+                                text: FFLocalizations.of(context).getText(
+                                  'z75w1snl' /* Continue with Google */,
+                                ),
                                 icon: const FaIcon(
                                   FontAwesomeIcons.google,
                                   size: 20.0,
@@ -465,7 +486,9 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         context.goNamedAuth(
                                             'AuthCheckView', context.mounted);
                                       },
-                                      text: 'Continue with Apple',
+                                      text: FFLocalizations.of(context).getText(
+                                        'e29jufhh' /* Continue with Apple */,
+                                      ),
                                       icon: const FaIcon(
                                         FontAwesomeIcons.apple,
                                         size: 20.0,
@@ -532,12 +555,18 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
-                                          text: 'Already have an account? ',
-                                          style: TextStyle(),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'wv61ar1n' /* Already have an account?  */,
+                                          ),
+                                          style: const TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Sign in here',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'u2evtsm0' /* Sign in here */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

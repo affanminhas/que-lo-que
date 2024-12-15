@@ -38,7 +38,10 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -67,7 +70,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Chat',
+                      FFLocalizations.of(context).getText(
+                        'fz9d3azv' /* Chat */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',
@@ -77,7 +82,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                               ),
                     ),
                     Text(
-                      'Connect with friends and groups',
+                      FFLocalizations.of(context).getText(
+                        'ao1ue5ny' /* Connect with friends and group... */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Plus Jakarta Sans',
                             color: FlutterFlowTheme.of(context).info,
@@ -132,7 +139,11 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            hintText: 'Search chats...',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'wl41483o' /* Search chats... */,
+                                            ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -195,7 +206,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 24.0),
                             child: Text(
-                              'Stories',
+                              FFLocalizations.of(context).getText(
+                                'rm5w9eu2' /* Stories */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -244,7 +257,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Add Story',
+                                      FFLocalizations.of(context).getText(
+                                        '9k94l8sy' /* Add Story */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -284,7 +299,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'John',
+                                      FFLocalizations.of(context).getText(
+                                        '8kn5vsh2' /* John */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -324,7 +341,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Emma',
+                                      FFLocalizations.of(context).getText(
+                                        'k9tf5zhu' /* Emma */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -364,7 +383,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      'Alex',
+                                      FFLocalizations.of(context).getText(
+                                        '781bxm9z' /* Alex */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -444,7 +465,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Sarah Johnson',
+                                            FFLocalizations.of(context).getText(
+                                              '6kygqigv' /* Sarah Johnson */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -455,7 +478,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'Hey, how\'s it going?',
+                                            FFLocalizations.of(context).getText(
+                                              '2y6gh91z' /* Hey, how's it going? */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -476,7 +501,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         Text(
-                                          '2m ago',
+                                          FFLocalizations.of(context).getText(
+                                            '36ujtq01' /* 2m ago */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -499,7 +526,10 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Text(
-                                              '2',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'zhzgv4c2' /* 2 */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -571,7 +601,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Project Alpha Team',
+                                            FFLocalizations.of(context).getText(
+                                              'npg6o99f' /* Project Alpha Team */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -582,7 +614,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'Meeting at 3 PM today',
+                                            FFLocalizations.of(context).getText(
+                                              '812h3u41' /* Meeting at 3 PM today */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -603,7 +637,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         Text(
-                                          '1h ago',
+                                          FFLocalizations.of(context).getText(
+                                            '01wrw4h2' /* 1h ago */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -626,7 +662,10 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
                                             child: Text(
-                                              '5',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'jkmq6jpe' /* 5 */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -698,7 +737,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Mike Smith',
+                                            FFLocalizations.of(context).getText(
+                                              'k3xi3t76' /* Mike Smith */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -719,7 +760,10 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                                 size: 16.0,
                                               ),
                                               Text(
-                                                'Voice message (0:30)',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'i6ulmg91' /* Voice message (0:30) */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -743,7 +787,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         Text(
-                                          'Yesterday',
+                                          FFLocalizations.of(context).getText(
+                                            'wazivbjc' /* Yesterday */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -794,7 +840,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Chats',
+                            FFLocalizations.of(context).getText(
+                              'suvnqegv' /* Chats */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
@@ -815,7 +863,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Groups',
+                            FFLocalizations.of(context).getText(
+                              '6v293hvr' /* Groups */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -836,7 +886,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Calls',
+                            FFLocalizations.of(context).getText(
+                              'o4rz0e71' /* Calls */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -866,7 +918,9 @@ class _UserchatpageWidgetState extends State<UserchatpageWidget> {
                             ),
                           ),
                           Text(
-                            'Profile',
+                            FFLocalizations.of(context).getText(
+                              'c6ccmjs5' /* Profile */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',

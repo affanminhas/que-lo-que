@@ -37,7 +37,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -70,7 +73,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Welcome, Business Name',
+                          FFLocalizations.of(context).getText(
+                            'uc9giiqd' /* Welcome, Business Name */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
@@ -96,7 +101,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                       ],
                     ),
                     Text(
-                      'Your business dashboard',
+                      FFLocalizations.of(context).getText(
+                        '6s5mdoan' /* Your business dashboard */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Plus Jakarta Sans',
                             color: FlutterFlowTheme.of(context).info,
@@ -145,7 +152,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Recent Messages',
+                                    FFLocalizations.of(context).getText(
+                                      '85qao0ax' /* Recent Messages */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -190,7 +199,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'John Doe',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'vrhkz2li' /* John Doe */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -203,7 +215,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'New partnership opportunity',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'p10t5ko6' /* New partnership opportunity */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -221,7 +236,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                         ].divide(const SizedBox(width: 12.0)),
                                       ),
                                       Text(
-                                        '2m ago',
+                                        FFLocalizations.of(context).getText(
+                                          '90xy98jo' /* 2m ago */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -269,7 +286,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Sarah Smith',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '673ohyb2' /* Sarah Smith */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -282,7 +302,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Project update: Q3 goals',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'z70ylq9e' /* Project update: Q3 goals */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -300,7 +323,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                         ].divide(const SizedBox(width: 12.0)),
                                       ),
                                       Text(
-                                        '1h ago',
+                                        FFLocalizations.of(context).getText(
+                                          '8x0gzldh' /* 1h ago */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -344,7 +369,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Text(
-                                      'Alerts',
+                                      FFLocalizations.of(context).getText(
+                                        'afuz2h51' /* Alerts */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
@@ -375,7 +402,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                               size: 24.0,
                                             ),
                                             Text(
-                                              'New security update available',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'jl6asrx0' /* New security update available */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -412,7 +442,10 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                               size: 24.0,
                                             ),
                                             Text(
-                                              'Q2 Financial report approved',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'c8axk2ur' /* Q2 Financial report approved */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -454,7 +487,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Upcoming Events',
+                                  FFLocalizations.of(context).getText(
+                                    'a08zya7u' /* Upcoming Events */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -475,7 +510,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Team Building Workshop',
+                                          FFLocalizations.of(context).getText(
+                                            'iqkj3gl7' /* Team Building Workshop */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -485,7 +522,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'July 15, 2023 • 2:00 PM',
+                                          FFLocalizations.of(context).getText(
+                                            'ljqf52fg' /* July 15, 2023 • 2:00 PM */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -502,7 +541,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'View',
+                                      text: FFLocalizations.of(context).getText(
+                                        'grq5v9s2' /* View */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 80.0,
                                         height: 36.0,
@@ -540,7 +581,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Quarterly Board Meeting',
+                                          FFLocalizations.of(context).getText(
+                                            'ysmchwwu' /* Quarterly Board Meeting */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -550,7 +593,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'July 30, 2023 • 10:00 AM',
+                                          FFLocalizations.of(context).getText(
+                                            'iui0jd9m' /* July 30, 2023 • 10:00 AM */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -567,7 +612,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'View',
+                                      text: FFLocalizations.of(context).getText(
+                                        'hmmohfxa' /* View */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 80.0,
                                         height: 36.0,
@@ -619,7 +666,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'New Connections',
+                                  FFLocalizations.of(context).getText(
+                                    '7m429jzo' /* New Connections */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -659,7 +708,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Emily Johnson',
+                                            FFLocalizations.of(context).getText(
+                                              'lmf1wz8o' /* Emily Johnson */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -670,7 +721,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'Marketing Director at TechCorp',
+                                            FFLocalizations.of(context).getText(
+                                              'hd2totz5' /* Marketing Director at TechCorp */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -689,7 +742,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Connect',
+                                      text: FFLocalizations.of(context).getText(
+                                        'v51y47cw' /* Connect */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 100.0,
                                         height: 36.0,
@@ -746,7 +801,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Michael Brown',
+                                            FFLocalizations.of(context).getText(
+                                              'rb47b3oe' /* Michael Brown */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -757,7 +814,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                                 ),
                                           ),
                                           Text(
-                                            'CEO at InnovateCo',
+                                            FFLocalizations.of(context).getText(
+                                              'gv7emige' /* CEO at InnovateCo */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -776,7 +835,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Connect',
+                                      text: FFLocalizations.of(context).getText(
+                                        'brzga14g' /* Connect */,
+                                      ),
                                       options: FFButtonOptions(
                                         width: 100.0,
                                         height: 36.0,
@@ -841,7 +902,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Home',
+                              FFLocalizations.of(context).getText(
+                                '74z1w2ru' /* Home */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -862,7 +925,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Chat',
+                              FFLocalizations.of(context).getText(
+                                '0ggvoi17' /* Chat */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -884,7 +949,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Network',
+                              FFLocalizations.of(context).getText(
+                                'qww536se' /* Network */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -906,7 +973,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Activities',
+                              FFLocalizations.of(context).getText(
+                                '0rmpfypf' /* Activities */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -928,7 +997,9 @@ class _WelcomebusinessuserWidgetState extends State<WelcomebusinessuserWidget> {
                               size: 28.0,
                             ),
                             Text(
-                              'Explore',
+                              FFLocalizations.of(context).getText(
+                                '9u7y0t17' /* Explore */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(

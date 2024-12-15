@@ -54,7 +54,10 @@ class _UsercreateadvertisepageCopyWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -122,7 +125,9 @@ class _UsercreateadvertisepageCopyWidgetState
                         ),
                       ),
                       Text(
-                        'Create Advertisement',
+                        FFLocalizations.of(context).getText(
+                          'xlst6xq1' /* Create Advertisement */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
@@ -132,7 +137,9 @@ class _UsercreateadvertisepageCopyWidgetState
                             ),
                       ),
                       Text(
-                        'Promote your event or content',
+                        FFLocalizations.of(context).getText(
+                          '5mffxn7u' /* Promote your event or content */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Plus Jakarta Sans',
                               color: FlutterFlowTheme.of(context).info,
@@ -180,7 +187,9 @@ class _UsercreateadvertisepageCopyWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Advertisement Details',
+                                  FFLocalizations.of(context).getText(
+                                    'hnx1jyeh' /* Advertisement Details */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -197,7 +206,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Content Type',
+                                      FFLocalizations.of(context).getText(
+                                        '1bgwr38e' /* Content Type */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -206,10 +217,19 @@ class _UsercreateadvertisepageCopyWidgetState
                                           ),
                                     ),
                                     FlutterFlowChoiceChips(
-                                      options: const [
-                                        ChipData('Flyer'),
-                                        ChipData('Photo'),
-                                        ChipData('Video')
+                                      options: [
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'i6ueeva1' /* Flyer */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'x87b5913' /* Photo */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'ylcxiea3' /* Video */,
+                                        ))
                                       ],
                                       onChanged: (val) => safeSetState(() =>
                                           _model.choiceChipsValue1 =
@@ -273,7 +293,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Description',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      's6qfs0dy' /* Description */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -336,7 +359,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Promotion Link',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'slfszzdj' /* Promotion Link */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -399,7 +425,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Category',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '4f8yei3d' /* Category */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -480,7 +509,9 @@ class _UsercreateadvertisepageCopyWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Location Details',
+                                  FFLocalizations.of(context).getText(
+                                    'hbtn5aih' /* Location Details */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -497,7 +528,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Planet',
+                                      FFLocalizations.of(context).getText(
+                                        'o9yxfn7z' /* Planet */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -506,16 +539,43 @@ class _UsercreateadvertisepageCopyWidgetState
                                           ),
                                     ),
                                     FlutterFlowChoiceChips(
-                                      options: const [
-                                        ChipData('Mercury'),
-                                        ChipData('Venus'),
-                                        ChipData('Earth'),
-                                        ChipData('Mars'),
-                                        ChipData('Jupiter'),
-                                        ChipData('Saturn'),
-                                        ChipData('Uranus'),
-                                        ChipData('Neptune'),
-                                        ChipData('Moon')
+                                      options: [
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          '9z63t2ul' /* Mercury */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'k97zqdqr' /* Venus */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'xbvxjn5i' /* Earth */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'a98dtcxa' /* Mars */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'nx8tlteo' /* Jupiter */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'ex3rcs5c' /* Saturn */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          'jgyumyxg' /* Uranus */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          '9wyly6gl' /* Neptune */,
+                                        )),
+                                        ChipData(
+                                            FFLocalizations.of(context).getText(
+                                          '70mxfdsi' /* Moon */,
+                                        ))
                                       ],
                                       onChanged: (val) => safeSetState(() =>
                                           _model.choiceChipsValue2 =
@@ -584,7 +644,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                     safeSetState(
                                         () => _model.placePickerValue1 = place);
                                   },
-                                  defaultText: 'Select Country',
+                                  defaultText:
+                                      FFLocalizations.of(context).getText(
+                                    '0nq5am5z' /* Select Country */,
+                                  ),
                                   icon: Icon(
                                     Icons.public,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -618,7 +681,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                     safeSetState(
                                         () => _model.placePickerValue2 = place);
                                   },
-                                  defaultText: 'Select Region',
+                                  defaultText:
+                                      FFLocalizations.of(context).getText(
+                                    'rvond24r' /* Select Region */,
+                                  ),
                                   icon: Icon(
                                     Icons.location_city,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -652,7 +718,10 @@ class _UsercreateadvertisepageCopyWidgetState
                                     safeSetState(
                                         () => _model.placePickerValue3 = place);
                                   },
-                                  defaultText: 'Select City',
+                                  defaultText:
+                                      FFLocalizations.of(context).getText(
+                                    'gxpgsduw' /* Select City */,
+                                  ),
                                   icon: Icon(
                                     Icons.location_on,
                                     color: FlutterFlowTheme.of(context).primary,
@@ -700,7 +769,9 @@ class _UsercreateadvertisepageCopyWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Promotion Options',
+                                  FFLocalizations.of(context).getText(
+                                    'e7tvv5da' /* Promotion Options */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -717,7 +788,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Keep Ad Active',
+                                      FFLocalizations.of(context).getText(
+                                        '5do9cbpb' /* Keep Ad Active */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -751,7 +824,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Priority Placement',
+                                      FFLocalizations.of(context).getText(
+                                        'tn9gmvgj' /* Priority Placement */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -798,7 +873,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                   ),
                                 ),
                                 Text(
-                                  'Duration: 7 days',
+                                  FFLocalizations.of(context).getText(
+                                    'j2oj4j6y' /* Duration: 7 days */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -817,7 +894,9 @@ class _UsercreateadvertisepageCopyWidgetState
                         onPressed: () async {
                           context.pushNamed('businessaymentpromotepage');
                         },
-                        text: 'Create Advertisement',
+                        text: FFLocalizations.of(context).getText(
+                          'utu0zpm9' /* Create Advertisement */,
+                        ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 56.0,
@@ -858,7 +937,9 @@ class _UsercreateadvertisepageCopyWidgetState
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Search Advertisements',
+                        FFLocalizations.of(context).getText(
+                          'i6iiqcmz' /* Search Advertisements */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .override(
@@ -902,7 +983,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       hintText:
-                                          'Search by category, location...',
+                                          FFLocalizations.of(context).getText(
+                                        'zb3nazoc' /* Search by category, location..... */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -931,7 +1014,9 @@ class _UsercreateadvertisepageCopyWidgetState
                         ),
                       ),
                       Text(
-                        'Featured Ads',
+                        FFLocalizations.of(context).getText(
+                          'k55ct7ra' /* Featured Ads */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .titleMedium
                             .override(
@@ -985,7 +1070,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                         ),
                                       ),
                                       Text(
-                                        'Live Jazz Night',
+                                        FFLocalizations.of(context).getText(
+                                          'n1fo8yag' /* Live Jazz Night */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -995,7 +1082,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Join us for an unforgettable evening of smooth jazz and soulful melodies.',
+                                        FFLocalizations.of(context).getText(
+                                          '7pdsjyl4' /* Join us for an unforgettable e... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1012,7 +1101,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'New York, USA',
+                                            FFLocalizations.of(context).getText(
+                                              'ho730cge' /* New York, USA */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1025,7 +1116,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                                 ),
                                           ),
                                           Text(
-                                            'Earth',
+                                            FFLocalizations.of(context).getText(
+                                              'hxmjpwmj' /* Earth */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1076,7 +1169,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                         ),
                                       ),
                                       Text(
-                                        'Modern Art Showcase',
+                                        FFLocalizations.of(context).getText(
+                                          'ovwvuvhl' /* Modern Art Showcase */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1086,7 +1181,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Experience the future of art in our cutting-edge exhibition.',
+                                        FFLocalizations.of(context).getText(
+                                          'sa48zvl2' /* Experience the future of art i... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1103,7 +1200,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Paris, France',
+                                            FFLocalizations.of(context).getText(
+                                              'vdan6so8' /* Paris, France */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1116,7 +1215,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                                 ),
                                           ),
                                           Text(
-                                            'Earth',
+                                            FFLocalizations.of(context).getText(
+                                              'w0e0g8lz' /* Earth */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1139,7 +1240,9 @@ class _UsercreateadvertisepageCopyWidgetState
                         ),
                       ),
                       Text(
-                        'Worldwide Suggestions',
+                        FFLocalizations.of(context).getText(
+                          'uebuzq3i' /* Worldwide Suggestions */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .titleMedium
                             .override(
@@ -1181,7 +1284,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'Virtual Reality Experience',
+                                        FFLocalizations.of(context).getText(
+                                          '08le5nen' /* Virtual Reality Experience */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1191,7 +1296,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Immerse yourself in new worlds',
+                                        FFLocalizations.of(context).getText(
+                                          'we7ruib4' /* Immerse yourself in new worlds */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1208,7 +1315,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Tokyo, Japan',
+                                            FFLocalizations.of(context).getText(
+                                              '9bn16u45' /* Tokyo, Japan */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1221,7 +1330,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                                 ),
                                           ),
                                           Text(
-                                            'Earth',
+                                            FFLocalizations.of(context).getText(
+                                              'q9gt1rb7' /* Earth */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1260,7 +1371,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'Mars Colony Tour',
+                                        FFLocalizations.of(context).getText(
+                                          'fqldc0um' /* Mars Colony Tour */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1270,7 +1383,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Experience life on the Red Planet',
+                                        FFLocalizations.of(context).getText(
+                                          'tsehmpde' /* Experience life on the Red Pla... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1287,7 +1402,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Olympus Mons',
+                                            FFLocalizations.of(context).getText(
+                                              'jrxi8jt3' /* Olympus Mons */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -1300,7 +1417,9 @@ class _UsercreateadvertisepageCopyWidgetState
                                                 ),
                                           ),
                                           Text(
-                                            'Mars',
+                                            FFLocalizations.of(context).getText(
+                                              'araz4p8n' /* Mars */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(

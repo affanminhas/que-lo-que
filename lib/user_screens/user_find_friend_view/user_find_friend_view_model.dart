@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'user_find_friend_view_widget.dart' show UserFindFriendViewWidget;
@@ -9,17 +10,31 @@ class UserFindFriendViewModel
 
   bool isFilterEnabled = false;
 
+  List<IndividualUserRecord> searchUserResults = [];
+  void addToSearchUserResults(IndividualUserRecord item) =>
+      searchUserResults.add(item);
+  void removeFromSearchUserResults(IndividualUserRecord item) =>
+      searchUserResults.remove(item);
+  void removeAtIndexFromSearchUserResults(int index) =>
+      searchUserResults.removeAt(index);
+  void insertAtIndexInSearchUserResults(int index, IndividualUserRecord item) =>
+      searchUserResults.insert(index, item);
+  void updateSearchUserResultsAtIndex(
+          int index, Function(IndividualUserRecord) updateFn) =>
+      searchUserResults[index] = updateFn(searchUserResults[index]);
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for PlanetDropDown widget.
-  String? planetDropDownValue;
-  FormFieldController<String>? planetDropDownValueController;
-  // State field(s) for CountryPicker widget.
-  FFPlace countryPickerValue = const FFPlace();
+  List<IndividualUserRecord> simpleSearchResults = [];
+  // State field(s) for GenderDropDown widget.
+  String? genderDropDownValue;
+  FormFieldController<String>? genderDropDownValueController;
+  // State field(s) for PlacePicker widget.
+  FFPlace placePickerValue = const FFPlace();
   // State field(s) for MinAge widget.
   FocusNode? minAgeFocusNode;
   TextEditingController? minAgeTextController;

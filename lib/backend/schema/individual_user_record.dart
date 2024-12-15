@@ -166,6 +166,36 @@ class IndividualUserRecord extends FirestoreRecord {
   String get astrologicalSign => _astrologicalSign ?? '';
   bool hasAstrologicalSign() => _astrologicalSign != null;
 
+  // "followers" field.
+  List<DocumentReference>? _followers;
+  List<DocumentReference> get followers => _followers ?? const [];
+  bool hasFollowers() => _followers != null;
+
+  // "following" field.
+  List<DocumentReference>? _following;
+  List<DocumentReference> get following => _following ?? const [];
+  bool hasFollowing() => _following != null;
+
+  // "friends" field.
+  List<DocumentReference>? _friends;
+  List<DocumentReference> get friends => _friends ?? const [];
+  bool hasFriends() => _friends != null;
+
+  // "friendRequests" field.
+  List<DocumentReference>? _friendRequests;
+  List<DocumentReference> get friendRequests => _friendRequests ?? const [];
+  bool hasFriendRequests() => _friendRequests != null;
+
+  // "createdAt" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
+
+  // "blockedUsers" field.
+  List<DocumentReference>? _blockedUsers;
+  List<DocumentReference> get blockedUsers => _blockedUsers ?? const [];
+  bool hasBlockedUsers() => _blockedUsers != null;
+
   void _initializeFields() {
     _username = snapshotData['username'] as String?;
     _firstName = snapshotData['firstName'] as String?;
@@ -197,6 +227,12 @@ class IndividualUserRecord extends FirestoreRecord {
     _birthday = snapshotData['birthday'] as String?;
     _userRef = snapshotData['userRef'] as DocumentReference?;
     _astrologicalSign = snapshotData['astrologicalSign'] as String?;
+    _followers = getDataList(snapshotData['followers']);
+    _following = getDataList(snapshotData['following']);
+    _friends = getDataList(snapshotData['friends']);
+    _friendRequests = getDataList(snapshotData['friendRequests']);
+    _createdAt = snapshotData['createdAt'] as DateTime?;
+    _blockedUsers = getDataList(snapshotData['blockedUsers']);
   }
 
   static CollectionReference get collection =>
@@ -262,6 +298,7 @@ Map<String, dynamic> createIndividualUserRecordData({
   String? birthday,
   DocumentReference? userRef,
   String? astrologicalSign,
+  DateTime? createdAt,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -293,6 +330,7 @@ Map<String, dynamic> createIndividualUserRecordData({
       'birthday': birthday,
       'userRef': userRef,
       'astrologicalSign': astrologicalSign,
+      'createdAt': createdAt,
     }.withoutNulls,
   );
 
@@ -335,7 +373,13 @@ class IndividualUserRecordDocumentEquality
         e1?.tattoo == e2?.tattoo &&
         e1?.birthday == e2?.birthday &&
         e1?.userRef == e2?.userRef &&
-        e1?.astrologicalSign == e2?.astrologicalSign;
+        e1?.astrologicalSign == e2?.astrologicalSign &&
+        listEquality.equals(e1?.followers, e2?.followers) &&
+        listEquality.equals(e1?.following, e2?.following) &&
+        listEquality.equals(e1?.friends, e2?.friends) &&
+        listEquality.equals(e1?.friendRequests, e2?.friendRequests) &&
+        e1?.createdAt == e2?.createdAt &&
+        listEquality.equals(e1?.blockedUsers, e2?.blockedUsers);
   }
 
   @override
@@ -369,7 +413,13 @@ class IndividualUserRecordDocumentEquality
         e?.tattoo,
         e?.birthday,
         e?.userRef,
-        e?.astrologicalSign
+        e?.astrologicalSign,
+        e?.followers,
+        e?.following,
+        e?.friends,
+        e?.friendRequests,
+        e?.createdAt,
+        e?.blockedUsers
       ]);
 
   @override

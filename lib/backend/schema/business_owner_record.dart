@@ -71,6 +71,21 @@ class BusinessOwnerRecord extends FirestoreRecord {
   String get profileUrl => _profileUrl ?? '';
   bool hasProfileUrl() => _profileUrl != null;
 
+  // "followers" field.
+  List<DocumentReference>? _followers;
+  List<DocumentReference> get followers => _followers ?? const [];
+  bool hasFollowers() => _followers != null;
+
+  // "following" field.
+  List<DocumentReference>? _following;
+  List<DocumentReference> get following => _following ?? const [];
+  bool hasFollowing() => _following != null;
+
+  // "businessNumber" field.
+  String? _businessNumber;
+  String get businessNumber => _businessNumber ?? '';
+  bool hasBusinessNumber() => _businessNumber != null;
+
   void _initializeFields() {
     _companyName = snapshotData['companyName'] as String?;
     _planet = snapshotData['planet'] as String?;
@@ -83,6 +98,9 @@ class BusinessOwnerRecord extends FirestoreRecord {
     _media = getDataList(snapshotData['media']);
     _companyUsername = snapshotData['companyUsername'] as String?;
     _profileUrl = snapshotData['profile_url'] as String?;
+    _followers = getDataList(snapshotData['followers']);
+    _following = getDataList(snapshotData['following']);
+    _businessNumber = snapshotData['businessNumber'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -130,6 +148,7 @@ Map<String, dynamic> createBusinessOwnerRecordData({
   DocumentReference? userRef,
   String? companyUsername,
   String? profileUrl,
+  String? businessNumber,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -143,6 +162,7 @@ Map<String, dynamic> createBusinessOwnerRecordData({
       'userRef': userRef,
       'companyUsername': companyUsername,
       'profile_url': profileUrl,
+      'businessNumber': businessNumber,
     }.withoutNulls,
   );
 
@@ -166,7 +186,10 @@ class BusinessOwnerRecordDocumentEquality
         e1?.userRef == e2?.userRef &&
         listEquality.equals(e1?.media, e2?.media) &&
         e1?.companyUsername == e2?.companyUsername &&
-        e1?.profileUrl == e2?.profileUrl;
+        e1?.profileUrl == e2?.profileUrl &&
+        listEquality.equals(e1?.followers, e2?.followers) &&
+        listEquality.equals(e1?.following, e2?.following) &&
+        e1?.businessNumber == e2?.businessNumber;
   }
 
   @override
@@ -181,7 +204,10 @@ class BusinessOwnerRecordDocumentEquality
         e?.userRef,
         e?.media,
         e?.companyUsername,
-        e?.profileUrl
+        e?.profileUrl,
+        e?.followers,
+        e?.following,
+        e?.businessNumber
       ]);
 
   @override

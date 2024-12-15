@@ -1,10 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'chat2_invite_users_widget.dart' show Chat2InviteUsersWidget;
+import 'chat_invite_users_widget.dart' show ChatInviteUsersWidget;
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
-class Chat2InviteUsersModel extends FlutterFlowModel<Chat2InviteUsersWidget> {
+class ChatInviteUsersModel extends FlutterFlowModel<ChatInviteUsersWidget> {
   ///  Local state fields for this page.
 
   List<DocumentReference> friendsList = [];
@@ -25,18 +25,8 @@ class Chat2InviteUsersModel extends FlutterFlowModel<Chat2InviteUsersWidget> {
   PagingController<DocumentSnapshot?, UsersRecord>? listViewPagingController;
   Query? listViewPagingQuery;
 
-  // State field(s) for CheckboxListTile widget.
-  Map<UsersRecord, bool> checkboxListTileValueMap = {};
-  List<UsersRecord> get checkboxListTileCheckedItems =>
-      checkboxListTileValueMap.entries
-          .where((e) => e.value)
-          .map((e) => e.key)
-          .toList();
-
-  // Stores action output result for [Firestore Query - Query a collection] action in Button widget.
-  ChatsRecord? updatedChatThread;
-  // Stores action output result for [Backend Call - Create Document] action in Button widget.
-  ChatsRecord? newChatThread;
+  // Stores action output result for [Backend Call - Create Document] action in Container widget.
+  ChatsRecord? chatThread;
 
   @override
   void initState(BuildContext context) {}

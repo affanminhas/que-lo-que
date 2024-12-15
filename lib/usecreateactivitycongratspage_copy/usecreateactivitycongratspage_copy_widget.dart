@@ -37,7 +37,10 @@ class _UsecreateactivitycongratspageCopyWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -82,7 +85,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
               ),
             ),
             Text(
-              'Congratulations!',
+              FFLocalizations.of(context).getText(
+                'cw24bqn7' /* Congratulations! */,
+              ),
               style: FlutterFlowTheme.of(context).headlineLarge.override(
                     fontFamily: 'Outfit',
                     color: FlutterFlowTheme.of(context).primaryText,
@@ -91,7 +96,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                   ),
             ),
             Text(
-              'Your activity has been created successfully!',
+              FFLocalizations.of(context).getText(
+                '7j5ehgbt' /* Your activity has been created... */,
+              ),
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Plus Jakarta Sans',
@@ -118,7 +125,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'What\'s Next?',
+                        FFLocalizations.of(context).getText(
+                          'ne23kaqe' /* What's Next? */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .override(
@@ -137,7 +146,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Invite friends to join your activity',
+                            FFLocalizations.of(context).getText(
+                              'l6828wlr' /* Invite friends to join your ac... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -156,7 +167,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Edit your activity details anytime',
+                            FFLocalizations.of(context).getText(
+                              'wgymj2dm' /* Edit your activity details any... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -175,7 +188,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Receive updates about participants',
+                            FFLocalizations.of(context).getText(
+                              'gv421cg6' /* Receive updates about particip... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -199,7 +214,9 @@ class _UsecreateactivitycongratspageCopyWidgetState
                 context.pushNamed('welcomeuserprofil3');
               },
               child: Text(
-                'Redirecting to home page...',
+                FFLocalizations.of(context).getText(
+                  '61p8kpac' /* Redirecting to home page... */,
+                ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Plus Jakarta Sans',
                       color: FlutterFlowTheme.of(context).secondaryText,

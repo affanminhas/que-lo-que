@@ -83,7 +83,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(24.0, 8.0, 0.0, 0.0),
             child: Text(
-              'Adjust the content below to update your profile.',
+              FFLocalizations.of(context).getText(
+                'uueid6oj' /* Adjust the content below to up... */,
+              ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
                     fontFamily: 'Outfit',
                     letterSpacing: 0.0,
@@ -207,7 +209,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     }
                   }
                 },
-                text: 'Change Photo',
+                text: FFLocalizations.of(context).getText(
+                  'pql6sxm8' /* Change Photo */,
+                ),
                 options: FFButtonOptions(
                   width: 130.0,
                   height: 40.0,
@@ -239,12 +243,16 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 textCapitalization: TextCapitalization.words,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Full Name',
+                  labelText: FFLocalizations.of(context).getText(
+                    '27j0wtm4' /* Full Name */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,
                       ),
-                  hintText: 'Your full name...',
+                  hintText: FFLocalizations.of(context).getText(
+                    'nqnholxq' /* Your full name... */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,
@@ -306,12 +314,22 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   _model.dropDownValue ??=
                       valueOrDefault(currentUserDocument?.role, ''),
                 ),
-                options: const [
-                  'Owner/Founder',
-                  'Director',
-                  'Manager',
-                  'Mid-Manager',
-                  'Employee'
+                options: [
+                  FFLocalizations.of(context).getText(
+                    'ftn0h6u1' /* Owner/Founder */,
+                  ),
+                  FFLocalizations.of(context).getText(
+                    'gtaia4if' /* Director */,
+                  ),
+                  FFLocalizations.of(context).getText(
+                    '9qii5cpa' /* Manager */,
+                  ),
+                  FFLocalizations.of(context).getText(
+                    'wi0iq37f' /* Mid-Manager */,
+                  ),
+                  FFLocalizations.of(context).getText(
+                    'g5o7n27m' /* Employee */,
+                  )
                 ],
                 onChanged: (val) =>
                     safeSetState(() => _model.dropDownValue = val),
@@ -321,7 +339,9 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       fontFamily: 'Plus Jakarta Sans',
                       letterSpacing: 0.0,
                     ),
-                hintText: 'Your Role',
+                hintText: FFLocalizations.of(context).getText(
+                  'pg6otdpj' /* Your Role */,
+                ),
                 icon: Icon(
                   Icons.keyboard_arrow_down_rounded,
                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -348,12 +368,16 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 textCapitalization: TextCapitalization.sentences,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelText: 'Short Description',
+                  labelText: FFLocalizations.of(context).getText(
+                    'v559lsr6' /* Short Description */,
+                  ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,
                       ),
-                  hintText: 'A little about you...',
+                  hintText: FFLocalizations.of(context).getText(
+                    'ruu2l0v3' /* A little about you... */,
+                  ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,

@@ -50,7 +50,10 @@ class _BusinessaymentpromotepageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -129,7 +132,9 @@ class _BusinessaymentpromotepageWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Payment Amount',
+                                FFLocalizations.of(context).getText(
+                                  '62fudswc' /* Payment Amount */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -140,7 +145,9 @@ class _BusinessaymentpromotepageWidgetState
                                     ),
                               ),
                               Text(
-                                '\$99.99',
+                                FFLocalizations.of(context).getText(
+                                  '0zuc2w29' /* $99.99 */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displayLarge
@@ -152,7 +159,9 @@ class _BusinessaymentpromotepageWidgetState
                                     ),
                               ),
                               Text(
-                                'Monthly Subscription',
+                                FFLocalizations.of(context).getText(
+                                  'n0c4it8w' /* Monthly Subscription */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -188,7 +197,9 @@ class _BusinessaymentpromotepageWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Payment Method',
+                                FFLocalizations.of(context).getText(
+                                  'cfqyw3sc' /* Payment Method */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -228,7 +239,9 @@ class _BusinessaymentpromotepageWidgetState
                                           ),
                                         ),
                                         Text(
-                                          'Credit Card',
+                                          FFLocalizations.of(context).getText(
+                                            'h67dq0pb' /* Credit Card */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -260,7 +273,9 @@ class _BusinessaymentpromotepageWidgetState
                                           ),
                                         ),
                                         Text(
-                                          'Bank Transfer',
+                                          FFLocalizations.of(context).getText(
+                                            'n1xwvhy0' /* Bank Transfer */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -292,7 +307,9 @@ class _BusinessaymentpromotepageWidgetState
                                           ),
                                         ),
                                         Text(
-                                          'PayPal',
+                                          FFLocalizations.of(context).getText(
+                                            '6hhm77aa' /* PayPal */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -330,7 +347,9 @@ class _BusinessaymentpromotepageWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Card Details',
+                                FFLocalizations.of(context).getText(
+                                  'dsnth40o' /* Card Details */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -346,7 +365,10 @@ class _BusinessaymentpromotepageWidgetState
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Card Number',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'gs27eax1' /* Card Number */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -423,7 +445,11 @@ class _BusinessaymentpromotepageWidgetState
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'Expiry Date',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              '4uarf6df' /* Expiry Date */,
+                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -508,7 +534,11 @@ class _BusinessaymentpromotepageWidgetState
                                           autofocus: false,
                                           obscureText: false,
                                           decoration: InputDecoration(
-                                            labelText: 'CVV',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'spoi3dpf' /* CVV */,
+                                            ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -589,7 +619,10 @@ class _BusinessaymentpromotepageWidgetState
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Cardholder Name',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    '5hyw46bn' /* Cardholder Name */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -672,7 +705,9 @@ class _BusinessaymentpromotepageWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Payment Summary',
+                                FFLocalizations.of(context).getText(
+                                  'cg3gsebc' /* Payment Summary */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -688,7 +723,9 @@ class _BusinessaymentpromotepageWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Subtotal',
+                                    FFLocalizations.of(context).getText(
+                                      'ig152r8l' /* Subtotal */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -697,7 +734,9 @@ class _BusinessaymentpromotepageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    '\$99.99',
+                                    FFLocalizations.of(context).getText(
+                                      'fgbex9nx' /* $99.99 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -713,7 +752,9 @@ class _BusinessaymentpromotepageWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Tax',
+                                    FFLocalizations.of(context).getText(
+                                      '071xqfd9' /* Tax */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -722,7 +763,9 @@ class _BusinessaymentpromotepageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    '\$5.00',
+                                    FFLocalizations.of(context).getText(
+                                      'hibgrf82' /* $5.00 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -742,7 +785,9 @@ class _BusinessaymentpromotepageWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Total',
+                                    FFLocalizations.of(context).getText(
+                                      'ifjujna3' /* Total */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -752,7 +797,9 @@ class _BusinessaymentpromotepageWidgetState
                                         ),
                                   ),
                                   Text(
-                                    '\$104.99',
+                                    FFLocalizations.of(context).getText(
+                                      'drgyfnkl' /* $104.99 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -777,7 +824,9 @@ class _BusinessaymentpromotepageWidgetState
                         onPressed: () async {
                           context.pushNamed('businessPromoteThankPage');
                         },
-                        text: 'Complete Payment',
+                        text: FFLocalizations.of(context).getText(
+                          't6dssg7v' /* Complete Payment */,
+                        ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 56.0,

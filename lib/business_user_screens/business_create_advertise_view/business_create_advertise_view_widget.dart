@@ -110,7 +110,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                     ),
                   ),
                   Text(
-                    'Create Advertisement',
+                    FFLocalizations.of(context).getText(
+                      'wzff8qac' /* Create Advertisement */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Outfit',
                           color: FlutterFlowTheme.of(context).info,
@@ -118,7 +120,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                         ),
                   ),
                   Text(
-                    'Promote your event or content',
+                    FFLocalizations.of(context).getText(
+                      '8m4oj5gv' /* Promote your event or content */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Plus Jakarta Sans',
                           color: FlutterFlowTheme.of(context).info,
@@ -167,7 +171,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                             Align(
                               alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
-                                'Advertisement Details',
+                                FFLocalizations.of(context).getText(
+                                  '0d90n2m9' /* Advertisement Details */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -186,7 +192,17 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 controller:
                                     _model.contentDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const ['Flyer', 'Photo', 'Video'],
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    '43b5578q' /* Flyer */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'g1u60yn6' /* Photo */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'o7qew9ah' /* Video */,
+                                  )
+                                ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.contentDropDownValue = val),
                                 width: double.infinity,
@@ -199,7 +215,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           .primaryText,
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select content type  ',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'tog5uecz' /* Select content type   */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -227,7 +245,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Description',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'yini8kqt' /* Description */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -290,7 +310,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Promotion Link',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '8vwe7n53' /* Promotion Link */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -353,7 +375,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Category',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'uc34o1lk' /* Category */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -433,7 +457,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Location Details',
+                              FFLocalizations.of(context).getText(
+                                'bdg32ivo' /* Location Details */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -451,16 +477,34 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 controller:
                                     _model.planetDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'Mercury',
-                                  'Venus',
-                                  'Earth',
-                                  'Mars',
-                                  'Jupiter',
-                                  'Saturn',
-                                  'Uranus',
-                                  'Neptune',
-                                  'Moon'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    'ksgchyai' /* Mercury */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'r7k7pqv8' /* Venus */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '07nfg9jz' /* Earth */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'et7026yi' /* Mars */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '7rtwkaeq' /* Jupiter */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'vot6dh3p' /* Saturn */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'igxhxyaa' /* Uranus */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '1he2zx0v' /* Neptune */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'cim3lirg' /* Moon */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.planetDropDownValue = val),
@@ -474,7 +518,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           .primaryText,
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select planet  ',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'uwc97i3m' /* Select planet   */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -506,7 +552,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 safeSetState(
                                     () => _model.placePickerValue1 = place);
                               },
-                              defaultText: 'Select Country',
+                              defaultText: FFLocalizations.of(context).getText(
+                                'f3vduchs' /* Select Country */,
+                              ),
                               icon: Icon(
                                 Icons.public,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -540,7 +588,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 safeSetState(
                                     () => _model.placePickerValue2 = place);
                               },
-                              defaultText: 'Select Region',
+                              defaultText: FFLocalizations.of(context).getText(
+                                '0mecou6s' /* Select Region */,
+                              ),
                               icon: Icon(
                                 Icons.location_city,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -574,7 +624,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 safeSetState(
                                     () => _model.placePickerValue3 = place);
                               },
-                              defaultText: 'Select City',
+                              defaultText: FFLocalizations.of(context).getText(
+                                'yug41wbx' /* Select City */,
+                              ),
                               icon: Icon(
                                 Icons.location_on,
                                 color: FlutterFlowTheme.of(context).primary,
@@ -621,7 +673,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Promotion Options',
+                              FFLocalizations.of(context).getText(
+                                'zbijk10o' /* Promotion Options */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -637,7 +691,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Keep Ad Active',
+                                  FFLocalizations.of(context).getText(
+                                    'p6pl0a4n' /* Keep Ad Active */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -668,7 +724,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  'Priority Placement',
+                                  FFLocalizations.of(context).getText(
+                                    '5h9dk75z' /* Priority Placement */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -713,7 +771,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                               ),
                             ),
                             Text(
-                              'Duration: 7 days',
+                              FFLocalizations.of(context).getText(
+                                'rnqdjemv' /* Duration: 7 days */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -732,7 +792,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                     onPressed: () async {
                       context.pushNamed('businessaymentpromotepage');
                     },
-                    text: 'Create Advertisement',
+                    text: FFLocalizations.of(context).getText(
+                      'gp1zg155' /* Create Advertisement */,
+                    ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 56.0,
@@ -772,7 +834,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Search Advertisements',
+                    FFLocalizations.of(context).getText(
+                      '5wv7rzmk' /* Search Advertisements */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -810,7 +874,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Search by category, location...',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'dl634tf8' /* Search by category, location..... */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -839,7 +905,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                     ),
                   ),
                   Text(
-                    'Featured Ads',
+                    FFLocalizations.of(context).getText(
+                      'cslgix33' /* Featured Ads */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           fontFamily: 'Plus Jakarta Sans',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -890,7 +958,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                     ),
                                   ),
                                   Text(
-                                    'Live Jazz Night',
+                                    FFLocalizations.of(context).getText(
+                                      '30h1c1vg' /* Live Jazz Night */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -900,7 +970,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Join us for an unforgettable evening of smooth jazz and soulful melodies.',
+                                    FFLocalizations.of(context).getText(
+                                      'go1s3j2u' /* Join us for an unforgettable e... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -916,7 +988,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'New York, USA',
+                                        FFLocalizations.of(context).getText(
+                                          '3oksolha' /* New York, USA */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -928,7 +1002,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Earth',
+                                        FFLocalizations.of(context).getText(
+                                          'obmgtorc' /* Earth */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -976,7 +1052,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                     ),
                                   ),
                                   Text(
-                                    'Modern Art Showcase',
+                                    FFLocalizations.of(context).getText(
+                                      'b9oaniox' /* Modern Art Showcase */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -986,7 +1064,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                         ),
                                   ),
                                   Text(
-                                    'Experience the future of art in our cutting-edge exhibition.',
+                                    FFLocalizations.of(context).getText(
+                                      '46vkrsex' /* Experience the future of art i... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -1002,7 +1082,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Paris, France',
+                                        FFLocalizations.of(context).getText(
+                                          'cidvs2sf' /* Paris, France */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1014,7 +1096,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                             ),
                                       ),
                                       Text(
-                                        'Earth',
+                                        FFLocalizations.of(context).getText(
+                                          'c6pw148s' /* Earth */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -1036,7 +1120,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                     ),
                   ),
                   Text(
-                    'Worldwide Suggestions',
+                    FFLocalizations.of(context).getText(
+                      'nglwq3ea' /* Worldwide Suggestions */,
+                    ),
                     style: FlutterFlowTheme.of(context).titleMedium.override(
                           fontFamily: 'Plus Jakarta Sans',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -1079,7 +1165,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      'Virtual Reality Experience',
+                                      FFLocalizations.of(context).getText(
+                                        'kl1346rn' /* Virtual Reality Experience */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -1089,7 +1177,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           ),
                                     ),
                                     Text(
-                                      'Immerse yourself in new worlds',
+                                      FFLocalizations.of(context).getText(
+                                        'v12ae136' /* Immerse yourself in new worlds */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -1105,7 +1195,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Tokyo, Japan',
+                                          FFLocalizations.of(context).getText(
+                                            '4xnjmjil' /* Tokyo, Japan */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -1117,7 +1209,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                               ),
                                         ),
                                         Text(
-                                          'Earth',
+                                          FFLocalizations.of(context).getText(
+                                            '99guf3px' /* Earth */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -1155,7 +1249,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Text(
-                                      'Mars Colony Tour',
+                                      FFLocalizations.of(context).getText(
+                                        'qgw0q3er' /* Mars Colony Tour */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .override(
@@ -1165,7 +1261,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           ),
                                     ),
                                     Text(
-                                      'Experience life on the Red Planet',
+                                      FFLocalizations.of(context).getText(
+                                        'r4m7ses3' /* Experience life on the Red Pla... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -1181,7 +1279,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          'Olympus Mons',
+                                          FFLocalizations.of(context).getText(
+                                            'mxkattop' /* Olympus Mons */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -1193,7 +1293,9 @@ class _BusinessCreateAdvertiseViewWidgetState
                                               ),
                                         ),
                                         Text(
-                                          'Mars',
+                                          FFLocalizations.of(context).getText(
+                                            '87kjo0kw' /* Mars */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(

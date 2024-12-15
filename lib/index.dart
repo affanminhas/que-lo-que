@@ -24,10 +24,6 @@ export '/welcomeuserprofil/welcomeuserprofil_widget.dart'
     show WelcomeuserprofilWidget;
 export '/createbusinessprofil/createbusinessprofil_widget.dart'
     show CreatebusinessprofilWidget;
-export '/chat_2_details/chat2_details_widget.dart' show Chat2DetailsWidget;
-export '/chat_2_main/chat2_main_widget.dart' show Chat2MainWidget;
-export '/chat_2_invite_users/chat2_invite_users_widget.dart'
-    show Chat2InviteUsersWidget;
 export '/userfindfriends/userfindfriends_widget.dart'
     show UserfindfriendsWidget;
 export '/welcomeuserprofil3/welcomeuserprofil3_widget.dart'
@@ -86,3 +82,20 @@ export '/authentication/signup_selection_view/signup_selection_view_widget.dart'
     show SignupSelectionViewWidget;
 export '/authentication/auth_check_view/auth_check_view_widget.dart'
     show AuthCheckViewWidget;
+export '/chat_screen_threads/chat_detail_view/chat_detail_view_widget.dart'
+    show ChatDetailViewWidget;
+export '/chat_screen_threads/chat_2_main/chat2_main_widget.dart'
+    show Chat2MainWidget;
+export '/chat_screen_threads/chat_invite_users/chat_invite_users_widget.dart'
+    show ChatInviteUsersWidget;
+export '/chat_screen_threads/image_details/image_details_widget.dart'
+    show ImageDetailsWidget;
+export '/authentication/change_password/change_password_widget.dart'
+    show ChangePasswordWidget;
+export '/profile/friends_view/friends_view_widget.dart' show FriendsViewWidget;
+export '/profile/block_users_view/block_users_view_widget.dart'
+    show BlockUsersViewWidget;
+export '/profile/contact_support/contact_support_widget.dart'
+    show ContactSupportWidget;
+export '/profile/edit_user_profile/edit_user_profile_widget.dart'
+    show EditUserProfileWidget;

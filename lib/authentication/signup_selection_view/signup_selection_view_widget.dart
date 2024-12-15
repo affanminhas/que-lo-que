@@ -42,7 +42,10 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -146,7 +149,9 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Create an Account',
+                                  FFLocalizations.of(context).getText(
+                                    'yz4rxkbl' /* Create an Account */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
@@ -156,7 +161,9 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                                       ),
                                 ),
                                 Text(
-                                  'Choose how you\'d like to sign up',
+                                  FFLocalizations.of(context).getText(
+                                    't91t3snc' /* Choose how you'd like to sign ... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -185,7 +192,9 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            'Sign Up As',
+                                            FFLocalizations.of(context).getText(
+                                              'w6qmxahn' /* Sign Up As */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineSmall
                                                 .override(
@@ -213,7 +222,10 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                                                 );
                                               }
                                             },
-                                            text: 'Individual Guest',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'eqoxigra' /* Individual Guest */,
+                                            ),
                                             icon: const Icon(
                                               Icons.person,
                                               size: 24.0,
@@ -259,7 +271,10 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                                                 );
                                               }
                                             },
-                                            text: 'Business Owner',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'qs0iprin' /* Business Owner */,
+                                            ),
                                             icon: const Icon(
                                               Icons.business,
                                               size: 24.0,
@@ -306,12 +321,18 @@ class _SignupSelectionViewWidgetState extends State<SignupSelectionViewWidget> {
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
-                                          text: 'Already have an account? ',
-                                          style: TextStyle(),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'e85497jj' /* Already have an account?  */,
+                                          ),
+                                          style: const TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Log In',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '4h1vounk' /* Log In */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

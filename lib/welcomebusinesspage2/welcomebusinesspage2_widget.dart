@@ -38,7 +38,10 @@ class _Welcomebusinesspage2WidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -106,7 +109,9 @@ class _Welcomebusinesspage2WidgetState
                                     Align(
                                       alignment: const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
-                                        'TechInnovate Solutions',
+                                        FFLocalizations.of(context).getText(
+                                          's90pkfi2' /* TechInnovate Solutions */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .headlineMedium
                                             .override(
@@ -118,7 +123,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                     ),
                                     Text(
-                                      '@techinnovate',
+                                      FFLocalizations.of(context).getText(
+                                        'b6504bfy' /* @techinnovate */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -166,7 +173,9 @@ class _Welcomebusinesspage2WidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '256',
+                                  FFLocalizations.of(context).getText(
+                                    'kc4u945w' /* 256 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -176,7 +185,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                 ),
                                 Text(
-                                  'Following',
+                                  FFLocalizations.of(context).getText(
+                                    '0whp7ax6' /* Following */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -192,7 +203,9 @@ class _Welcomebusinesspage2WidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '1.2K',
+                                  FFLocalizations.of(context).getText(
+                                    'q496k4td' /* 1.2K */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -202,7 +215,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                 ),
                                 Text(
-                                  'Followers',
+                                  FFLocalizations.of(context).getText(
+                                    'pzs4z7eu' /* Followers */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -225,7 +240,9 @@ class _Welcomebusinesspage2WidgetState
                 child: SizedBox(
                   width: MediaQuery.sizeOf(context).width * 1.0,
                   child: Text(
-                    'Welcome back, TechInnovate!',
+                    FFLocalizations.of(context).getText(
+                      'cq6ko41p' /* Welcome back, TechInnovate! */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
                           letterSpacing: 0.0,
@@ -265,7 +282,9 @@ class _Welcomebusinesspage2WidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'Upcoming Event',
+                                      FFLocalizations.of(context).getText(
+                                        '9v9ue0n7' /* Upcoming Event */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -284,7 +303,9 @@ class _Welcomebusinesspage2WidgetState
                                   ],
                                 ),
                                 Text(
-                                  'Tech Expo 2023',
+                                  FFLocalizations.of(context).getText(
+                                    'n6a5noxx' /* Tech Expo 2023 */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyLarge
                                       .override(
@@ -293,7 +314,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                 ),
                                 Text(
-                                  'Join us at the annual Tech Expo on July 15th, 2023. Showcase your latest innovations!',
+                                  FFLocalizations.of(context).getText(
+                                    'k3p2vf8r' /* Join us at the annual Tech Exp... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -333,7 +356,9 @@ class _Welcomebusinesspage2WidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'New Messages',
+                                      FFLocalizations.of(context).getText(
+                                        'mg6o1u2n' /* New Messages */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -352,7 +377,9 @@ class _Welcomebusinesspage2WidgetState
                                   ],
                                 ),
                                 Text(
-                                  '3 new messages from potential clients',
+                                  FFLocalizations.of(context).getText(
+                                    'wef8b1ae' /* 3 new messages from potential ... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -361,7 +388,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                 ),
                                 Text(
-                                  'Check your inbox to respond promptly.',
+                                  FFLocalizations.of(context).getText(
+                                    'g8sqrwjg' /* Check your inbox to respond pr... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -401,7 +430,9 @@ class _Welcomebusinesspage2WidgetState
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'New Follower',
+                                      FFLocalizations.of(context).getText(
+                                        'xnz8otd2' /* New Follower */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -420,7 +451,9 @@ class _Welcomebusinesspage2WidgetState
                                   ],
                                 ),
                                 Text(
-                                  'InnovateTech Corp is now following you',
+                                  FFLocalizations.of(context).getText(
+                                    'ay2spiqm' /* InnovateTech Corp is now follo... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -429,7 +462,9 @@ class _Welcomebusinesspage2WidgetState
                                       ),
                                 ),
                                 Text(
-                                  'Expand your network and explore collaboration opportunities.',
+                                  FFLocalizations.of(context).getText(
+                                    'l0l1kvu4' /* Expand your network and explor... */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

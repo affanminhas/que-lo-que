@@ -78,7 +78,10 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -124,7 +127,9 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                           ),
                         ),
                         Text(
-                          'flow.io',
+                          FFLocalizations.of(context).getText(
+                            '9js0som8' /* flow.io */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(

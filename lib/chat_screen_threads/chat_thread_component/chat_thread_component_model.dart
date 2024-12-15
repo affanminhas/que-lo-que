@@ -1,5 +1,5 @@
 import '/backend/backend.dart';
-import '/components/chat_thread_update_widget.dart';
+import '/chat_screen_threads/chat_thread/chat_thread_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'chat_thread_component_widget.dart' show ChatThreadComponentWidget;
 import 'package:flutter/material.dart';
@@ -32,8 +32,8 @@ class ChatThreadComponentModel
 
   final formKey = GlobalKey<FormState>();
   List<ChatMessagesRecord>? listViewPreviousSnapshot;
-  // Models for chat_threadUpdate dynamic component.
-  late FlutterFlowDynamicModels<ChatThreadUpdateModel> chatThreadUpdateModels;
+  // Models for chatThread dynamic component.
+  late FlutterFlowDynamicModels<ChatThreadModel> chatThreadModels;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -43,20 +43,30 @@ class ChatThreadComponentModel
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  String? _textControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'ddjwpl9g' /* Enter your message */,
+      );
+    }
+
+    return null;
+  }
+
   // Stores action output result for [Backend Call - Create Document] action in TextField widget.
-  ChatMessagesRecord? newChatMessage;
+  ChatMessagesRecord? newChatCopy;
   // Stores action output result for [Backend Call - Create Document] action in IconButton widget.
   ChatMessagesRecord? newChat;
 
   @override
   void initState(BuildContext context) {
-    chatThreadUpdateModels =
-        FlutterFlowDynamicModels(() => ChatThreadUpdateModel());
+    chatThreadModels = FlutterFlowDynamicModels(() => ChatThreadModel());
+    textControllerValidator = _textControllerValidator;
   }
 
   @override
   void dispose() {
-    chatThreadUpdateModels.dispose();
+    chatThreadModels.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }

@@ -36,7 +36,10 @@ class _UsecreateactivitycongratspageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -81,7 +84,9 @@ class _UsecreateactivitycongratspageWidgetState
               ),
             ),
             Text(
-              'Congratulations!',
+              FFLocalizations.of(context).getText(
+                'sxkb711c' /* Congratulations! */,
+              ),
               style: FlutterFlowTheme.of(context).headlineLarge.override(
                     fontFamily: 'Outfit',
                     color: FlutterFlowTheme.of(context).primaryText,
@@ -90,7 +95,9 @@ class _UsecreateactivitycongratspageWidgetState
                   ),
             ),
             Text(
-              'Your activity has been created successfully!',
+              FFLocalizations.of(context).getText(
+                'agy3cvlj' /* Your activity has been created... */,
+              ),
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyLarge.override(
                     fontFamily: 'Plus Jakarta Sans',
@@ -117,7 +124,9 @@ class _UsecreateactivitycongratspageWidgetState
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'What\'s Next?',
+                        FFLocalizations.of(context).getText(
+                          'ssczcmcm' /* What's Next? */,
+                        ),
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .override(
@@ -136,7 +145,9 @@ class _UsecreateactivitycongratspageWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Invite friends to join your activity',
+                            FFLocalizations.of(context).getText(
+                              'wrngq12i' /* Invite friends to join your ac... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -155,7 +166,9 @@ class _UsecreateactivitycongratspageWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Edit your activity details anytime',
+                            FFLocalizations.of(context).getText(
+                              'm00vwe97' /* Edit your activity details any... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -174,7 +187,9 @@ class _UsecreateactivitycongratspageWidgetState
                             size: 24.0,
                           ),
                           Text(
-                            'Receive updates about participants',
+                            FFLocalizations.of(context).getText(
+                              'll1rcca5' /* Receive updates about particip... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -198,7 +213,9 @@ class _UsecreateactivitycongratspageWidgetState
                 context.goNamed('userDashboard');
               },
               child: Text(
-                'Redirecting to home page...',
+                FFLocalizations.of(context).getText(
+                  'gsvzp6gt' /* Back to home */,
+                ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Plus Jakarta Sans',
                       color: FlutterFlowTheme.of(context).secondaryText,

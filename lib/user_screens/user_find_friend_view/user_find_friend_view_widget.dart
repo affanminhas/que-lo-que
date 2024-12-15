@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
@@ -5,7 +6,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:text_search/text_search.dart';
 import 'user_find_friend_view_model.dart';
 export 'user_find_friend_view_model.dart';
 
@@ -35,10 +39,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.minAgeTextController ??= TextEditingController(text: '12');
+    _model.minAgeTextController ??= TextEditingController();
     _model.minAgeFocusNode ??= FocusNode();
 
-    _model.maxAgeTextController ??= TextEditingController(text: '40');
+    _model.maxAgeTextController ??= TextEditingController();
     _model.maxAgeFocusNode ??= FocusNode();
 
     _model.heightFieldTextController ??= TextEditingController();
@@ -50,7 +54,16 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
     _model.ethinicityFieldTextController ??= TextEditingController();
     _model.ethinicityFieldFocusNode ??= FocusNode();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {
+          _model.minAgeTextController?.text =
+              FFLocalizations.of(context).getText(
+            'w0nexjtc' /* 12 */,
+          );
+          _model.maxAgeTextController?.text =
+              FFLocalizations.of(context).getText(
+            'pt0up0ql' /* 40 */,
+          );
+        }));
   }
 
   @override
@@ -91,7 +104,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Find Friends',
+                      FFLocalizations.of(context).getText(
+                        't28kmajs' /* Find Friends */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineLarge.override(
                                 fontFamily: 'Outfit',
@@ -101,7 +116,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                               ),
                     ),
                     Text(
-                      'Discover new connections',
+                      FFLocalizations.of(context).getText(
+                        '6lrkzeg0' /* Discover new connections */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Plus Jakarta Sans',
                             color: const Color(0xFFE0E0E0),
@@ -144,11 +161,55 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                               child: TextFormField(
                                 controller: _model.textController1,
                                 focusNode: _model.textFieldFocusNode,
+                                onChanged: (_) => EasyDebounce.debounce(
+                                  '_model.textController1',
+                                  const Duration(milliseconds: 2000),
+                                  () async {
+                                    if (_model.textController1.text != '') {
+                                      await queryIndividualUserRecordOnce()
+                                          .then(
+                                            (records) =>
+                                                _model.simpleSearchResults =
+                                                    TextSearch(
+                                              records
+                                                  .map(
+                                                    (record) => TextSearchItem
+                                                        .fromTerms(record, [
+                                                      record.firstName,
+                                                      record.lastName,
+                                                      record.username
+                                                    ]),
+                                                  )
+                                                  .toList(),
+                                            )
+                                                        .search(_model
+                                                            .textController1
+                                                            .text)
+                                                        .map((r) => r.object)
+                                                        .toList(),
+                                          )
+                                          .onError((_, __) =>
+                                              _model.simpleSearchResults = [])
+                                          .whenComplete(
+                                              () => safeSetState(() {}));
+
+                                      _model.searchUserResults = _model
+                                          .simpleSearchResults
+                                          .toList()
+                                          .cast<IndividualUserRecord>();
+                                      safeSetState(() {});
+                                    } else {
+                                      _model.searchUserResults = [];
+                                      safeSetState(() {});
+                                    }
+                                  },
+                                ),
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText:
-                                      'Search friends, companies, or activities...',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'rqqxzkm4' /* Search friends, companies, or ... */,
+                                  ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -231,7 +292,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Filter Options',
+                                FFLocalizations.of(context).getText(
+                                  'g8d0j1wk' /* Filter Options */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -246,17 +309,27 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                     0.0, 10.0, 0.0, 0.0),
                                 child: FlutterFlowDropDown<String>(
                                   controller:
-                                      _model.planetDropDownValueController ??=
+                                      _model.genderDropDownValueController ??=
                                           FormFieldController<String>(null),
-                                  options: const [
-                                    'Male',
-                                    'Female',
-                                    'Any',
-                                    'Alien',
-                                    'Robot'
+                                  options: [
+                                    FFLocalizations.of(context).getText(
+                                      'eb0ntvct' /* Male */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'kd7ftuid' /* Female */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'h17cg11m' /* Any */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '1rizjzbm' /* Alien */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'du37eq2p' /* Robot */,
+                                    )
                                   ],
                                   onChanged: (val) => safeSetState(
-                                      () => _model.planetDropDownValue = val),
+                                      () => _model.genderDropDownValue = val),
                                   width: double.infinity,
                                   height: 50.0,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -267,7 +340,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                             .primaryText,
                                         letterSpacing: 0.0,
                                       ),
-                                  hintText: 'Select gender  ',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'q91u19vi' /* Select gender   */,
+                                  ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -297,30 +372,34 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                     'AIzaSyCD7valhGeAqpijAjNTgji5BEuw7B2UUbY',
                                 onSelect: (place) async {
                                   safeSetState(
-                                      () => _model.countryPickerValue = place);
+                                      () => _model.placePickerValue = place);
                                 },
-                                defaultText: 'Select Location',
+                                defaultText:
+                                    FFLocalizations.of(context).getText(
+                                  'fnojqy19' /* Select Country */,
+                                ),
                                 icon: Icon(
-                                  Icons.public,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
+                                  Icons.place,
+                                  color: FlutterFlowTheme.of(context).info,
+                                  size: 16.0,
                                 ),
                                 buttonOptions: FFButtonOptions(
                                   width: double.infinity,
-                                  height: 50.0,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  textAlign: TextAlign.start,
+                                  height: 40.0,
+                                  color: FlutterFlowTheme.of(context).secondary,
                                   textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                      .titleSmall
                                       .override(
                                         fontFamily: 'Plus Jakarta Sans',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 14.0,
+                                        color:
+                                            FlutterFlowTheme.of(context).info,
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 0.0,
+                                  borderSide: const BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                               ),
@@ -333,7 +412,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 30.0, 0.0),
                                     child: Text(
-                                      'Age Range',
+                                      FFLocalizations.of(context).getText(
+                                        'kmkmvqgt' /* Age Range */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -358,7 +439,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                               fontFamily: 'Outfit',
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: 'Min',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'ufnkcyne' /* Min */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -421,7 +505,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 10.0, 0.0),
                                     child: Text(
-                                      'to',
+                                      FFLocalizations.of(context).getText(
+                                        'uv2h6nyz' /* to */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -446,7 +532,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                               fontFamily: 'Outfit',
                                               letterSpacing: 0.0,
                                             ),
-                                        hintText: 'Min',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'ch0b3cl9' /* Min */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -513,7 +602,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Height',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'x98n56d0' /* Height */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -577,7 +669,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Weight',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'q8pftaac' /* Weight */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -642,7 +737,10 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Ethinicity',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    '8q2na8s8' /* Ethinicity */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -704,13 +802,25 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 controller:
                                     _model.eyeDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'Brown',
-                                  'Blue',
-                                  'Green',
-                                  'Hazel',
-                                  'Gray',
-                                  'Other'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    '49vy5ymw' /* Brown */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '7m3vu9gb' /* Blue */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '0pt6bmhi' /* Green */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '05w2jfg2' /* Hazel */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '2vu0qkaf' /* Gray */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'aqi6pggm' /* Other */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.eyeDropDownValue = val),
@@ -722,7 +832,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select eye color',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '5ll03qyi' /* Select eye color */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -747,13 +859,25 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 controller:
                                     _model.hairDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'Black',
-                                  'Brown',
-                                  'Blonde',
-                                  'Red',
-                                  'Gray',
-                                  'Other'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    '3pyyasr7' /* Black */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '2enhnmk2' /* Brown */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'z7av5ue0' /* Blonde */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '5uw71oks' /* Red */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'm8eg3u5w' /* Gray */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'cpe9hvco' /* Other */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.hairDropDownValue = val),
@@ -765,7 +889,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select hair color',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '85ffeoyw' /* Select hair color */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -790,14 +916,28 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 controller:
                                     _model.languageDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'English',
-                                  'Spanish',
-                                  'French',
-                                  'German',
-                                  'Chinese',
-                                  'Arabic',
-                                  'Other'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    'qc1pm9vv' /* English */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '0uwocuev' /* Spanish */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '24wicgrx' /* French */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'hhp0nb0p' /* German */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'u4n6doa5' /* Chinese */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'qn8vut7z' /* Arabic */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '4lrgyqeh' /* Other */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.languageDropDownValue = val),
@@ -809,7 +949,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select language',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'd82jyazh' /* Select language */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -834,15 +976,31 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 controller:
                                     _model.religionDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'N/A',
-                                  'Atheist',
-                                  'Buddhist',
-                                  'Christian',
-                                  'Hindu',
-                                  'Jewish',
-                                  'Muslim',
-                                  'Other'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    'mzzxawf6' /* N/A */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '3yprxpwr' /* Atheist */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'la1hs686' /* Buddhist */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '15qr5pqx' /* Christian */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'oda9a75f' /* Hindu */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '7aw7w0ok' /* Jewish */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'p7n1kje1' /* Muslim */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '4r4pqjkd' /* Other */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.religionDropDownValue = val),
@@ -854,7 +1012,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select religion',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '4184fora' /* Select religion */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -879,19 +1039,43 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                 controller:
                                     _model.signDropDownValueController ??=
                                         FormFieldController<String>(null),
-                                options: const [
-                                  'Aries',
-                                  'Taurus',
-                                  'Gemini',
-                                  'Cancer',
-                                  'Leo',
-                                  'Virgo',
-                                  'Libra',
-                                  'Scorpio',
-                                  'Sagittarius',
-                                  'Capricorn',
-                                  'Aquarius',
-                                  'Pisces'
+                                options: [
+                                  FFLocalizations.of(context).getText(
+                                    'yqt8s3fw' /* Aries */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'whtu25sr' /* Taurus */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'y7qrjy02' /* Gemini */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '2gmgdvuz' /* Cancer */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '8u6qyeh3' /* Leo */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '3rt7tm9y' /* Virgo */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'm1zull5u' /* Libra */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'yosox8hr' /* Scorpio */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    '93ckicvb' /* Sagittarius */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    't6fmcke0' /* Capricorn */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'l175fxup' /* Aquarius */,
+                                  ),
+                                  FFLocalizations.of(context).getText(
+                                    'fh4g3bnl' /* Pisces */,
+                                  )
                                 ],
                                 onChanged: (val) => safeSetState(
                                     () => _model.signDropDownValue = val),
@@ -903,7 +1087,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                       fontFamily: 'Plus Jakarta Sans',
                                       letterSpacing: 0.0,
                                     ),
-                                hintText: 'Select astrological sign',
+                                hintText: FFLocalizations.of(context).getText(
+                                  'd5qn75rc' /* Select astrological sign */,
+                                ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
                                   color: FlutterFlowTheme.of(context)
@@ -929,7 +1115,9 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                                   _model.isFilterEnabled = false;
                                   safeSetState(() {});
                                 },
-                                text: 'Apply Filters',
+                                text: FFLocalizations.of(context).getText(
+                                  'h09w8ysr' /* Apply Filters */,
+                                ),
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 50.0,
@@ -954,330 +1142,409 @@ class _UserFindFriendViewWidgetState extends State<UserFindFriendViewWidget> {
                         ),
                       ),
                     ),
+                  Align(
+                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          safeSetState(() {
+                            _model.textController1?.clear();
+                            _model.heightFieldTextController?.clear();
+                            _model.weightFieldTextController?.clear();
+                            _model.ethinicityFieldTextController?.clear();
+                          });
+                          safeSetState(() {
+                            _model.genderDropDownValueController?.reset();
+                            _model.eyeDropDownValueController?.reset();
+                            _model.hairDropDownValueController?.reset();
+                            _model.languageDropDownValueController?.reset();
+                            _model.religionDropDownValueController?.reset();
+                            _model.signDropDownValueController?.reset();
+                          });
+                          _model.isFilterEnabled = false;
+                          safeSetState(() {});
+                          safeSetState(() {
+                            _model.minAgeTextController?.text = '12';
+                          });
+                          safeSetState(() {
+                            _model.maxAgeTextController?.text = '40';
+                          });
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'u833wj12' /* Clear filters */,
+                          ),
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                fontSize: 15.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  if (_model.searchUserResults.isNotEmpty)
+                    Text(
+                      FFLocalizations.of(context).getText(
+                        'thzz0fwa' /* Search Results */,
+                      ),
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Outfit',
+                                color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
+                              ),
+                    ),
+                  if (_model.searchUserResults.isNotEmpty)
+                    Builder(
+                      builder: (context) {
+                        final searchResults = _model.searchUserResults
+                            .where((e) =>
+                                ((e.gender == _model.genderDropDownValue) ||
+                                    (_model.genderDropDownValue == null ||
+                                        _model.genderDropDownValue == '')) &&
+                                ((e.height == _model.heightFieldTextController.text) ||
+                                    (_model.heightFieldTextController.text ==
+                                            '')) &&
+                                ((e.weight == _model.weightFieldTextController.text) ||
+                                    (_model.weightFieldTextController.text ==
+                                            '')) &&
+                                ((e.ethinicity == _model.ethinicityFieldTextController.text) ||
+                                    (_model.ethinicityFieldTextController.text ==
+                                            '')) &&
+                                ((e.eyeColor == _model.eyeDropDownValue) ||
+                                    (_model.eyeDropDownValue == null || _model.eyeDropDownValue == '')) &&
+                                ((e.hairColor == _model.hairDropDownValue) || (_model.hairDropDownValue == null || _model.hairDropDownValue == '')) &&
+                                ((e.hairColor == _model.hairDropDownValue) || (_model.hairDropDownValue == null || _model.hairDropDownValue == '')) &&
+                                ((e.language == _model.languageDropDownValue) || (_model.languageDropDownValue == null || _model.languageDropDownValue == '')) &&
+                                ((e.religion == _model.religionDropDownValue) || (_model.religionDropDownValue == null || _model.religionDropDownValue == '')) &&
+                                ((e.astrologicalSign == _model.signDropDownValue) || (_model.signDropDownValue == null || _model.signDropDownValue == '')) &&
+                                functions.checkAgeLimit(functions.calculateAge(e.birthday), _model.minAgeTextController.text, _model.maxAgeTextController.text) &&
+                                ((e.location == _model.placePickerValue.country) || (_model.placePickerValue == null)))
+                            .toList();
+
+                        return ListView.separated(
+                          padding: EdgeInsets.zero,
+                          primary: false,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          itemCount: searchResults.length,
+                          separatorBuilder: (_, __) => const SizedBox(height: 16.0),
+                          itemBuilder: (context, searchResultsIndex) {
+                            final searchResultsItem =
+                                searchResults[searchResultsIndex];
+                            return Material(
+                              color: Colors.transparent,
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 16.0, 16.0, 16.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Container(
+                                        width: 80.0,
+                                        height: 80.0,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFFE0E0E0),
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(40.0),
+                                          child: Image.network(
+                                            valueOrDefault<String>(
+                                              functions
+                                                  .convertStringToImagePath(
+                                                      searchResultsItem
+                                                          .profilePhoto),
+                                              'https://firebasestorage.googleapis.com/v0/b/que-lo-que-2-05vr7v.firebasestorage.app/o/AppAssets%2Fuser_default%20(1).png?alt=media&token=402ca7ea-8208-43ce-abaa-7a0af96c367e',
+                                            ),
+                                            width: 80.0,
+                                            height: 80.0,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              '${searchResultsItem.firstName} ${searchResultsItem.lastName}',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                            ),
+                                            Text(
+                                              '${valueOrDefault<String>(
+                                                searchResultsItem.address,
+                                                'address not provided',
+                                              )} • ${searchResultsItem.birthday != '' ? '${functions.calculateAge(searchResultsItem.birthday).toString()} years' : 'age not provided'}',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 20.0,
+                                            buttonSize: 40.0,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            icon: const Icon(
+                                              Icons.person_add,
+                                              color: Color(0xFF2D2A2A),
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                          FlutterFlowIconButton(
+                                            borderColor: Colors.transparent,
+                                            borderRadius: 20.0,
+                                            buttonSize: 40.0,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                            icon: const Icon(
+                                              Icons.chat,
+                                              color: Colors.white,
+                                              size: 24.0,
+                                            ),
+                                            onPressed: () {
+                                              print('IconButton pressed ...');
+                                            },
+                                          ),
+                                        ].divide(const SizedBox(width: 8.0)),
+                                      ),
+                                    ].divide(const SizedBox(width: 16.0)),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   Text(
-                    'Search Results',
+                    FFLocalizations.of(context).getText(
+                      '7w4d6dl0' /* Suggested Friends */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Outfit',
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
                   ),
-                  Expanded(
-                    child: ListView(
-                      padding: EdgeInsets.zero,
-                      primary: false,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.vertical,
-                      children: [
-                        Material(
-                          color: Colors.transparent,
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          ),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(16.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 16.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 80.0,
-                                    height: 80.0,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFE0E0E0),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1541911087797-f89237bd95d0?w=500&h=500',
-                                        width: 80.0,
-                                        height: 80.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'John Doe',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyLarge
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                        Text(
-                                          'New York, USA • 28 years',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        icon: const Icon(
-                                          Icons.person_add,
-                                          color: Colors.white,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        icon: const Icon(
-                                          Icons.chat,
-                                          color: Colors.white,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ].divide(const SizedBox(width: 8.0)),
-                                  ),
-                                ].divide(const SizedBox(width: 16.0)),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Material(
-                          color: Colors.transparent,
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0),
-                          ),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(16.0),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 16.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 80.0,
-                                    height: 80.0,
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFFE0E0E0),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(40.0),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1534846664198-20473b7286fc?w=500&h=500',
-                                        width: 80.0,
-                                        height: 80.0,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Jane Smith',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyLarge
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w600,
-                                              ),
-                                        ),
-                                        Text(
-                                          'London, UK • 32 years',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodySmall
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        icon: const Icon(
-                                          Icons.person_add,
-                                          color: Colors.white,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                      FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 20.0,
-                                        buttonSize: 40.0,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        icon: const Icon(
-                                          Icons.chat,
-                                          color: Colors.white,
-                                          size: 24.0,
-                                        ),
-                                        onPressed: () {
-                                          print('IconButton pressed ...');
-                                        },
-                                      ),
-                                    ].divide(const SizedBox(width: 8.0)),
-                                  ),
-                                ].divide(const SizedBox(width: 16.0)),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ].divide(const SizedBox(height: 16.0)),
+                  StreamBuilder<List<IndividualUserRecord>>(
+                    stream: queryIndividualUserRecord(
+                      queryBuilder: (individualUserRecord) =>
+                          individualUserRecord.orderBy('createdAt',
+                              descending: true),
+                      limit: 3,
                     ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      List<IndividualUserRecord>
+                          listViewIndividualUserRecordList = snapshot.data!;
+
+                      return ListView.separated(
+                        padding: EdgeInsets.zero,
+                        primary: false,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        itemCount: listViewIndividualUserRecordList.length,
+                        separatorBuilder: (_, __) => const SizedBox(height: 16.0),
+                        itemBuilder: (context, listViewIndex) {
+                          final listViewIndividualUserRecord =
+                              listViewIndividualUserRecordList[listViewIndex];
+                          return Material(
+                            color: Colors.transparent,
+                            elevation: 2.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                            ),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 16.0, 16.0, 16.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 80.0,
+                                      height: 80.0,
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFFE0E0E0),
+                                        borderRadius:
+                                            BorderRadius.circular(40.0),
+                                      ),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(40.0),
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            functions.convertStringToImagePath(
+                                                listViewIndividualUserRecord
+                                                    .profilePhoto),
+                                            'https://firebasestorage.googleapis.com/v0/b/que-lo-que-2-05vr7v.firebasestorage.app/o/AppAssets%2Fuser_default%20(1).png?alt=media&token=402ca7ea-8208-43ce-abaa-7a0af96c367e',
+                                          ),
+                                          width: 80.0,
+                                          height: 80.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            '${listViewIndividualUserRecord.firstName} ${listViewIndividualUserRecord.lastName}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                          Text(
+                                            '${listViewIndividualUserRecord.address} • ${listViewIndividualUserRecord.birthday != '' ? '${functions.calculateAge(listViewIndividualUserRecord.birthday).toString()} years' : 'age not provided'}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodySmall
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          borderRadius: 20.0,
+                                          buttonSize: 40.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                          icon: const Icon(
+                                            Icons.person_add,
+                                            color: Color(0xFF2D2A2A),
+                                            size: 24.0,
+                                          ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
+                                        ),
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          borderRadius: 20.0,
+                                          buttonSize: 40.0,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .secondary,
+                                          icon: const Icon(
+                                            Icons.chat,
+                                            color: Colors.white,
+                                            size: 24.0,
+                                          ),
+                                          onPressed: () {
+                                            print('IconButton pressed ...');
+                                          },
+                                        ),
+                                      ].divide(const SizedBox(width: 8.0)),
+                                    ),
+                                  ].divide(const SizedBox(width: 16.0)),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      );
+                    },
                   ),
                 ].divide(const SizedBox(height: 24.0)),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    width: 80.0,
-                    height: 80.0,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFE0E0E0),
-                      borderRadius: BorderRadius.circular(40.0),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(40.0),
-                      child: Image.network(
-                        'https://images.unsplash.com/photo-1566559532061-6486aa691226?w=500&h=500',
-                        width: 80.0,
-                        height: 80.0,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'TechCorp Inc.',
-                          style:
-                              FlutterFlowTheme.of(context).bodyLarge.override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                        ),
-                        Text(
-                          'Technology Company',
-                          style: FlutterFlowTheme.of(context)
-                              .bodySmall
-                              .override(
-                                fontFamily: 'Plus Jakarta Sans',
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                letterSpacing: 0.0,
-                              ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 20.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).primary,
-                        icon: const Icon(
-                          Icons.add_business,
-                          color: Colors.white,
-                          size: 24.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 20.0,
-                        buttonSize: 40.0,
-                        fillColor: FlutterFlowTheme.of(context).secondary,
-                        icon: const Icon(
-                          Icons.chat,
-                          color: Colors.white,
-                          size: 24.0,
-                        ),
-                        onPressed: () {
-                          print('IconButton pressed ...');
-                        },
-                      ),
-                    ].divide(const SizedBox(width: 8.0)),
-                  ),
-                ].divide(const SizedBox(width: 16.0)),
               ),
             ),
           ],

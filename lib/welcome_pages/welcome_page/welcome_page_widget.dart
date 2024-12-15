@@ -56,7 +56,10 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -66,7 +69,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
           title: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 35.0),
             child: Text(
-              'WELCOME PAGE',
+              FFLocalizations.of(context).getText(
+                'ehwr8g0l' /* WELCOME PAGE */,
+              ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
                     fontFamily: 'Outfit',
                     color: Colors.white,
@@ -149,7 +154,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Welcome to',
+                            FFLocalizations.of(context).getText(
+                              '915w775m' /* Welcome to */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -160,7 +167,10 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                                 ),
                           ),
                           Text(
-                            'Que Lo Que',
+                            FFLocalizations.of(context).getText(
+                              'e0mj12ro' /* QUITA */,
+                            ),
+                            textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .displayLarge
                                 .override(
@@ -173,7 +183,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                           ).animateOnPageLoad(
                               animationsMap['textOnPageLoadAnimation']!),
                           Text(
-                            'Meet, Have Fun & Stay Informed.',
+                            FFLocalizations.of(context).getText(
+                              'viavbdr5' /* Meet, Have Fun & Stay Informed... */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -190,7 +202,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                             onPressed: () async {
                               context.pushNamed('signupuserpluscompany');
                             },
-                            text: 'Sign Up',
+                            text: FFLocalizations.of(context).getText(
+                              'xujlv7ej' /* Sign Up */,
+                            ),
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
@@ -215,7 +229,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Already have an account?',
+                                FFLocalizations.of(context).getText(
+                                  'h4mvfg2d' /* Already have an account? */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -225,7 +241,9 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                                     ),
                               ),
                               Text(
-                                'Log In',
+                                FFLocalizations.of(context).getText(
+                                  'g5jm7udd' /* Log In */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

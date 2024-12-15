@@ -2,10 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
-import 'chat_thread_update_widget.dart' show ChatThreadUpdateWidget;
+import 'chat_thread_widget.dart' show ChatThreadWidget;
 import 'package:flutter/material.dart';
 
-class ChatThreadUpdateModel extends FlutterFlowModel<ChatThreadUpdateWidget> {
+class ChatThreadModel extends FlutterFlowModel<ChatThreadWidget> {
   /// Query cache managers for this widget.
 
   final _chatUserManager = FutureRequestManager<UsersRecord>();

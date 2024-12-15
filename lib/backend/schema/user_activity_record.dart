@@ -95,6 +95,21 @@ class UserActivityRecord extends FirestoreRecord {
   int get noOfParticipants => _noOfParticipants ?? 0;
   bool hasNoOfParticipants() => _noOfParticipants != null;
 
+  // "createdBy" field.
+  DocumentReference? _createdBy;
+  DocumentReference? get createdBy => _createdBy;
+  bool hasCreatedBy() => _createdBy != null;
+
+  // "createdAt" field.
+  DateTime? _createdAt;
+  DateTime? get createdAt => _createdAt;
+  bool hasCreatedAt() => _createdAt != null;
+
+  // "title" field.
+  String? _title;
+  String get title => _title ?? '';
+  bool hasTitle() => _title != null;
+
   void _initializeFields() {
     _planet = snapshotData['planet'] as String?;
     _country = snapshotData['country'] as String?;
@@ -112,6 +127,9 @@ class UserActivityRecord extends FirestoreRecord {
     _activityVideo = snapshotData['activityVideo'] as String?;
     _promoteActivity = snapshotData['promoteActivity'] as bool?;
     _noOfParticipants = castToType<int>(snapshotData['noOfParticipants']);
+    _createdBy = snapshotData['createdBy'] as DocumentReference?;
+    _createdAt = snapshotData['createdAt'] as DateTime?;
+    _title = snapshotData['title'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -165,6 +183,9 @@ Map<String, dynamic> createUserActivityRecordData({
   String? activityVideo,
   bool? promoteActivity,
   int? noOfParticipants,
+  DocumentReference? createdBy,
+  DateTime? createdAt,
+  String? title,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -184,6 +205,9 @@ Map<String, dynamic> createUserActivityRecordData({
       'activityVideo': activityVideo,
       'promoteActivity': promoteActivity,
       'noOfParticipants': noOfParticipants,
+      'createdBy': createdBy,
+      'createdAt': createdAt,
+      'title': title,
     }.withoutNulls,
   );
 
@@ -211,7 +235,10 @@ class UserActivityRecordDocumentEquality
         e1?.activityImage == e2?.activityImage &&
         e1?.activityVideo == e2?.activityVideo &&
         e1?.promoteActivity == e2?.promoteActivity &&
-        e1?.noOfParticipants == e2?.noOfParticipants;
+        e1?.noOfParticipants == e2?.noOfParticipants &&
+        e1?.createdBy == e2?.createdBy &&
+        e1?.createdAt == e2?.createdAt &&
+        e1?.title == e2?.title;
   }
 
   @override
@@ -231,7 +258,10 @@ class UserActivityRecordDocumentEquality
         e?.activityImage,
         e?.activityVideo,
         e?.promoteActivity,
-        e?.noOfParticipants
+        e?.noOfParticipants,
+        e?.createdBy,
+        e?.createdAt,
+        e?.title
       ]);
 
   @override

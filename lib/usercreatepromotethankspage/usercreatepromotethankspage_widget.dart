@@ -37,7 +37,10 @@ class _UsercreatepromotethankspageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -92,7 +95,9 @@ class _UsercreatepromotethankspageWidgetState
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Text(
-                      'Thank You!',
+                      FFLocalizations.of(context).getText(
+                        'm6am6z1r' /* Thank You! */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).displayLarge.override(
                             fontFamily: 'Outfit',
@@ -105,7 +110,9 @@ class _UsercreatepromotethankspageWidgetState
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Text(
-                      'Your payment has been processed successfully.',
+                      FFLocalizations.of(context).getText(
+                        'ne9tl4wq' /* Your payment has been processe... */,
+                      ),
                       textAlign: TextAlign.center,
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
@@ -137,7 +144,9 @@ class _UsercreatepromotethankspageWidgetState
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Promotion Details',
+                                FFLocalizations.of(context).getText(
+                                  'jmo186f9' /* Promotion Details */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -149,7 +158,9 @@ class _UsercreatepromotethankspageWidgetState
                                     ),
                               ),
                               Text(
-                                'Your promotion will begin shortly. Here\'s what to expect:',
+                                FFLocalizations.of(context).getText(
+                                  'pb20rnna' /* Your promotion will begin shor... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -174,7 +185,9 @@ class _UsercreatepromotethankspageWidgetState
                                         size: 24.0,
                                       ),
                                       Text(
-                                        'Increased visibility within minutes',
+                                        FFLocalizations.of(context).getText(
+                                          'gc9y5yon' /* Increased visibility within mi... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -198,7 +211,9 @@ class _UsercreatepromotethankspageWidgetState
                                         size: 24.0,
                                       ),
                                       Text(
-                                        'Boost in engagement and reach',
+                                        FFLocalizations.of(context).getText(
+                                          '0dbl4zs5' /* Boost in engagement and reach */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -222,7 +237,9 @@ class _UsercreatepromotethankspageWidgetState
                                         size: 24.0,
                                       ),
                                       Text(
-                                        'Real-time performance tracking',
+                                        FFLocalizations.of(context).getText(
+                                          'vyje9tst' /* Real-time performance tracking */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -247,7 +264,9 @@ class _UsercreatepromotethankspageWidgetState
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                     child: Text(
-                      'We\'ll notify you once your promotion is live!',
+                      FFLocalizations.of(context).getText(
+                        'eit603an' /* We'll notify you once your pro... */,
+                      ),
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Plus Jakarta Sans',
@@ -263,7 +282,9 @@ class _UsercreatepromotethankspageWidgetState
                       onPressed: () async {
                         context.pushNamed('userDashboard');
                       },
-                      text: 'View Dashboard',
+                      text: FFLocalizations.of(context).getText(
+                        'key6ewoa' /* View Dashboard */,
+                      ),
                       options: FFButtonOptions(
                         width: MediaQuery.sizeOf(context).width * 0.8,
                         height: 50.0,
@@ -294,12 +315,16 @@ class _UsercreatepromotethankspageWidgetState
                       textScaler: MediaQuery.of(context).textScaler,
                       text: TextSpan(
                         children: [
-                          const TextSpan(
-                            text: 'Need help? ',
-                            style: TextStyle(),
+                          TextSpan(
+                            text: FFLocalizations.of(context).getText(
+                              '2k2rp0s7' /* Need help?  */,
+                            ),
+                            style: const TextStyle(),
                           ),
                           TextSpan(
-                            text: 'Contact Support',
+                            text: FFLocalizations.of(context).getText(
+                              'h9ym28dl' /* Contact Support */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(

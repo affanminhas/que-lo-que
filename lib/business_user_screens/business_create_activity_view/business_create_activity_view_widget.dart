@@ -109,7 +109,9 @@ class _BusinessCreateActivityViewWidgetState
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Adventure Seekers Inc.',
+                              FFLocalizations.of(context).getText(
+                                'x6zl55sw' /* Adventure Seekers Inc. */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -149,7 +151,9 @@ class _BusinessCreateActivityViewWidgetState
                               ].divide(const SizedBox(width: 4.0)),
                             ),
                             Text(
-                              'Reliability Rating: 5 stars',
+                              FFLocalizations.of(context).getText(
+                                'p7cxc17v' /* Reliability Rating: 5 stars */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
@@ -190,7 +194,9 @@ class _BusinessCreateActivityViewWidgetState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Create New Activity',
+                        FFLocalizations.of(context).getText(
+                          '8wo5teut' /* Create New Activity */,
+                        ),
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
@@ -218,7 +224,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Planet',
+                                    FFLocalizations.of(context).getText(
+                                      'aqd4torq' /* Planet */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -244,7 +252,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Earth',
+                                            FFLocalizations.of(context).getText(
+                                              '540capmw' /* Earth */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -274,7 +284,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Country',
+                                    FFLocalizations.of(context).getText(
+                                      'czgxt0ba' /* Country */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -300,7 +312,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Select Country',
+                                            FFLocalizations.of(context).getText(
+                                              'vwnhiqw3' /* Select Country */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -330,7 +344,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Province/State',
+                                    FFLocalizations.of(context).getText(
+                                      'hp4k35qb' /* Province/State */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -356,7 +372,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Select Province',
+                                            FFLocalizations.of(context).getText(
+                                              '9261bgea' /* Select Province */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -386,7 +404,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'City/Village',
+                                    FFLocalizations.of(context).getText(
+                                      'xobo1qiu' /* City/Village */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -412,7 +432,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Select City',
+                                            FFLocalizations.of(context).getText(
+                                              'gy8w7440' /* Select City */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -442,7 +464,10 @@ class _BusinessCreateActivityViewWidgetState
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Address',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'pibnoviu' /* Address */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -509,7 +534,9 @@ class _BusinessCreateActivityViewWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Date',
+                                        FFLocalizations.of(context).getText(
+                                          '84qxh468' /* Date */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -538,7 +565,10 @@ class _BusinessCreateActivityViewWidgetState
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                'Select Date',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'd5kw3ybx' /* Select Date */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -570,7 +600,9 @@ class _BusinessCreateActivityViewWidgetState
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Time',
+                                        FFLocalizations.of(context).getText(
+                                          's8zaio95' /* Time */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -599,7 +631,10 @@ class _BusinessCreateActivityViewWidgetState
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                'Select Time',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '2z6lnmgj' /* Select Time */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -633,7 +668,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Activity Type',
+                                    FFLocalizations.of(context).getText(
+                                      'kjgnn4ia' /* Activity Type */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -658,7 +695,9 @@ class _BusinessCreateActivityViewWidgetState
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 16.0, 8.0, 16.0),
                                           child: Text(
-                                            'Free',
+                                            FFLocalizations.of(context).getText(
+                                              'ph54u3k6' /* Free */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -689,7 +728,9 @@ class _BusinessCreateActivityViewWidgetState
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 16.0, 8.0, 16.0),
                                           child: Text(
-                                            'Paid',
+                                            FFLocalizations.of(context).getText(
+                                              'nlcbb115' /* Paid */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -713,7 +754,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Activity Category',
+                                    FFLocalizations.of(context).getText(
+                                      'qcad4llg' /* Activity Category */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -739,7 +782,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Select Category',
+                                            FFLocalizations.of(context).getText(
+                                              'a8fm5ltl' /* Select Category */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -769,7 +814,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Visibility',
+                                    FFLocalizations.of(context).getText(
+                                      'kjl2uz9n' /* Visibility */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -795,7 +842,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Public',
+                                            FFLocalizations.of(context).getText(
+                                              'yfnqvhbz' /* Public */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -825,7 +874,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Participant Limit',
+                                    FFLocalizations.of(context).getText(
+                                      'z0fxwbul' /* Participant Limit */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -851,7 +902,9 @@ class _BusinessCreateActivityViewWidgetState
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            '10',
+                                            FFLocalizations.of(context).getText(
+                                              '01647cvn' /* 10 */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -879,7 +932,9 @@ class _BusinessCreateActivityViewWidgetState
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Invite Friends',
+                                text: FFLocalizations.of(context).getText(
+                                  'vz2hpgsv' /* Invite Friends */,
+                                ),
                                 icon: Icon(
                                   Icons.person_add,
                                   color: FlutterFlowTheme.of(context).primary,
@@ -916,7 +971,10 @@ class _BusinessCreateActivityViewWidgetState
                                 autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Description',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'eaklt6bg' /* Description */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -987,7 +1045,10 @@ class _BusinessCreateActivityViewWidgetState
                                         onPressed: () {
                                           print('Button pressed ...');
                                         },
-                                        text: 'Add Photo',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'p2k71l0g' /* Add Photo */,
+                                        ),
                                         icon: Icon(
                                           Icons.photo_camera,
                                           color: FlutterFlowTheme.of(context)
@@ -1033,7 +1094,10 @@ class _BusinessCreateActivityViewWidgetState
                                         onPressed: () {
                                           print('Button pressed ...');
                                         },
-                                        text: 'Add Video',
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'f3u71r3r' /* Add Video */,
+                                        ),
                                         icon: Icon(
                                           Icons.videocam,
                                           color: FlutterFlowTheme.of(context)
@@ -1076,7 +1140,9 @@ class _BusinessCreateActivityViewWidgetState
                                       onPressed: () {
                                         print('Button pressed ...');
                                       },
-                                      text: 'Add Location',
+                                      text: FFLocalizations.of(context).getText(
+                                        'wb75knbz' /* Add Location */,
+                                      ),
                                       icon: Icon(
                                         Icons.add_location,
                                         color: FlutterFlowTheme.of(context)
@@ -1121,7 +1187,9 @@ class _BusinessCreateActivityViewWidgetState
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Enable Double Confirmation',
+                                    FFLocalizations.of(context).getText(
+                                      '5gqlav2v' /* Enable Double Confirmation */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -1157,7 +1225,9 @@ class _BusinessCreateActivityViewWidgetState
                         onPressed: () async {
                           context.pushNamed('businessActivityCongrats');
                         },
-                        text: 'Create Activity',
+                        text: FFLocalizations.of(context).getText(
+                          '6sdmuan2' /* Create Activity */,
+                        ),
                         options: FFButtonOptions(
                           width: MediaQuery.sizeOf(context).width * 1.0,
                           height: 56.0,
@@ -1183,7 +1253,9 @@ class _BusinessCreateActivityViewWidgetState
                           onPressed: () {
                             print('Button pressed ...');
                           },
-                          text: 'Promote Activity',
+                          text: FFLocalizations.of(context).getText(
+                            '5kp8z87x' /* Promote Activity */,
+                          ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 56.0,

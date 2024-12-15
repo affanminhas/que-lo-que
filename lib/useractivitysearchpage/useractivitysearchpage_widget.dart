@@ -38,7 +38,10 @@ class _UseractivitysearchpageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -67,7 +70,9 @@ class _UseractivitysearchpageWidgetState
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Activity Search',
+                        FFLocalizations.of(context).getText(
+                          '1d83ziuw' /* Activity Search */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
                                   fontFamily: 'Outfit',
@@ -77,7 +82,9 @@ class _UseractivitysearchpageWidgetState
                                 ),
                       ),
                       Text(
-                        'Discover exciting events across the universe',
+                        FFLocalizations.of(context).getText(
+                          'q8kxo0dg' /* Discover exciting events acros... */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Plus Jakarta Sans',
                               color: const Color(0xFFE0E0E0),
@@ -127,7 +134,9 @@ class _UseractivitysearchpageWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Search Filters',
+                                    FFLocalizations.of(context).getText(
+                                      'ag0tvaiw' /* Search Filters */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -172,7 +181,10 @@ class _UseractivitysearchpageWidgetState
                                               mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Text(
-                                                  'Planet',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '6y3bdzxr' /* Planet */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -199,7 +211,11 @@ class _UseractivitysearchpageWidgetState
                                                       size: 24.0,
                                                     ),
                                                     Text(
-                                                      'Earth',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'rutg2vtx' /* Earth */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -239,7 +255,10 @@ class _UseractivitysearchpageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Country',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '8mhfzaw3' /* Country */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -263,7 +282,10 @@ class _UseractivitysearchpageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'Select Country',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '4912x95x' /* Select Country */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -308,7 +330,10 @@ class _UseractivitysearchpageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Region',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '4jvdwaos' /* Region */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -332,7 +357,10 @@ class _UseractivitysearchpageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'Select Region',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '0onemjjo' /* Select Region */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -370,7 +398,10 @@ class _UseractivitysearchpageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'City',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '9ttxqchn' /* City */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -394,7 +425,10 @@ class _UseractivitysearchpageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'Select City',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'cyu9tij1' /* Select City */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -434,7 +468,10 @@ class _UseractivitysearchpageWidgetState
                                           mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Text(
-                                              'Activity Type',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'jis4xsc5' /* Activity Type */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -459,7 +496,10 @@ class _UseractivitysearchpageWidgetState
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Select Activity Type',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'a8xh684l' /* Select Activity Type */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -503,7 +543,10 @@ class _UseractivitysearchpageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Min Price',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '5vj78oen' /* Min Price */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -527,7 +570,10 @@ class _UseractivitysearchpageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    '\$0',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'xvcq7vps' /* $0 */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -565,7 +611,10 @@ class _UseractivitysearchpageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Max Price',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'u43hx18i' /* Max Price */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -589,7 +638,10 @@ class _UseractivitysearchpageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'No limit',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'oc2dgkuj' /* No limit */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -613,7 +665,9 @@ class _UseractivitysearchpageWidgetState
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Only Free Activities',
+                                        FFLocalizations.of(context).getText(
+                                          'umczybam' /* Only Free Activities */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -644,7 +698,9 @@ class _UseractivitysearchpageWidgetState
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Search Activities',
+                                    text: FFLocalizations.of(context).getText(
+                                      'nsaqkwvv' /* Search Activities */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -693,7 +749,9 @@ class _UseractivitysearchpageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Upcoming Activities',
+                                  FFLocalizations.of(context).getText(
+                                    'ruacnshj' /* Upcoming Activities */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -761,7 +819,11 @@ class _UseractivitysearchpageWidgetState
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'Intergalactic Music Festival',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '49wgk5rf' /* Intergalactic Music Festival */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -774,7 +836,11 @@ class _UseractivitysearchpageWidgetState
                                                           ),
                                                     ),
                                                     Text(
-                                                      'Mars, Olympus Mons',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '41a8ulzq' /* Mars, Olympus Mons */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -801,7 +867,11 @@ class _UseractivitysearchpageWidgetState
                                                           size: 16.0,
                                                         ),
                                                         Text(
-                                                          'July 15, 2023',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'u5zh8ljy' /* July 15, 2023 */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -820,7 +890,11 @@ class _UseractivitysearchpageWidgetState
                                                           size: 16.0,
                                                         ),
                                                         Text(
-                                                          '150 Credits',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'u41db0f0' /* 150 Credits */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -855,7 +929,11 @@ class _UseractivitysearchpageWidgetState
                                                                   const EdgeInsets
                                                                       .all(8.0),
                                                               child: Text(
-                                                                'Public',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  's2ejfob7' /* Public */,
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodySmall
@@ -934,7 +1012,11 @@ class _UseractivitysearchpageWidgetState
                                                       CrossAxisAlignment.start,
                                                   children: [
                                                     Text(
-                                                      'Zero-G Baseball Tournament',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '4fgpbh75' /* Zero-G Baseball Tournament */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyLarge
@@ -947,7 +1029,11 @@ class _UseractivitysearchpageWidgetState
                                                           ),
                                                     ),
                                                     Text(
-                                                      'Moon, Sea of Tranquility',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'u1mhg8yt' /* Moon, Sea of Tranquility */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -974,7 +1060,11 @@ class _UseractivitysearchpageWidgetState
                                                           size: 16.0,
                                                         ),
                                                         Text(
-                                                          'August 5, 2023',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'we8scf0u' /* August 5, 2023 */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -993,7 +1083,11 @@ class _UseractivitysearchpageWidgetState
                                                           size: 16.0,
                                                         ),
                                                         Text(
-                                                          'Free',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '0he5blwm' /* Free */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -1028,7 +1122,11 @@ class _UseractivitysearchpageWidgetState
                                                                   const EdgeInsets
                                                                       .all(8.0),
                                                               child: Text(
-                                                                'Public',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'a30i0jl7' /* Public */,
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodySmall
@@ -1083,7 +1181,9 @@ class _UseractivitysearchpageWidgetState
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Random Suggestions',
+                                  FFLocalizations.of(context).getText(
+                                    'bth5m79c' /* Random Suggestions */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -1115,7 +1215,9 @@ class _UseractivitysearchpageWidgetState
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 16.0, 8.0, 16.0),
                                         child: Text(
-                                          'Venus Hot Air Balloon Ride',
+                                          FFLocalizations.of(context).getText(
+                                            'bp3t5138' /* Venus Hot Air Balloon Ride */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1139,7 +1241,9 @@ class _UseractivitysearchpageWidgetState
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 16.0, 8.0, 16.0),
                                         child: Text(
-                                          'Jupiter Storm Chasing',
+                                          FFLocalizations.of(context).getText(
+                                            't9gahzg9' /* Jupiter Storm Chasing */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1163,7 +1267,9 @@ class _UseractivitysearchpageWidgetState
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 16.0, 8.0, 16.0),
                                         child: Text(
-                                          'Saturn Ring Surfing',
+                                          FFLocalizations.of(context).getText(
+                                            'jsj9hlm1' /* Saturn Ring Surfing */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1187,7 +1293,9 @@ class _UseractivitysearchpageWidgetState
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             8.0, 16.0, 8.0, 16.0),
                                         child: Text(
-                                          'Pluto Ice Skating',
+                                          FFLocalizations.of(context).getText(
+                                            '8ze1fhk8' /* Pluto Ice Skating */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1211,7 +1319,9 @@ class _UseractivitysearchpageWidgetState
                         onPressed: () async {
                           context.pushNamed('usercreateactivitypage');
                         },
-                        text: 'Create New Activity',
+                        text: FFLocalizations.of(context).getText(
+                          's1kdo3ln' /* Create New Activity */,
+                        ),
                         icon: const Icon(
                           Icons.add_circle_outline,
                           color: Colors.white,

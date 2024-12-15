@@ -77,7 +77,10 @@ class _AuthCheckViewWidgetState extends State<AuthCheckViewWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -90,7 +93,9 @@ class _AuthCheckViewWidgetState extends State<AuthCheckViewWidget> {
                 child: Align(
                   alignment: const AlignmentDirectional(0.0, 0.0),
                   child: Text(
-                    'Loading ....',
+                    FFLocalizations.of(context).getText(
+                      '2ulinylv' /* Loading .... */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Plus Jakarta Sans',
                           fontSize: 18.0,

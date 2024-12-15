@@ -41,7 +41,10 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -91,7 +94,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                         ),
                       ),
                       Text(
-                        'Find Friends',
+                        FFLocalizations.of(context).getText(
+                          '17wdr0z5' /* Find Friends */,
+                        ),
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
                                   fontFamily: 'Outfit',
@@ -101,7 +106,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                 ),
                       ),
                       Text(
-                        'Discover new connections',
+                        FFLocalizations.of(context).getText(
+                          '6uxvgcjy' /* Discover new connections */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
                               fontFamily: 'Plus Jakarta Sans',
                               color: const Color(0xFFE0E0E0),
@@ -150,7 +157,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText:
-                                        'Search friends, companies, or activities...',
+                                        FFLocalizations.of(context).getText(
+                                      'bsh16wxg' /* Search friends, companies, or ... */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -198,7 +207,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Filter Options',
+                                FFLocalizations.of(context).getText(
+                                  '6jni1228' /* Filter Options */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -219,12 +230,27 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                 clipBehavior: Clip.none,
                                 children: [
                                   FlutterFlowChoiceChips(
-                                    options: const [
-                                      ChipData('Male'),
-                                      ChipData('Female'),
-                                      ChipData('Any'),
-                                      ChipData('Alien'),
-                                      ChipData('Robot')
+                                    options: [
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        '7cqk082d' /* Male */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'i3nbyucv' /* Female */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'dlv18azm' /* Any */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'b1sdnoyt' /* Alien */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'hgj1pajn' /* Robot */,
+                                      ))
                                     ],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.choiceChipsValue =
@@ -282,7 +308,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Location',
+                                    FFLocalizations.of(context).getText(
+                                      'qkch9ll7' /* Location */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -305,7 +333,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Age Range',
+                                    FFLocalizations.of(context).getText(
+                                      '0s0dd2eu' /* Age Range */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -316,7 +346,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '18 - 200',
+                                    FFLocalizations.of(context).getText(
+                                      'a3oofrpf' /* 18 - 200 */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -334,7 +366,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Nationality',
+                                    FFLocalizations.of(context).getText(
+                                      'er64sj48' /* Nationality */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -357,7 +391,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Height',
+                                    FFLocalizations.of(context).getText(
+                                      'bqwzovtm' /* Height */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -380,7 +416,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Weight',
+                                    FFLocalizations.of(context).getText(
+                                      'lbltudpg' /* Weight */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -403,7 +441,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Ethnicity',
+                                    FFLocalizations.of(context).getText(
+                                      'g5set84p' /* Ethnicity */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -426,7 +466,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Eye Color',
+                                    FFLocalizations.of(context).getText(
+                                      'wbcyauot' /* Eye Color */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -449,7 +491,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Hair Color',
+                                    FFLocalizations.of(context).getText(
+                                      'auqb8cie' /* Hair Color */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -472,7 +516,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Language',
+                                    FFLocalizations.of(context).getText(
+                                      'pxu2rpw9' /* Language */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -495,7 +541,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Religion',
+                                    FFLocalizations.of(context).getText(
+                                      'rayi3zsh' /* Religion */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -518,7 +566,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Astrological Sign',
+                                    FFLocalizations.of(context).getText(
+                                      'i2z8414p' /* Astrological Sign */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -539,7 +589,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Apply Filters',
+                                text: FFLocalizations.of(context).getText(
+                                  '8olccwij' /* Apply Filters */,
+                                ),
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 1.0,
                                   height: 50.0,
@@ -565,7 +617,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                       ),
                     ),
                     Text(
-                      'Suggested Profiles',
+                      FFLocalizations.of(context).getText(
+                        '6y6hdyll' /* Suggested Profiles */,
+                      ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
@@ -624,7 +678,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'John Doe',
+                                          FFLocalizations.of(context).getText(
+                                            'fw23x06n' /* John Doe */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -634,7 +690,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'New York, USA • 28 years',
+                                          FFLocalizations.of(context).getText(
+                                            'egukgn75' /* New York, USA • 28 years */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -731,7 +789,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Jane Smith',
+                                          FFLocalizations.of(context).getText(
+                                            'j3i9gku6' /* Jane Smith */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -741,7 +801,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                               ),
                                         ),
                                         Text(
-                                          'London, UK • 32 years',
+                                          FFLocalizations.of(context).getText(
+                                            'mojl2s3u' /* London, UK • 32 years */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -842,7 +904,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'TechCorp Inc.',
+                            FFLocalizations.of(context).getText(
+                              '7l77tcjx' /* TechCorp Inc. */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -851,7 +915,9 @@ class _UserfindfriendsWidgetState extends State<UserfindfriendsWidget> {
                                     ),
                           ),
                           Text(
-                            'Technology Company',
+                            FFLocalizations.of(context).getText(
+                              '7zl285ud' /* Technology Company */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',

@@ -42,7 +42,10 @@ class _Useractivitysearchpage2WidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -88,7 +91,9 @@ class _Useractivitysearchpage2WidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'Planet',
+                                        FFLocalizations.of(context).getText(
+                                          '5ue0mtfg' /* Planet */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -125,7 +130,10 @@ class _Useractivitysearchpage2WidgetState
                                                   size: 20.0,
                                                 ),
                                                 Text(
-                                                  'Earth',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'wk0ay4zt' /* Earth */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -155,7 +163,9 @@ class _Useractivitysearchpage2WidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'Country',
+                                        FFLocalizations.of(context).getText(
+                                          'h5hxoygz' /* Country */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -192,7 +202,10 @@ class _Useractivitysearchpage2WidgetState
                                                   size: 20.0,
                                                 ),
                                                 Text(
-                                                  'Select Country',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'a3036v58' /* Select Country */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -228,7 +241,9 @@ class _Useractivitysearchpage2WidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'Region',
+                                        FFLocalizations.of(context).getText(
+                                          'llxuwsd6' /* Region */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -265,7 +280,10 @@ class _Useractivitysearchpage2WidgetState
                                                   size: 20.0,
                                                 ),
                                                 Text(
-                                                  'Select Region',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3td9bmuy' /* Select Region */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -295,7 +313,9 @@ class _Useractivitysearchpage2WidgetState
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
-                                        'City',
+                                        FFLocalizations.of(context).getText(
+                                          '6ttns3u3' /* City */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -332,7 +352,10 @@ class _Useractivitysearchpage2WidgetState
                                                   size: 20.0,
                                                 ),
                                                 Text(
-                                                  'Select City',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    't9a3dzee' /* Select City */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -365,7 +388,9 @@ class _Useractivitysearchpage2WidgetState
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Search Activities',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '9o92zjgu' /* Search Activities */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -435,14 +460,35 @@ class _Useractivitysearchpage2WidgetState
                               clipBehavior: Clip.none,
                               children: [
                                 FlutterFlowChoiceChips(
-                                  options: const [
-                                    ChipData('Sports'),
-                                    ChipData('Concerts'),
-                                    ChipData('Parks'),
-                                    ChipData('Free'),
-                                    ChipData('Paid'),
-                                    ChipData('Public'),
-                                    ChipData('Private')
+                                  options: [
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'p8idnvws' /* Sports */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      '803v7ivn' /* Concerts */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'sqafq8k8' /* Parks */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'c8antrfj' /* Free */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'fqdrz9jb' /* Paid */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'kkekuaqr' /* Public */,
+                                    )),
+                                    ChipData(
+                                        FFLocalizations.of(context).getText(
+                                      'uszjv5ax' /* Private */,
+                                    ))
                                   ],
                                   onChanged: (val) => safeSetState(() => _model
                                       .choiceChipsValue = val?.firstOrNull),
@@ -521,7 +567,9 @@ class _Useractivitysearchpage2WidgetState
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Search Results',
+                              FFLocalizations.of(context).getText(
+                                'vbatkucg' /* Search Results */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -562,7 +610,10 @@ class _Useractivitysearchpage2WidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Soccer Match',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '3fqafw6m' /* Soccer Match */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
@@ -575,7 +626,10 @@ class _Useractivitysearchpage2WidgetState
                                                         ),
                                               ),
                                               Text(
-                                                'Parc Jarry, Montreal',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '3i8wwwqi' /* Parc Jarry, Montreal */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -589,7 +643,10 @@ class _Useractivitysearchpage2WidgetState
                                                         ),
                                               ),
                                               Text(
-                                                'Nov 30, 2024 • 2:00 PM',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'z2ehsny4' /* Nov 30, 2024 • 2:00 PM */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -624,7 +681,11 @@ class _Useractivitysearchpage2WidgetState
                                                         padding:
                                                             const EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          'Free',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'cc4povop' /* Free */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -660,7 +721,11 @@ class _Useractivitysearchpage2WidgetState
                                                         padding:
                                                             const EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          'Public',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '0wc8jshz' /* Public */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -685,7 +750,10 @@ class _Useractivitysearchpage2WidgetState
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'Join',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '5rawsoks' /* Join */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: 80.0,
                                               height: 36.0,
@@ -745,7 +813,10 @@ class _Useractivitysearchpage2WidgetState
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                'Art Exhibition',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '60kk8zu5' /* Art Exhibition */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyLarge
@@ -758,7 +829,10 @@ class _Useractivitysearchpage2WidgetState
                                                         ),
                                               ),
                                               Text(
-                                                'Gallery XYZ, New York',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'fogz1rh6' /* Gallery XYZ, New York */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -772,7 +846,10 @@ class _Useractivitysearchpage2WidgetState
                                                         ),
                                               ),
                                               Text(
-                                                'Dec 15, 2024 • 10:00 AM',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '970sxwd9' /* Dec 15, 2024 • 10:00 AM */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodySmall
@@ -807,7 +884,11 @@ class _Useractivitysearchpage2WidgetState
                                                         padding:
                                                             const EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          '\$15',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '9n4w8k9l' /* $15 */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -843,7 +924,11 @@ class _Useractivitysearchpage2WidgetState
                                                         padding:
                                                             const EdgeInsets.all(8.0),
                                                         child: Text(
-                                                          'Public',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            '1wjns19b' /* Public */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodySmall
@@ -868,7 +953,10 @@ class _Useractivitysearchpage2WidgetState
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'Join',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'cj5mrb5g' /* Join */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: 80.0,
                                               height: 36.0,
@@ -930,7 +1018,9 @@ class _Useractivitysearchpage2WidgetState
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              'Random Suggestions',
+                              FFLocalizations.of(context).getText(
+                                'ct9v69i8' /* Random Suggestions */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -971,7 +1061,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Beach Volleyball',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '6dy87olh' /* Beach Volleyball */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
@@ -989,7 +1082,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Copacabana, Rio',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'tsb4y98k' /* Copacabana, Rio */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1009,7 +1105,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Dec 5, 2024',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '52w3hyp1' /* Dec 5, 2024 */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -1039,7 +1138,10 @@ class _Useractivitysearchpage2WidgetState
                                               child: Padding(
                                                 padding: const EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  'Free',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '93i0r44s' /* Free */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1085,7 +1187,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Cooking Class',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'wsgw7psb' /* Cooking Class */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
@@ -1103,7 +1208,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Culinary Institute, Paris',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'tom0q634' /* Culinary Institute, Paris */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1123,7 +1231,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Jan 10, 2025',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '4aqb2m6n' /* Jan 10, 2025 */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -1153,7 +1264,10 @@ class _Useractivitysearchpage2WidgetState
                                               child: Padding(
                                                 padding: const EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  '\$50',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '4xoigk3a' /* $50 */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -1199,7 +1313,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Stargazing',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'bpq3l85n' /* Stargazing */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyLarge
@@ -1217,7 +1334,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Observatory, Hawaii',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vur547l5' /* Observatory, Hawaii */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1237,7 +1357,10 @@ class _Useractivitysearchpage2WidgetState
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 4.0, 0.0),
                                             child: Text(
-                                              'Feb 14, 2025',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'bn6nznds' /* Feb 14, 2025 */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -1267,7 +1390,10 @@ class _Useractivitysearchpage2WidgetState
                                               child: Padding(
                                                 padding: const EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  'Public',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '90vn43ou' /* Public */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall

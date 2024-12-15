@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -75,6 +76,11 @@ class UsersRecord extends FirestoreRecord {
   DocumentReference? get businessOwnerRef => _businessOwnerRef;
   bool hasBusinessOwnerRef() => _businessOwnerRef != null;
 
+  // "chattingWith" field.
+  List<DocumentReference>? _chattingWith;
+  List<DocumentReference> get chattingWith => _chattingWith ?? const [];
+  bool hasChattingWith() => _chattingWith != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -89,6 +95,7 @@ class UsersRecord extends FirestoreRecord {
     _individualUserRef =
         snapshotData['individualUserRef'] as DocumentReference?;
     _businessOwnerRef = snapshotData['businessOwnerRef'] as DocumentReference?;
+    _chattingWith = getDataList(snapshotData['chattingWith']);
   }
 
   static CollectionReference get collection =>
@@ -163,6 +170,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
 
   @override
   bool equals(UsersRecord? e1, UsersRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
         e1?.photoUrl == e2?.photoUrl &&
@@ -174,7 +182,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.role == e2?.role &&
         e1?.title == e2?.title &&
         e1?.individualUserRef == e2?.individualUserRef &&
-        e1?.businessOwnerRef == e2?.businessOwnerRef;
+        e1?.businessOwnerRef == e2?.businessOwnerRef &&
+        listEquality.equals(e1?.chattingWith, e2?.chattingWith);
   }
 
   @override
@@ -190,7 +199,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.role,
         e?.title,
         e?.individualUserRef,
-        e?.businessOwnerRef
+        e?.businessOwnerRef,
+        e?.chattingWith
       ]);
 
   @override

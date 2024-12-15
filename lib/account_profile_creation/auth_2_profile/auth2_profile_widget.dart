@@ -85,7 +85,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -212,7 +215,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                   child: Text(
-                    'Your Account',
+                    FFLocalizations.of(context).getText(
+                      '2ytw871b' /* Your Account */,
+                    ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Outfit',
                           letterSpacing: 0.0,
@@ -266,7 +271,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Edit Profile',
+                                FFLocalizations.of(context).getText(
+                                  'c9lbdu5p' /* Edit Profile */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
@@ -295,7 +302,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                   child: Text(
-                    'App Settings',
+                    FFLocalizations.of(context).getText(
+                      'cfh7ds4r' /* App Settings */,
+                    ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
                           fontFamily: 'Outfit',
                           letterSpacing: 0.0,
@@ -341,7 +350,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Support',
+                              FFLocalizations.of(context).getText(
+                                'ep6qzscf' /* Support */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -405,7 +416,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 12.0, 0.0, 0.0, 0.0),
                             child: Text(
-                              'Terms of Service',
+                              FFLocalizations.of(context).getText(
+                                'vhry9216' /* Terms of Service */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
@@ -444,7 +457,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         context.goNamedAuth(
                             'WelcomeVideoView', context.mounted);
                       },
-                      text: 'Log Out',
+                      text: FFLocalizations.of(context).getText(
+                        'osjwa1pi' /* Log Out */,
+                      ),
                       options: FFButtonOptions(
                         width: 150.0,
                         height: 44.0,

@@ -52,7 +52,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -85,7 +88,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Welcome, User',
+                          FFLocalizations.of(context).getText(
+                            'yp4g45h1' /* Welcome, User */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
@@ -110,7 +115,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                       ].divide(const SizedBox(width: 16.0)),
                     ),
                     Text(
-                      'Explore, Connect, Create',
+                      FFLocalizations.of(context).getText(
+                        'r6rhb4wz' /* Explore, Connect, Create */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Plus Jakarta Sans',
                             color: FlutterFlowTheme.of(context).info,
@@ -159,7 +166,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Find Friends',
+                                    FFLocalizations.of(context).getText(
+                                      'n7o0dfau' /* Find Friends */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -176,7 +185,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       hintText:
-                                          'Search for friends, companies, or activities',
+                                          FFLocalizations.of(context).getText(
+                                        'rrrkugvz' /* Search for friends, companies,... */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -256,7 +267,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 12.0, 8.0, 12.0),
                                           child: Text(
-                                            'Friends',
+                                            FFLocalizations.of(context).getText(
+                                              '4z1r7tqw' /* Friends */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -282,7 +295,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 12.0, 8.0, 12.0),
                                           child: Text(
-                                            'Companies',
+                                            FFLocalizations.of(context).getText(
+                                              'rtnc2g3y' /* Companies */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -308,7 +323,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   8.0, 12.0, 8.0, 12.0),
                                           child: Text(
-                                            'Activities',
+                                            FFLocalizations.of(context).getText(
+                                              'l4n9dtof' /* Activities */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -349,7 +366,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Chat',
+                                    FFLocalizations.of(context).getText(
+                                      'ezjmqt45' /* Chat */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -365,7 +384,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Recent Conversations',
+                                        FFLocalizations.of(context).getText(
+                                          'wfczknjl' /* Recent Conversations */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -374,7 +395,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             ),
                                       ),
                                       Text(
-                                        'See All',
+                                        FFLocalizations.of(context).getText(
+                                          'o0hict00' /* See All */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -409,7 +432,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'JD',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'qhmn5a8l' /* JD */,
+                                                ),
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -432,7 +458,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'John Doe',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ejkafhys' /* John Doe */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -443,7 +472,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Hey, are you up for soccer tonight?',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'c24hngat' /* Hey, are you up for soccer ton... */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -478,7 +510,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             child: Padding(
                                               padding: const EdgeInsets.all(8.0),
                                               child: Text(
-                                                'JS',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'dx5rfmbl' /* JS */,
+                                                ),
                                                 textAlign: TextAlign.center,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -501,7 +536,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Jane Smith',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'gyqkjuwo' /* Jane Smith */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -512,7 +550,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                       ),
                                                 ),
                                                 Text(
-                                                  'Thanks for organizing the event!',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'l5aux54p' /* Thanks for organizing the even... */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodySmall
@@ -558,7 +599,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Activity Search',
+                                    FFLocalizations.of(context).getText(
+                                      'ebdy0h6o' /* Activity Search */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -600,7 +643,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Select Date',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'l5lvyi5q' /* Select Date */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -644,7 +690,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Location',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'nzbd9ixg' /* Location */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -687,7 +736,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             size: 24.0,
                                           ),
                                           Text(
-                                            'Activity Type',
+                                            FFLocalizations.of(context).getText(
+                                              'bei744qh' /* Activity Type */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -704,7 +755,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Search Activities',
+                                    text: FFLocalizations.of(context).getText(
+                                      '01z14yg0' /* Search Activities */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -753,7 +806,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Create Activity',
+                                    FFLocalizations.of(context).getText(
+                                      'loghmzfb' /* Create Activity */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -769,7 +824,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'Activity Name',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '2ll34jet' /* Activity Name */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -829,7 +887,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'Description',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'bdiuj8z3' /* Description */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -916,7 +977,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Date',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'nilrugg8' /* Date */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -960,7 +1024,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Time',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3mouvctg' /* Time */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1003,7 +1070,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             size: 24.0,
                                           ),
                                           Text(
-                                            'Location',
+                                            FFLocalizations.of(context).getText(
+                                              '9nuqtt5w' /* Location */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1048,7 +1117,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Free',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'it0wk0cy' /* Free */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1092,7 +1164,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Paid',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'b6bc30aj' /* Paid */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1113,7 +1188,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Create Activity',
+                                    text: FFLocalizations.of(context).getText(
+                                      'kzqb7rbh' /* Create Activity */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -1162,7 +1239,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Create Advertisement',
+                                    FFLocalizations.of(context).getText(
+                                      '3sw5j7g5' /* Create Advertisement */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -1178,7 +1257,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'Ad Title',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '35tdw9yr' /* Ad Title */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1238,7 +1320,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      hintText: 'Ad Description',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'x6y1t9p8' /* Ad Description */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1323,7 +1408,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                             size: 48.0,
                                           ),
                                           Text(
-                                            'Upload Photo or Video',
+                                            FFLocalizations.of(context).getText(
+                                              'sjuqhcpa' /* Upload Photo or Video */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1368,7 +1455,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Global',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'x7zwmdb8' /* Global */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1412,7 +1502,10 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                                   size: 24.0,
                                                 ),
                                                 Text(
-                                                  'Regional',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '29mfwfl8' /* Regional */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -1433,7 +1526,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Create Advertisement',
+                                    text: FFLocalizations.of(context).getText(
+                                      'qjba631u' /* Create Advertisement */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
@@ -1494,7 +1589,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Home',
+                            FFLocalizations.of(context).getText(
+                              '5am5flvr' /* Home */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
@@ -1515,7 +1612,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Chat',
+                            FFLocalizations.of(context).getText(
+                              'p7b66l3l' /* Chat */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -1536,7 +1635,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Create',
+                            FFLocalizations.of(context).getText(
+                              'x6wuzdjj' /* Create */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -1557,7 +1658,9 @@ class _WelcomeuserprofilWidgetState extends State<WelcomeuserprofilWidget> {
                             size: 28.0,
                           ),
                           Text(
-                            'Promote',
+                            FFLocalizations.of(context).getText(
+                              'wmvjqaaf' /* Promote */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       fontFamily: 'Plus Jakarta Sans',

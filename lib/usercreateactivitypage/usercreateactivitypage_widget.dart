@@ -54,7 +54,10 @@ class _UsercreateactivitypageWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -90,7 +93,9 @@ class _UsercreateactivitypageWidgetState
                         Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Create Activity',
+                            FFLocalizations.of(context).getText(
+                              'krr8bcob' /* Create Activity */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
@@ -104,7 +109,9 @@ class _UsercreateactivitypageWidgetState
                         Align(
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Organize your event and connect with others',
+                            FFLocalizations.of(context).getText(
+                              'x55uf2eg' /* Organize your event and connec... */,
+                            ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
@@ -154,7 +161,9 @@ class _UsercreateactivitypageWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Basic Information',
+                                    FFLocalizations.of(context).getText(
+                                      'az5k6hbn' /* Basic Information */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -166,16 +175,43 @@ class _UsercreateactivitypageWidgetState
                                         ),
                                   ),
                                   FlutterFlowChoiceChips(
-                                    options: const [
-                                      ChipData('Earth'),
-                                      ChipData('Mercury'),
-                                      ChipData('Venus'),
-                                      ChipData('Mars'),
-                                      ChipData('Jupiter'),
-                                      ChipData('Saturn'),
-                                      ChipData('Uranus'),
-                                      ChipData('Neptune'),
-                                      ChipData('Moon')
+                                    options: [
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'zrgato6o' /* Earth */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'k311gvgy' /* Mercury */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'snmgognt' /* Venus */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'epaelmvu' /* Mars */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'nd1ekq7a' /* Jupiter */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'mg2vagx8' /* Saturn */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'z6705lqw' /* Uranus */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'bvgr4qs7' /* Neptune */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'btxm2r9o' /* Moon */,
+                                      ))
                                     ],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.choiceChipsValue1 =
@@ -237,7 +273,10 @@ class _UsercreateactivitypageWidgetState
                                       safeSetState(() =>
                                           _model.placePickerValue1 = place);
                                     },
-                                    defaultText: 'Select Country',
+                                    defaultText:
+                                        FFLocalizations.of(context).getText(
+                                      '8pyrzva7' /* Select Country */,
+                                    ),
                                     icon: Icon(
                                       Icons.public,
                                       color:
@@ -274,7 +313,10 @@ class _UsercreateactivitypageWidgetState
                                       safeSetState(() =>
                                           _model.placePickerValue2 = place);
                                     },
-                                    defaultText: 'Select Region',
+                                    defaultText:
+                                        FFLocalizations.of(context).getText(
+                                      '4hgbmxos' /* Select Region */,
+                                    ),
                                     icon: Icon(
                                       Icons.location_city,
                                       color:
@@ -309,7 +351,10 @@ class _UsercreateactivitypageWidgetState
                                       safeSetState(() =>
                                           _model.placePickerValue3 = place);
                                     },
-                                    defaultText: 'Select City',
+                                    defaultText:
+                                        FFLocalizations.of(context).getText(
+                                      '34kie6pz' /* Select City */,
+                                    ),
                                     icon: Icon(
                                       Icons.location_on,
                                       color:
@@ -339,7 +384,10 @@ class _UsercreateactivitypageWidgetState
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Activity Address',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'x5xfgbo5' /* Activity Address */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -424,7 +472,9 @@ class _UsercreateactivitypageWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Activity Details',
+                                    FFLocalizations.of(context).getText(
+                                      '2lphx10a' /* Activity Details */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -458,7 +508,10 @@ class _UsercreateactivitypageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Date',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '96g8mlx6' /* Date */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -482,7 +535,10 @@ class _UsercreateactivitypageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'Select Date',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '2kne2j18' /* Select Date */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -516,7 +572,10 @@ class _UsercreateactivitypageWidgetState
                                             mainAxisSize: MainAxisSize.min,
                                             children: [
                                               Text(
-                                                'Time',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'pon2tmmt' /* Time */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -540,7 +599,10 @@ class _UsercreateactivitypageWidgetState
                                                     size: 24.0,
                                                   ),
                                                   Text(
-                                                    'Select Time',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'jhhpirzk' /* Select Time */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -564,7 +626,9 @@ class _UsercreateactivitypageWidgetState
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Is this activity free?',
+                                        FFLocalizations.of(context).getText(
+                                          '63qyhyjq' /* Is this activity free? */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -604,7 +668,10 @@ class _UsercreateactivitypageWidgetState
                                       safeSetState(() =>
                                           _model.placePickerValue4 = place);
                                     },
-                                    defaultText: 'Select Activity Category',
+                                    defaultText:
+                                        FFLocalizations.of(context).getText(
+                                      '15g3pb3a' /* Select Activity Category */,
+                                    ),
                                     icon: Icon(
                                       Icons.category,
                                       color:
@@ -629,10 +696,19 @@ class _UsercreateactivitypageWidgetState
                                     ),
                                   ),
                                   FlutterFlowChoiceChips(
-                                    options: const [
-                                      ChipData('Public'),
-                                      ChipData('Friends Only'),
-                                      ChipData('Private')
+                                    options: [
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'lsnl7kw7' /* Public */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'bnph47uy' /* Friends Only */,
+                                      )),
+                                      ChipData(
+                                          FFLocalizations.of(context).getText(
+                                        'jk28f4xe' /* Private */,
+                                      ))
                                     ],
                                     onChanged: (val) => safeSetState(() =>
                                         _model.choiceChipsValue2 =
@@ -689,7 +765,10 @@ class _UsercreateactivitypageWidgetState
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Number of Participants',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        '7i7wajw9' /* Number of Participants */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -775,7 +854,9 @@ class _UsercreateactivitypageWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Activity Description',
+                                    FFLocalizations.of(context).getText(
+                                      'fnralnfz' /* Activity Description */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -792,7 +873,10 @@ class _UsercreateactivitypageWidgetState
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Description',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'wqent52w' /* Description */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -905,7 +989,10 @@ class _UsercreateactivitypageWidgetState
                                                   size: 40.0,
                                                 ),
                                                 Text(
-                                                  'Add Photo/Video',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'sn216cwj' /* Add Photo/Video */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyLarge
@@ -932,7 +1019,10 @@ class _UsercreateactivitypageWidgetState
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Location Link (Optional)',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'po8fefym' /* Location Link (Optional) */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1018,7 +1108,9 @@ class _UsercreateactivitypageWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    'Visibility Options',
+                                    FFLocalizations.of(context).getText(
+                                      '1af03b4e' /* Visibility Options */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
@@ -1035,7 +1127,9 @@ class _UsercreateactivitypageWidgetState
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Promote Activity',
+                                        FFLocalizations.of(context).getText(
+                                          'r9cb15xc' /* Promote Activity */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
@@ -1065,7 +1159,9 @@ class _UsercreateactivitypageWidgetState
                                     ],
                                   ),
                                   Text(
-                                    'Promoting your activity will place it at the top of the list for increased visibility. Additional charges may apply.',
+                                    FFLocalizations.of(context).getText(
+                                      'kdj6hatc' /* Promoting your activity will p... */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -1084,7 +1180,9 @@ class _UsercreateactivitypageWidgetState
                           onPressed: () async {
                             context.pushNamed('usecreateactivitycongratspage');
                           },
-                          text: 'Create Activity',
+                          text: FFLocalizations.of(context).getText(
+                            '9508fugq' /* Create Activity */,
+                          ),
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 56.0,

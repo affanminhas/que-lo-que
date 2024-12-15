@@ -36,7 +36,10 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -75,7 +78,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Welcome, User',
+                              FFLocalizations.of(context).getText(
+                                '9s37h4cf' /* Welcome, User */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
                                   .override(
@@ -152,7 +157,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '1,234',
+                                          FFLocalizations.of(context).getText(
+                                            'tx56d1jf' /* 1,234 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -164,7 +171,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                               ),
                                         ),
                                         Text(
-                                          'Followers',
+                                          FFLocalizations.of(context).getText(
+                                            '7s5as73a' /* Followers */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -183,7 +192,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                           CrossAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '567',
+                                          FFLocalizations.of(context).getText(
+                                            'uicocerz' /* 567 */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -195,7 +206,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                               ),
                                         ),
                                         Text(
-                                          'Following',
+                                          FFLocalizations.of(context).getText(
+                                            'g3raa628' /* Following */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -235,7 +248,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  'Notifications',
+                                  FFLocalizations.of(context).getText(
+                                    '10g3plsg' /* Notifications */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -255,7 +270,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                       size: 24.0,
                                     ),
                                     Text(
-                                      '3 new messages',
+                                      FFLocalizations.of(context).getText(
+                                        'u12gapnd' /* 3 new messages */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -275,7 +292,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                       size: 24.0,
                                     ),
                                     Text(
-                                      '2 friend requests',
+                                      FFLocalizations.of(context).getText(
+                                        'tcfi6rrj' /* 2 friend requests */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -295,7 +314,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                       size: 24.0,
                                     ),
                                     Text(
-                                      '15 new likes',
+                                      FFLocalizations.of(context).getText(
+                                        'uvzoxlcr' /* 15 new likes */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -315,7 +336,9 @@ class _Welcomeuserprofil3WidgetState extends State<Welcomeuserprofil3Widget> {
                                       size: 24.0,
                                     ),
                                     Text(
-                                      'Upcoming event: Movie Night',
+                                      FFLocalizations.of(context).getText(
+                                        'y8gq19kj' /* Upcoming event: Movie Night */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

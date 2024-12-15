@@ -88,7 +88,10 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -176,7 +179,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                'Welcome Back',
+                                FFLocalizations.of(context).getText(
+                                  'cy3rg0ep' /* Welcome Back */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
@@ -189,7 +194,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 24.0),
                                 child: Text(
-                                  'Fill out the information below in order to access your account.',
+                                  FFLocalizations.of(context).getText(
+                                    'yttz1as8' /* Fill out the information below... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -212,7 +219,10 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                     autofillHints: const [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: 'Email',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'kf8xqy2k' /* Email */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -284,7 +294,10 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                     autofillHints: const [AutofillHints.password],
                                     obscureText: !_model.passwordVisibility,
                                     decoration: InputDecoration(
-                                      labelText: 'Password',
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'o9i66ceu' /* Password */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -429,7 +442,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
 
                                     if (shouldSetState) safeSetState(() {});
                                   },
-                                  text: 'Sign In',
+                                  text: FFLocalizations.of(context).getText(
+                                    '4ykwuhy6' /* Sign In */,
+                                  ),
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 44.0,
@@ -458,7 +473,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 24.0),
                                 child: Text(
-                                  'Or sign in with',
+                                  FFLocalizations.of(context).getText(
+                                    'mky4z7gx' /* Or sign in with */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .labelMedium
@@ -556,7 +573,9 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
 
                                     if (shouldSetState) safeSetState(() {});
                                   },
-                                  text: 'Continue with Google',
+                                  text: FFLocalizations.of(context).getText(
+                                    'iyetpk8e' /* Continue with Google */,
+                                  ),
                                   icon: const FaIcon(
                                     FontAwesomeIcons.google,
                                     size: 20.0,
@@ -694,7 +713,10 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                               safeSetState(() {});
                                             }
                                           },
-                                          text: 'Continue with Apple',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'lb8txsiv' /* Continue with Apple */,
+                                          ),
                                           icon: const FaIcon(
                                             FontAwesomeIcons.apple,
                                             size: 20.0,
@@ -755,12 +777,18 @@ class _LoginViewWidgetState extends State<LoginViewWidget>
                                         MediaQuery.of(context).textScaler,
                                     text: TextSpan(
                                       children: [
-                                        const TextSpan(
-                                          text: 'Don\'t have an account?  ',
-                                          style: TextStyle(),
+                                        TextSpan(
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'gyrsz13v' /* Don't have an account?   */,
+                                          ),
+                                          style: const TextStyle(),
                                         ),
                                         TextSpan(
-                                          text: 'Sign Up here',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'vfjtjuxc' /* Sign Up here */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(

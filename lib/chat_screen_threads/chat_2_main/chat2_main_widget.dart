@@ -38,7 +38,10 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -46,7 +49,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'My Chats',
+            FFLocalizations.of(context).getText(
+              'znuc17cx' /* My Chats */,
+            ),
             style: FlutterFlowTheme.of(context).headlineLarge.override(
                   fontFamily: 'Outfit',
                   letterSpacing: 0.0,
@@ -68,7 +73,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                 ),
                 onPressed: () async {
                   context.pushNamed(
-                    'chat_2_InviteUsers',
+                    'ChatInviteUsers',
                     extra: <String, dynamic>{
                       kTransitionInfoKey: const TransitionInfo(
                         hasTransition: true,
@@ -93,7 +98,9 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Below are your chats and group chats',
+                  FFLocalizations.of(context).getText(
+                    '2xxuxxu4' /* Below are your chats and group... */,
+                  ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Outfit',
                         letterSpacing: 0.0,
@@ -144,7 +151,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                             highlightColor: Colors.transparent,
                             onTap: () async {
                               context.pushNamed(
-                                'chat_2_Details',
+                                'ChatDetailView',
                                 queryParameters: {
                                   'chatRef': serializeParam(
                                     listViewChatsRecord,
@@ -197,7 +204,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             e !=
                                                             currentUserReference)
                                                         .toList()
-                                                        .first),
+                                                        .firstOrNull!),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -400,9 +407,16 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           0.0),
                                                               child: Text(
                                                                 dateTimeFormat(
-                                                                    "relative",
-                                                                    listViewChatsRecord
-                                                                        .lastMessageTime!),
+                                                                  "relative",
+                                                                  listViewChatsRecord
+                                                                      .lastMessageTime!,
+                                                                  locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageShortCode ??
+                                                                      FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                ),
                                                                 textAlign:
                                                                     TextAlign
                                                                         .start,
@@ -452,7 +466,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                             e !=
                                                             currentUserReference)
                                                         .toList()
-                                                        .first),
+                                                        .firstOrNull!),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -498,15 +512,14 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                   1.0, 1.0),
                                                           child: FutureBuilder<
                                                               UsersRecord>(
-                                                            future: UsersRecord
-                                                                .getDocumentOnce(
-                                                                    listViewChatsRecord
-                                                                        .users
-                                                                        .where((e) =>
-                                                                            e !=
-                                                                            currentUserReference)
-                                                                        .toList()
-                                                                        .last),
+                                                            future: UsersRecord.getDocumentOnce(
+                                                                listViewChatsRecord
+                                                                    .users
+                                                                    .where((e) =>
+                                                                        e !=
+                                                                        currentUserReference)
+                                                                    .toList()
+                                                                    .lastOrNull!),
                                                             builder: (context,
                                                                 snapshot) {
                                                               // Customize what your widget looks like when it's loading.
@@ -557,78 +570,35 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                     width: 2.0,
                                                                   ),
                                                                 ),
-                                                                child: Builder(
-                                                                  builder:
-                                                                      (context) {
-                                                                    if (containerUsersRecord.photoUrl !=
-                                                                            '') {
-                                                                      return Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.all(2.0),
-                                                                        child:
-                                                                            ClipRRect(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                          child:
-                                                                              CachedNetworkImage(
-                                                                            fadeInDuration:
-                                                                                const Duration(milliseconds: 200),
-                                                                            fadeOutDuration:
-                                                                                const Duration(milliseconds: 200),
-                                                                            imageUrl:
-                                                                                valueOrDefault<String>(
-                                                                              containerUsersRecord.photoUrl,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/test-flow-at3mts/assets/jozbfglfd548/flutterflow_future%402x.jpg',
-                                                                            ),
-                                                                            width:
-                                                                                44.0,
-                                                                            height:
-                                                                                44.0,
-                                                                            fit:
-                                                                                BoxFit.cover,
-                                                                          ),
-                                                                        ),
-                                                                      );
-                                                                    } else {
-                                                                      return Padding(
-                                                                        padding:
-                                                                            const EdgeInsets.all(2.0),
-                                                                        child:
-                                                                            Container(
-                                                                          width:
-                                                                              100.0,
-                                                                          height:
-                                                                              100.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
-                                                                          ),
-                                                                          alignment: const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            valueOrDefault<String>(
-                                                                              containerUsersRecord.displayName,
-                                                                              'A',
-                                                                            ).maybeHandleOverflow(
-                                                                              maxChars: 1,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  fontFamily: 'Plus Jakarta Sans',
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FontWeight.bold,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      );
-                                                                    }
-                                                                  },
+                                                                child: Padding(
+                                                                  padding:
+                                                                      const EdgeInsets
+                                                                          .all(
+                                                                              2.0),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child:
+                                                                        CachedNetworkImage(
+                                                                      fadeInDuration:
+                                                                          const Duration(
+                                                                              milliseconds: 300),
+                                                                      fadeOutDuration:
+                                                                          const Duration(
+                                                                              milliseconds: 300),
+                                                                      imageUrl:
+                                                                          containerUsersRecord
+                                                                              .photoUrl,
+                                                                      width:
+                                                                          44.0,
+                                                                      height:
+                                                                          44.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
                                                                 ),
                                                               );
                                                             },
@@ -660,89 +630,25 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                 width: 2.0,
                                                               ),
                                                             ),
-                                                            child: Builder(
-                                                              builder:
-                                                                  (context) {
-                                                                if (rowUsersRecord
-                                                                            .photoUrl !=
-                                                                        '') {
-                                                                  return Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            2.0),
-                                                                    child:
-                                                                        ClipRRect(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      child:
-                                                                          CachedNetworkImage(
-                                                                        fadeInDuration:
-                                                                            const Duration(milliseconds: 200),
-                                                                        fadeOutDuration:
-                                                                            const Duration(milliseconds: 200),
-                                                                        imageUrl:
-                                                                            valueOrDefault<String>(
-                                                                          rowUsersRecord
-                                                                              .photoUrl,
-                                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/test-flow-at3mts/assets/jozbfglfd548/flutterflow_future%402x.jpg',
-                                                                        ),
-                                                                        width:
-                                                                            44.0,
-                                                                        height:
-                                                                            44.0,
-                                                                        fit: BoxFit
-                                                                            .cover,
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                } else {
-                                                                  return Padding(
-                                                                    padding:
-                                                                        const EdgeInsets.all(
-                                                                            2.0),
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          100.0,
-                                                                      height:
-                                                                          100.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                      ),
-                                                                      alignment:
-                                                                          const AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          rowUsersRecord
-                                                                              .displayName,
-                                                                          'A',
-                                                                        ).maybeHandleOverflow(
-                                                                          maxChars:
-                                                                              1,
-                                                                        ),
-                                                                        textAlign:
-                                                                            TextAlign.center,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .override(
-                                                                              fontFamily: 'Plus Jakarta Sans',
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                  );
-                                                                }
-                                                              },
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                      .all(2.0),
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  rowUsersRecord
+                                                                      .photoUrl,
+                                                                  width: 44.0,
+                                                                  height: 44.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
@@ -777,7 +683,11 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                             12.0,
                                                                             0.0),
                                                                 child: Text(
-                                                                  'Group Chat',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'z4r2vyer' /* Daniel */,
+                                                                  ),
                                                                   textAlign:
                                                                       TextAlign
                                                                           .start,
@@ -839,12 +749,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              listViewChatsRecord
-                                                                  .lastMessage,
-                                                              'No messages yet.',
-                                                            ),
+                                                            listViewChatsRecord
+                                                                .lastMessage,
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
@@ -877,9 +783,14 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                 valueOrDefault<
                                                                     String>(
                                                                   dateTimeFormat(
-                                                                      "relative",
-                                                                      listViewChatsRecord
-                                                                          .lastMessageTime),
+                                                                    "relative",
+                                                                    listViewChatsRecord
+                                                                        .lastMessageTime,
+                                                                    locale: FFLocalizations.of(context)
+                                                                            .languageShortCode ??
+                                                                        FFLocalizations.of(context)
+                                                                            .languageCode,
+                                                                  ),
                                                                   '--',
                                                                 ),
                                                                 textAlign:

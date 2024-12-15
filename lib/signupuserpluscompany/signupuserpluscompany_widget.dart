@@ -37,7 +37,10 @@ class _SignupuserpluscompanyWidgetState
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -138,7 +141,9 @@ class _SignupuserpluscompanyWidgetState
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Text(
-                                'Create an Account',
+                                FFLocalizations.of(context).getText(
+                                  'kygtkrav' /* Create an Account */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
@@ -148,7 +153,9 @@ class _SignupuserpluscompanyWidgetState
                                     ),
                               ),
                               Text(
-                                'Choose how you\'d like to sign up',
+                                FFLocalizations.of(context).getText(
+                                  'ymochtj3' /* Choose how you'd like to sign ... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -177,7 +184,9 @@ class _SignupuserpluscompanyWidgetState
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Text(
-                                          'Sign Up As',
+                                          FFLocalizations.of(context).getText(
+                                            '0bq7uk1l' /* Sign Up As */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
@@ -193,7 +202,10 @@ class _SignupuserpluscompanyWidgetState
                                             context
                                                 .pushNamed('createprofiluser');
                                           },
-                                          text: 'Individual Guest',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'kljwhbod' /* Individual Guest */,
+                                          ),
                                           icon: const Icon(
                                             Icons.person,
                                             size: 24.0,
@@ -228,7 +240,10 @@ class _SignupuserpluscompanyWidgetState
                                             context.pushNamed(
                                                 'createbusinessprofil');
                                           },
-                                          text: 'Business Owner',
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            'jkmjozrn' /* Business Owner */,
+                                          ),
                                           icon: const Icon(
                                             Icons.business,
                                             size: 24.0,
@@ -264,7 +279,9 @@ class _SignupuserpluscompanyWidgetState
                                 ),
                               ),
                               Text(
-                                'Or sign up with',
+                                FFLocalizations.of(context).getText(
+                                  '402753kt' /* Or sign up with */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -277,7 +294,9 @@ class _SignupuserpluscompanyWidgetState
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Continue with Google',
+                                text: FFLocalizations.of(context).getText(
+                                  'k70odmkb' /* Continue with Google */,
+                                ),
                                 icon: const Icon(
                                   Icons.toggle_on,
                                   size: 20.0,
@@ -312,7 +331,9 @@ class _SignupuserpluscompanyWidgetState
                                 onPressed: () {
                                   print('Button pressed ...');
                                 },
-                                text: 'Continue with Apple',
+                                text: FFLocalizations.of(context).getText(
+                                  '1tybcueh' /* Continue with Apple */,
+                                ),
                                 icon: const Icon(
                                   Icons.apple,
                                   size: 20.0,
@@ -347,12 +368,16 @@ class _SignupuserpluscompanyWidgetState
                                 textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
-                                    const TextSpan(
-                                      text: 'Already have an account? ',
-                                      style: TextStyle(),
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        'iye621dw' /* Already have an account?  */,
+                                      ),
+                                      style: const TextStyle(),
                                     ),
                                     TextSpan(
-                                      text: 'Log In',
+                                      text: FFLocalizations.of(context).getText(
+                                        'cwtqnbth' /* Log In */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
