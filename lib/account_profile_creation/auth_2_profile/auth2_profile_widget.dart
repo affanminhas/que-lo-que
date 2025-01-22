@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'auth2_profile_model.dart';
 export 'auth2_profile_model.dart';
 
@@ -192,7 +193,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                     builder: (context) => Text(
                       currentUserDisplayName,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Outfit',
+                            font: GoogleFonts.outfit(),
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -206,7 +207,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       'andrew@domainname.com',
                     ),
                     style: FlutterFlowTheme.of(context).labelLarge.override(
-                          fontFamily: 'Outfit',
+                          font: GoogleFonts.outfit(),
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                         ),
@@ -219,7 +220,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       '2ytw871b' /* Your Account */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Outfit',
+                          font: GoogleFonts.outfit(),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -277,7 +278,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Outfit',
+                                      font: GoogleFonts.outfit(),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -306,7 +307,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                       'cfh7ds4r' /* App Settings */,
                     ),
                     style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Outfit',
+                          font: GoogleFonts.outfit(),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -356,7 +357,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Outfit',
+                                    font: GoogleFonts.outfit(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -422,7 +423,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Outfit',
+                                    font: GoogleFonts.outfit(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -470,7 +471,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyLarge.override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 0.0,

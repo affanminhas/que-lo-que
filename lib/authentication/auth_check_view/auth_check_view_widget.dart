@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'auth_check_view_model.dart';
 export 'auth_check_view_model.dart';
 
@@ -97,7 +98,7 @@ class _AuthCheckViewWidgetState extends State<AuthCheckViewWidget> {
                       '2ulinylv' /* Loading .... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           fontSize: 18.0,
                           letterSpacing: 0.0,
                         ),

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'user_chat_view_model.dart';
 export 'user_chat_view_model.dart';
 
@@ -74,7 +75,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                     'y7beskyo' /* Chat */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineLarge.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         color: FlutterFlowTheme.of(context).info,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.bold,
@@ -87,7 +88,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                       'xtpfrlcl' /* Connect with friends and group... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           color: FlutterFlowTheme.of(context).info,
                           letterSpacing: 0.0,
                         ),
@@ -138,7 +139,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Plus Jakarta Sans',
+                                        font: GoogleFonts.plusJakartaSans(),
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: InputBorder.none,
@@ -155,7 +156,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       letterSpacing: 0.0,
                                     ),
                                 minLines: 1,
@@ -202,7 +203,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  font: GoogleFonts.outfit(),
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
@@ -246,7 +247,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -286,7 +287,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -326,7 +327,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -366,7 +367,7 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -537,8 +538,8 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                                             context)
                                                         .bodyLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -557,8 +558,8 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
+                                                                font: GoogleFonts
+                                                                    .plusJakartaSans(),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
@@ -591,8 +592,8 @@ class _UserChatViewWidgetState extends State<UserChatViewWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)

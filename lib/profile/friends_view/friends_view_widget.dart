@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'friends_view_model.dart';
 export 'friends_view_model.dart';
 
@@ -114,7 +115,7 @@ class _FriendsViewWidgetState extends State<FriendsViewWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Poppins',
+                                  font: GoogleFonts.poppins(),
                                   color: FlutterFlowTheme.of(context).info,
                                   fontSize: 34.0,
                                   letterSpacing: 0.0,
@@ -293,8 +294,8 @@ class _FriendsViewWidgetState extends State<FriendsViewWidget> {
                                                                     .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
+                                                                  font: GoogleFonts
+                                                                      .outfit(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -310,8 +311,8 @@ class _FriendsViewWidgetState extends State<FriendsViewWidget> {
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
+                                                                  font: GoogleFonts
+                                                                      .plusJakartaSans(),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,

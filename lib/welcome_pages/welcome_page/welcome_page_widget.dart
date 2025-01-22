@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'welcome_page_model.dart';
 export 'welcome_page_model.dart';
 
@@ -73,7 +74,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                 'ehwr8g0l' /* WELCOME PAGE */,
               ),
               style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     color: Colors.white,
                     fontSize: 22.0,
                     letterSpacing: 0.0,
@@ -160,7 +161,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  font: GoogleFonts.outfit(),
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w300,
@@ -174,7 +175,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displayLarge
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  font: GoogleFonts.outfit(),
                                   color: Colors.white,
                                   fontSize: 55.0,
                                   letterSpacing: 0.0,
@@ -188,7 +189,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       color: const Color(0xFFE0E0E0),
                                       letterSpacing: 0.0,
                                     ),
@@ -216,7 +217,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    font: GoogleFonts.plusJakartaSans(),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
@@ -235,7 +236,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       color: const Color(0xFFE0E0E0),
                                       letterSpacing: 0.0,
                                     ),
@@ -247,7 +248,7 @@ class _WelcomePageWidgetState extends State<WelcomePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,

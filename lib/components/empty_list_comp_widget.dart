@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'empty_list_comp_model.dart';
 export 'empty_list_comp_model.dart';
 
@@ -51,7 +52,7 @@ class _EmptyListCompWidgetState extends State<EmptyListCompWidget> {
         child: Text(
           widget.title,
           style: FlutterFlowTheme.of(context).bodyMedium.override(
-                fontFamily: 'Plus Jakarta Sans',
+                font: GoogleFonts.plusJakartaSans(),
                 letterSpacing: 0.0,
               ),
         ),

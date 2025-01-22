@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'delete_dialog_box_model.dart';
 export 'delete_dialog_box_model.dart';
 
@@ -93,7 +94,7 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              fontFamily: 'Outfit',
+                              font: GoogleFonts.outfit(),
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -106,7 +107,7 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    fontFamily: 'Outfit',
+                                    font: GoogleFonts.outfit(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -141,7 +142,7 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                                 .secondaryBackground,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       letterSpacing: 0.0,
                                     ),
                             elevation: 0.0,
@@ -174,7 +175,7 @@ class _DeleteDialogBoxWidgetState extends State<DeleteDialogBoxWidget> {
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    font: GoogleFonts.plusJakartaSans(),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     letterSpacing: 0.0,

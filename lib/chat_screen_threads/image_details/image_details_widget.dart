@@ -7,6 +7,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'image_details_model.dart';
 export 'image_details_model.dart';
 
@@ -240,7 +241,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Plus Jakarta Sans',
+                                            font: GoogleFonts.plusJakartaSans(),
                                             letterSpacing: 0.0,
                                             lineHeight: 1.5,
                                           ),
@@ -260,7 +261,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .labelSmall
                                             .override(
-                                              fontFamily: 'Outfit',
+                                              font: GoogleFonts.outfit(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -280,7 +281,7 @@ class _ImageDetailsWidgetState extends State<ImageDetailsWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),

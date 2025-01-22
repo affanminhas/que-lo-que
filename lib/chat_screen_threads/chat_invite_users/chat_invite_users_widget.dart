@@ -7,6 +7,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'chat_invite_users_model.dart';
 export 'chat_invite_users_model.dart';
@@ -113,7 +114,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineLarge.override(
-                                fontFamily: 'Outfit',
+                                font: GoogleFonts.outfit(),
                                 color: FlutterFlowTheme.of(context).info,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
@@ -127,7 +128,7 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                           '4l8ygd8w' /* Select users from below to sta... */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              font: GoogleFonts.plusJakartaSans(),
                               color: FlutterFlowTheme.of(context).info,
                               letterSpacing: 0.0,
                             ),
@@ -363,8 +364,8 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
+                                                          font: GoogleFonts
+                                                              .plusJakartaSans(),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -380,8 +381,8 @@ class _ChatInviteUsersWidgetState extends State<ChatInviteUsersWidget> {
                                                               .of(context)
                                                           .bodyMedium
                                                           .override(
-                                                            fontFamily:
-                                                                'Plus Jakarta Sans',
+                                                            font: GoogleFonts
+                                                                .plusJakartaSans(),
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondary,

@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'usecreateactivitycongratspage_copy_model.dart';
 export 'usecreateactivitycongratspage_copy_model.dart';
 
@@ -89,7 +90,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                 'cw24bqn7' /* Congratulations! */,
               ),
               style: FlutterFlowTheme.of(context).headlineLarge.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
                     fontWeight: FontWeight.bold,
@@ -101,7 +102,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
               ),
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).bodyLarge.override(
-                    fontFamily: 'Plus Jakarta Sans',
+                    font: GoogleFonts.plusJakartaSans(),
                     color: FlutterFlowTheme.of(context).secondaryText,
                     letterSpacing: 0.0,
                   ),
@@ -131,7 +132,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                         style: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .override(
-                              fontFamily: 'Outfit',
+                              font: GoogleFonts.outfit(),
                               color: FlutterFlowTheme.of(context).primaryText,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
@@ -152,7 +153,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -173,7 +174,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -194,7 +195,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -218,7 +219,7 @@ class _UsecreateactivitycongratspageCopyWidgetState
                   '61p8kpac' /* Redirecting to home page... */,
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Plus Jakarta Sans',
+                      font: GoogleFonts.plusJakartaSans(),
                       color: FlutterFlowTheme.of(context).secondaryText,
                       letterSpacing: 0.0,
                     ),

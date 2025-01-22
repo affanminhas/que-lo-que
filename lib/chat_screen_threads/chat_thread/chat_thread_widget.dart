@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_video_player.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'chat_thread_model.dart';
 export 'chat_thread_model.dart';
 
@@ -151,7 +152,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Plus Jakarta Sans',
+                                            font: GoogleFonts.plusJakartaSans(),
                                             letterSpacing: 0.0,
                                             lineHeight: 1.5,
                                           ),
@@ -171,7 +172,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .override(
-                                            fontFamily: 'Outfit',
+                                            font: GoogleFonts.outfit(),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -190,7 +191,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -321,7 +322,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .labelSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -338,7 +339,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                           lineHeight: 1.5,
                                         ),
@@ -396,7 +397,7 @@ class _ChatThreadWidgetState extends State<ChatThreadWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .override(
-                                      fontFamily: 'Outfit',
+                                      font: GoogleFonts.outfit(),
                                       letterSpacing: 0.0,
                                     ),
                               )),

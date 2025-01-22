@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'business_home_view_model.dart';
 export 'business_home_view_model.dart';
 
@@ -136,7 +137,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                fontFamily: 'Outfit',
+                                                font: GoogleFonts.outfit(),
                                                 color: Colors.white,
                                                 fontSize: 20.0,
                                                 letterSpacing: 0.0,
@@ -148,7 +149,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               color: const Color(0xFFE0E0E0),
                                               letterSpacing: 0.0,
                                             ),
@@ -198,7 +200,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -210,7 +212,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           color: const Color(0xFFE0E0E0),
                                           letterSpacing: 0.0,
                                         ),
@@ -227,7 +229,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           color: Colors.white,
                                           letterSpacing: 0.0,
                                         ),
@@ -239,7 +241,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           color: const Color(0xFFE0E0E0),
                                           letterSpacing: 0.0,
                                         ),
@@ -262,7 +264,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                       'Welcome back, ${columnBusinessOwnerRecord.companyName}',
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Outfit',
+                                font: GoogleFonts.outfit(),
                                 letterSpacing: 0.0,
                               ),
                     ),
@@ -307,7 +309,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -329,7 +332,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -340,7 +343,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
@@ -382,7 +385,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondary,
@@ -404,7 +408,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -415,7 +419,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,
@@ -457,7 +461,8 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
@@ -479,7 +484,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -490,7 +495,7 @@ class _BusinessHomeViewWidgetState extends State<BusinessHomeViewWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Plus Jakarta Sans',
+                                          font: GoogleFonts.plusJakartaSans(),
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           letterSpacing: 0.0,

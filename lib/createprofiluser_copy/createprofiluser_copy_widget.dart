@@ -12,28 +12,29 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'createprofiluser_model.dart';
-export 'createprofiluser_model.dart';
+import 'createprofiluser_copy_model.dart';
+export 'createprofiluser_copy_model.dart';
 
-class CreateprofiluserWidget extends StatefulWidget {
-  const CreateprofiluserWidget({super.key});
+class CreateprofiluserCopyWidget extends StatefulWidget {
+  const CreateprofiluserCopyWidget({super.key});
 
   @override
-  State<CreateprofiluserWidget> createState() => _CreateprofiluserWidgetState();
+  State<CreateprofiluserCopyWidget> createState() =>
+      _CreateprofiluserCopyWidgetState();
 }
 
-class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
-  late CreateprofiluserModel _model;
+class _CreateprofiluserCopyWidgetState
+    extends State<CreateprofiluserCopyWidget> {
+  late CreateprofiluserCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateprofiluserModel());
+    _model = createModel(context, () => CreateprofiluserCopyModel());
 
     _model.userNameFieldTextController ??= TextEditingController();
     _model.userNameFieldFocusNode ??= FocusNode();
@@ -154,7 +155,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                 children: [
                   Text(
                     FFLocalizations.of(context).getText(
-                      '8h2nolk0' /* Create Your Profile */,
+                      'fnwhb6sx' /* Create Your Profile */,
                     ),
                     style: FlutterFlowTheme.of(context).displaySmall.override(
                           font: GoogleFonts.outfit(),
@@ -164,7 +165,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                   ),
                   Text(
                     FFLocalizations.of(context).getText(
-                      '4ipb7d53' /* Please fill in the following i... */,
+                      'rjvz91am' /* Please fill in the following i... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           font: GoogleFonts.plusJakartaSans(),
@@ -196,7 +197,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                             children: [
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  'o2ikywd6' /* Personal Information */,
+                                  '025ms2sh' /* Personal Information */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
@@ -215,7 +216,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'n5f8f5hn' /* Username */,
+                                    '007j7xgd' /* Username */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -281,7 +282,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'hq628u1d' /* First Name */,
+                                    '5uce28x7' /* First Name */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -347,7 +348,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '0geel60a' /* Last Name */,
+                                    'ohc672jo' /* Last Name */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -421,7 +422,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'nb91woy4' /* Select gender */,
+                                  'yjtoehgn' /* Select gender */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -450,7 +451,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'j4831sav' /* Upload Profile Picture */,
+                                      'vnhey5n2' /* Upload Profile Picture */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -577,7 +578,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                               ),
                               Text(
                                 FFLocalizations.of(context).getText(
-                                  '1duz6rgd' /* Upload 2 mandatory photos (fac... */,
+                                  'wipoew4k' /* Upload 2 mandatory photos (fac... */,
                                 ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -747,7 +748,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '7yt3bbmw' /* Select nationality */,
+                                  'ftsdt0jt' /* Select nationality */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -775,10 +776,10 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                     FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'pmkj7vzi' /* Yes */,
+                                    'y2oy4tpx' /* Yes */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'c2ktlemh' /* No */,
+                                    'l274l8po' /* No */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(() =>
@@ -792,7 +793,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '64v0kh7c' /* Mix nationality */,
+                                  'vu8bnzi4' /* Mix nationality */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -818,7 +819,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'uryql39u' /* Enter your birthday */,
+                                    'j1216xf1' /* Enter your birthday */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -848,7 +849,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              'hgec1hvj' /* Day */,
+                                              'u44gsyus' /* Day */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -934,7 +935,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         decoration: InputDecoration(
                                           labelText: FFLocalizations.of(context)
                                               .getText(
-                                            'mvs5wy1f' /* Month */,
+                                            'wzhc4nkx' /* Month */,
                                           ),
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
@@ -1022,7 +1023,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '3vw9ts2p' /* Year */,
+                                              'dt23wfwl' /* Year */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -1114,7 +1115,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '3tibldli' /* Select height */,
+                                  'xnxj7zoz' /* Select height */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1152,7 +1153,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '8sk3z314' /* Select weight */,
+                                  'br9234ab' /* Select weight */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1182,7 +1183,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '159d1vdi' /* Ethnicity */,
+                                    '0xeev0ll' /* Ethnicity */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1256,7 +1257,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ehaizci4' /* Select eye color */,
+                                  'ks33i5ar' /* Select eye color */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1294,7 +1295,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'hiyzyqys' /* Select hair color */,
+                                  '4x42sx77' /* Select hair color */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1332,7 +1333,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'h4q6heuy' /* Select hair style */,
+                                  'dsc9bpyy' /* Select hair style */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1360,31 +1361,31 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'hfmfgedf' /* Mercury */,
+                                    'zepymcs0' /* Mercury */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '4og0c44t' /* Venus */,
+                                    'nroj01cp' /* Venus */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '4jysbwhr' /* Earth */,
+                                    'agswijxm' /* Earth */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'exjnnby4' /* Mars */,
+                                    'pmpichfe' /* Mars */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '0k54z3zu' /* Jupiter */,
+                                    'q9bpqomw' /* Jupiter */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'vy9e6eks' /* Saturn */,
+                                    'zs8sfs01' /* Saturn */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'ee8azvrz' /* Uranus */,
+                                    'u0pjs5hg' /* Uranus */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'o2hto838' /* Neptune */,
+                                    '8deuwheu' /* Neptune */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'jbco27cm' /* Moon */,
+                                    '3vcjfbz7' /* Moon */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -1398,7 +1399,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '7a72w2uv' /* Select planet */,
+                                  'o95qbidu' /* Select planet */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1436,7 +1437,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                     },
                                     defaultText:
                                         FFLocalizations.of(context).getText(
-                                      'd2d5odmd' /* Select Country */,
+                                      'ypc7okl1' /* Select Country */,
                                     ),
                                     icon: Icon(
                                       Icons.place,
@@ -1470,7 +1471,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'f462ca85' /* Address (Optional) */,
+                                    'h0uz30h8' /* Address (Optional) */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1544,7 +1545,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'sxutkay9' /* Select language */,
+                                  'tfyi15rg' /* Select language */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -1582,409 +1583,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'cnmd7ll5' /* Select religion */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.glassesDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    '4n6u34xn' /* Yes */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '1nhsvnr0' /* No */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.glassesDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'ti5zs6ya' /* Glasses */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.beardDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    'ie1h64jm' /* Yes */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'dv5hqthk' /* No */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.beardDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'jcd60mvf' /* Beard */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.mustacheDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    'up6jx4ak' /* Yes */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '1ulyz8hs' /* No */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.mustacheDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'qn118qlx' /* Mustache */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.lipDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    'jtkqu1jy' /* Small */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'tzdiwdbp' /* Medium */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '5mg61j7e' /* Large */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'brri9909' /* Enhanced */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.lipDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  '18fy2qp2' /* Lip thickness */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.bodyTypeDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    'qqqmw1c9' /* Natural */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '37vb2m1e' /* Enhanced */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.bodyTypeDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'xan0jj1t' /* Body Type */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.disabilityDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: [
-                                  FFLocalizations.of(context).getText(
-                                    '895p9lbx' /* Wheelchair */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'khd6ygd2' /* Deaf */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'p4adzc9f' /* Mute */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'd8iwxxij' /* Blind */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    'gxrxzk0c' /* Other */,
-                                  ),
-                                  FFLocalizations.of(context).getText(
-                                    '6pdzztu7' /* None */,
-                                  )
-                                ],
-                                onChanged: (val) => safeSetState(
-                                    () => _model.disabilityDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  '7yed775a' /* Disability */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              FlutterFlowDropDown<String>(
-                                multiSelectController:
-                                    _model.clothingDropDownValueController ??=
-                                        FormListFieldController<String>(null),
-                                options: functions.getClothingStyles(),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'kjjw8tcu' /* Select clothing style */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: true,
-                                onMultiSelectChanged: (val) => safeSetState(
-                                    () => _model.clothingDropDownValue = val),
-                              ),
-                              FlutterFlowDropDown<String>(
-                                multiSelectController:
-                                    _model.personalDropDownValueController ??=
-                                        FormListFieldController<String>(null),
-                                options: functions.getPersonalValues(),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  '3i6hrt9l' /* Select personal values */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: true,
-                                onMultiSelectChanged: (val) => safeSetState(
-                                    () => _model.personalDropDownValue = val),
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.activityDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: functions.getActivitiesPromotions(),
-                                onChanged: (val) => safeSetState(
-                                    () => _model.activityDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'c76n881k' /* Activities and promotion */,
+                                  'hewrfkch' /* Select religion */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2016,7 +1615,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'r8mw835n' /* Social Media Link 1 (Optional) */,
+                                    '5o52uooz' /* Social Media Link 1 (Optional) */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -2085,7 +1684,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '10h53h4v' /* Social Media Link 2 (Optional) */,
+                                    '1oy958yb' /* Social Media Link 2 (Optional) */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -2153,7 +1752,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'eftp2o8u' /* Description (Optional) */,
+                                    'z9vvj4gc' /* Description (Optional) */,
                                   ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -2219,7 +1818,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'i7h5azar' /* Private Profile */,
+                                      'on6v800n' /* Private Profile */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -2255,7 +1854,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'ypymill5' /* Hide All Friends */,
+                                      'rwccvcjo' /* Hide All Friends */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -2290,40 +1889,40 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    '5wxy44bt' /* Aries */,
+                                    'q55jarzv' /* Aries */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '7meqqa8d' /* Taurus */,
+                                    '8c83js0u' /* Taurus */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'la05fwhc' /* Gemini */,
+                                    '4ijgve9z' /* Gemini */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'l18cdp76' /* Cancer */,
+                                    '4qkp5cz2' /* Cancer */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '1x6vscla' /* Leo */,
+                                    '3hzr39dk' /* Leo */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'ohs4uvbk' /* Virgo */,
+                                    'pz2k83qa' /* Virgo */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'feqrnepu' /* Libra */,
+                                    'qtkb0k5u' /* Libra */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'nuwwh4ba' /* Scorpio */,
+                                    '6rmu3a38' /* Scorpio */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '0mjvexwg' /* Sagittarius */,
+                                    'xd9xfqaa' /* Sagittarius */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'e6r4q6n8' /* Capricorn */,
+                                    'dswryzf9' /* Capricorn */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'n1bzir90' /* Aquarius */,
+                                    'xjzfmybs' /* Aquarius */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '45wa50r0' /* Pisces */,
+                                    '10oh6p2z' /* Pisces */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -2337,7 +1936,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '4yicejuz' /* Select sign */,
+                                  'vjl6i9n3' /* Select sign */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2365,22 +1964,22 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'h0qruje8' /* Single */,
+                                    'y9oifc65' /* Single */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '4y0wuhst' /* In a relationship */,
+                                    '5h1tepeb' /* In a relationship */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '9w76kclu' /* Married */,
+                                    'jdsmcww9' /* Married */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'j0cn7udk' /* Divorced */,
+                                    'b2bwfhw3' /* Divorced */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    't13lj6n1' /* Widowed */,
+                                    'czrif9a0' /* Widowed */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    '9ygmh515' /* It's Complicated */,
+                                    'te2oxv6p' /* It's Complicated */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -2394,7 +1993,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '88wtcthb' /* Select relation */,
+                                  '0xan7byx' /* Select relation */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2422,16 +2021,16 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'unw366bt' /* Has Children  */,
+                                    '8l3gfwre' /* Has Children  */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    's8zxxjjz' /* No Children */,
+                                    'nwexl2ln' /* No Children */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'v3qeyjhk' /* Wants Children */,
+                                    'tuzyr5hq' /* Wants Children */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'udw5cc5a' /* Prefer not to say */,
+                                    'be4qsph2' /* Prefer not to say */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -2445,7 +2044,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ep43pdjx' /* Select status */,
+                                  '9uxbmkhi' /* Select status */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2474,7 +2073,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'jj6uhzsa' /* Driver's License */,
+                                      'on3e484a' /* Driver's License */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
@@ -2509,19 +2108,19 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'yahgzg38' /* Worker */,
+                                    'zrw905aj' /* Worker */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'j9w5yd1t' /* Student */,
+                                    'yeinarzf' /* Student */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'xjoqzq0o' /* Retired */,
+                                    'ohtuhci6' /* Retired */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'fnweu033' /* Unemployed */,
+                                    'ab5h6hfn' /* Unemployed */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'c5jio1ya' /* Other */,
+                                    'jb34jrpm' /* Other */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -2535,7 +2134,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  '4adsll4n' /* Select occupation */,
+                                  'n2gday3v' /* Select occupation */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2563,10 +2162,10 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                         FormFieldController<String>(null),
                                 options: [
                                   FFLocalizations.of(context).getText(
-                                    'rrng7yso' /* Yes */,
+                                    'rok6kg37' /* Yes */,
                                   ),
                                   FFLocalizations.of(context).getText(
-                                    'fm90wmh6' /* No */,
+                                    '8viuheuu' /* No */,
                                   )
                                 ],
                                 onChanged: (val) => safeSetState(
@@ -2580,107 +2179,7 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                                       letterSpacing: 0.0,
                                     ),
                                 hintText: FFLocalizations.of(context).getText(
-                                  'ik60avf3' /* Select tattoo */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'n6v13vz4' /* Section to promote songs and m... */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.musicTypeDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: functions.getMusicTypes(),
-                                onChanged: (val) => safeSetState(
-                                    () => _model.musicTypeDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'tpmtn2d0' /* Select music type */,
-                                ),
-                                icon: Icon(
-                                  Icons.keyboard_arrow_down_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                elevation: 2.0,
-                                borderColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                                borderWidth: 0.0,
-                                borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                hidesUnderline: true,
-                                isOverButton: false,
-                                isSearchable: false,
-                                isMultiSelect: false,
-                              ),
-                              Text(
-                                FFLocalizations.of(context).getText(
-                                  'agx3es4h' /* Section to promote dance style... */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyLarge
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              FlutterFlowDropDown<String>(
-                                controller:
-                                    _model.danceTypeDropDownValueController ??=
-                                        FormFieldController<String>(null),
-                                options: functions.getDanceTypes(),
-                                onChanged: (val) => safeSetState(
-                                    () => _model.danceTypeDropDownValue = val),
-                                width: double.infinity,
-                                height: 50.0,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      font: GoogleFonts.plusJakartaSans(),
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: FFLocalizations.of(context).getText(
-                                  'lisoatc9' /* Select dance type */,
+                                  'lgd6f4un' /* Select tattoo */,
                                 ),
                                 icon: Icon(
                                   Icons.keyboard_arrow_down_rounded,
@@ -2708,455 +2207,328 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Theme(
-                        data: ThemeData(
-                          checkboxTheme: CheckboxThemeData(
-                            visualDensity: VisualDensity.compact,
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4.0),
-                            ),
-                          ),
-                          unselectedWidgetColor: Colors.white,
-                        ),
-                        child: Checkbox(
-                          value: _model.termOfUseCheckboxValue ??= false,
-                          onChanged: (newValue) async {
-                            safeSetState(() =>
-                                _model.termOfUseCheckboxValue = newValue!);
-                          },
-                          side: const BorderSide(
-                            width: 2,
-                            color: Colors.white,
-                          ),
-                          activeColor: FlutterFlowTheme.of(context).primary,
-                          checkColor: FlutterFlowTheme.of(context).info,
-                        ),
-                      ),
-                      RichText(
-                        textScaler: MediaQuery.of(context).textScaler,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: FFLocalizations.of(context).getText(
-                                'hi8b6l1w' /* Agree */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.plusJakartaSans(),
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                            TextSpan(
-                              text: FFLocalizations.of(context).getText(
-                                '21in6rcb' /*  terms of use */,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.plusJakartaSans(),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.underline,
-                                  ),
-                              mouseCursor: SystemMouseCursors.click,
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () async {
-                                  context.pushNamed('termsOfUse');
-                                },
-                            )
-                          ],
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.plusJakartaSans(),
-                                    letterSpacing: 0.0,
-                                  ),
-                        ),
-                      ),
-                    ],
-                  ),
                   FFButtonWidget(
-                    onPressed: !_model.termOfUseCheckboxValue!
-                        ? null
-                        : () async {
-                            if (_model.formKey.currentState == null ||
-                                !_model.formKey.currentState!.validate()) {
-                              return;
-                            }
-                            if (_model.genderDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'gender field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.eyeDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'eye field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.hairDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'hair field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.hairStyleDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'hair style field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.planetDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'planet field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.languageDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'language field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.religionDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'religion field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.signDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'sign field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.relationDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'relation field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.childrenDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'children field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.occupationDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'occupation field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            if (_model.tattooDropDownValue == null) {
-                              ScaffoldMessenger.of(context).clearSnackBars();
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: Text(
-                                    'tattoo field is required',
-                                    style: TextStyle(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                  duration: const Duration(milliseconds: 4000),
-                                  backgroundColor:
-                                      FlutterFlowTheme.of(context).secondary,
-                                ),
-                              );
-                              return;
-                            }
-                            _model.mandatoryImages =
-                                await actions.uploadMediaListToCustomFolder(
-                              _model.mandatoryPhoto.toList(),
-                              '/individualUser/',
-                            );
-
-                            var individualUserRecordReference =
-                                IndividualUserRecord.collection.doc();
-                            await individualUserRecordReference.set({
-                              ...createIndividualUserRecordData(
-                                username:
-                                    _model.userNameFieldTextController.text,
-                                firstName:
-                                    _model.firstNameFieldTextController.text,
-                                lastName:
-                                    _model.lastNameFieldTextController.text,
-                                gender: _model.genderDropDownValue,
-                                profilePhoto: _model.uploadedFileUrl1,
-                                nationality: _model.nationalityDropDownValue,
-                                height: _model.heightDropDownValue,
-                                weight: _model.weightDropDownValue,
-                                ethinicity:
-                                    _model.ethnicityFieldTextController.text,
-                                eyeColor: _model.eyeDropDownValue,
-                                hairColor: _model.hairDropDownValue,
-                                hairStyle: _model.hairStyleDropDownValue,
-                                planet: _model.planetDropDownValue,
-                                location: _model.placePickerValue.country,
-                                address: _model.addressFieldTextController.text,
-                                language: _model.languageDropDownValue,
-                                religion: _model.religionDropDownValue,
-                                description:
-                                    _model.addressFieldTextController.text,
-                                privateProfile: _model.switchValue1,
-                                hideFriends: _model.switchValue2,
-                                relationship: _model.signDropDownValue,
-                                status: _model.childrenDropDownValue,
-                                drivingLicense: _model.switchValue3,
-                                occupation: _model.occupationDropDownValue,
-                                tattoo: _model.tattooDropDownValue,
-                                birthday:
-                                    '${_model.dateFieldTextController.text}/${_model.monthFieldTextController.text}/${_model.yearFieldTextController.text}',
-                                userRef: currentUserReference,
-                                astrologicalSign: _model.signDropDownValue,
-                                createdAt: getCurrentTimestamp,
-                                mixedNationality:
-                                    _model.mixNationalityDropDownValue,
-                                glasses: _model.glassesDropDownValue,
-                                beard: _model.beardDropDownValue,
-                                mustache: _model.mustacheDropDownValue,
-                                lipThickness: _model.lipDropDownValue,
-                                bodyType: _model.bodyTypeDropDownValue,
-                                disability: _model.disabilityDropDownValue,
-                                activity: _model.activityDropDownValue,
-                                musicType: _model.musicTypeDropDownValue,
-                                danceType: _model.danceTypeDropDownValue,
+                    onPressed: () async {
+                      if (_model.formKey.currentState == null ||
+                          !_model.formKey.currentState!.validate()) {
+                        return;
+                      }
+                      if (_model.genderDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'gender field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
-                              ...mapToFirestore(
-                                {
-                                  'faceBodyMedia': _model.mandatoryImages,
-                                  'socialLinks': functions.newCustomFunction(
-                                      _model.socialMediaLinkField1TextController
-                                          .text,
-                                      _model.socialMediaLinkField2TextController
-                                          .text),
-                                  'clothingStyle': _model.clothingDropDownValue,
-                                  'personalValues':
-                                      _model.personalDropDownValue,
-                                },
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.eyeDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'eye field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
-                            });
-                            _model.individualUser =
-                                IndividualUserRecord.getDocumentFromData({
-                              ...createIndividualUserRecordData(
-                                username:
-                                    _model.userNameFieldTextController.text,
-                                firstName:
-                                    _model.firstNameFieldTextController.text,
-                                lastName:
-                                    _model.lastNameFieldTextController.text,
-                                gender: _model.genderDropDownValue,
-                                profilePhoto: _model.uploadedFileUrl1,
-                                nationality: _model.nationalityDropDownValue,
-                                height: _model.heightDropDownValue,
-                                weight: _model.weightDropDownValue,
-                                ethinicity:
-                                    _model.ethnicityFieldTextController.text,
-                                eyeColor: _model.eyeDropDownValue,
-                                hairColor: _model.hairDropDownValue,
-                                hairStyle: _model.hairStyleDropDownValue,
-                                planet: _model.planetDropDownValue,
-                                location: _model.placePickerValue.country,
-                                address: _model.addressFieldTextController.text,
-                                language: _model.languageDropDownValue,
-                                religion: _model.religionDropDownValue,
-                                description:
-                                    _model.addressFieldTextController.text,
-                                privateProfile: _model.switchValue1,
-                                hideFriends: _model.switchValue2,
-                                relationship: _model.signDropDownValue,
-                                status: _model.childrenDropDownValue,
-                                drivingLicense: _model.switchValue3,
-                                occupation: _model.occupationDropDownValue,
-                                tattoo: _model.tattooDropDownValue,
-                                birthday:
-                                    '${_model.dateFieldTextController.text}/${_model.monthFieldTextController.text}/${_model.yearFieldTextController.text}',
-                                userRef: currentUserReference,
-                                astrologicalSign: _model.signDropDownValue,
-                                createdAt: getCurrentTimestamp,
-                                mixedNationality:
-                                    _model.mixNationalityDropDownValue,
-                                glasses: _model.glassesDropDownValue,
-                                beard: _model.beardDropDownValue,
-                                mustache: _model.mustacheDropDownValue,
-                                lipThickness: _model.lipDropDownValue,
-                                bodyType: _model.bodyTypeDropDownValue,
-                                disability: _model.disabilityDropDownValue,
-                                activity: _model.activityDropDownValue,
-                                musicType: _model.musicTypeDropDownValue,
-                                danceType: _model.danceTypeDropDownValue,
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.hairDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'hair field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
-                              ...mapToFirestore(
-                                {
-                                  'faceBodyMedia': _model.mandatoryImages,
-                                  'socialLinks': functions.newCustomFunction(
-                                      _model.socialMediaLinkField1TextController
-                                          .text,
-                                      _model.socialMediaLinkField2TextController
-                                          .text),
-                                  'clothingStyle': _model.clothingDropDownValue,
-                                  'personalValues':
-                                      _model.personalDropDownValue,
-                                },
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.hairStyleDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'hair style field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
                               ),
-                            }, individualUserRecordReference);
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.planetDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'planet field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.languageDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'language field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.religionDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'religion field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.signDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'sign field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.relationDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'relation field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.childrenDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'children field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.occupationDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'occupation field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      if (_model.tattooDropDownValue == null) {
+                        ScaffoldMessenger.of(context).clearSnackBars();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'tattoo field is required',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
+                        return;
+                      }
+                      _model.mandatoryImages =
+                          await actions.uploadMediaListToCustomFolder(
+                        _model.mandatoryPhoto.toList(),
+                        '/individualUser/',
+                      );
 
-                            await currentUserReference!
-                                .update(createUsersRecordData(
-                              individualUserRef:
-                                  _model.individualUser?.reference,
-                              role: UserRole.IndividualUser.name,
-                              displayName:
-                                  '${_model.firstNameFieldTextController.text} ${_model.lastNameFieldTextController.text}',
-                              photoUrl: _model.uploadedFileUrl1,
-                            ));
-
-                            context.pushNamed('userDashboard');
-
-                            safeSetState(() {});
+                      var individualUserRecordReference =
+                          IndividualUserRecord.collection.doc();
+                      await individualUserRecordReference.set({
+                        ...createIndividualUserRecordData(
+                          username: _model.userNameFieldTextController.text,
+                          firstName: _model.firstNameFieldTextController.text,
+                          lastName: _model.lastNameFieldTextController.text,
+                          gender: _model.genderDropDownValue,
+                          profilePhoto: _model.uploadedFileUrl1,
+                          nationality: _model.nationalityDropDownValue,
+                          height: _model.heightDropDownValue,
+                          weight: _model.weightDropDownValue,
+                          ethinicity: _model.ethnicityFieldTextController.text,
+                          eyeColor: _model.eyeDropDownValue,
+                          hairColor: _model.hairDropDownValue,
+                          hairStyle: _model.hairStyleDropDownValue,
+                          planet: _model.planetDropDownValue,
+                          location: _model.placePickerValue.country,
+                          address: _model.addressFieldTextController.text,
+                          language: _model.languageDropDownValue,
+                          religion: _model.religionDropDownValue,
+                          description: _model.addressFieldTextController.text,
+                          privateProfile: _model.switchValue1,
+                          hideFriends: _model.switchValue2,
+                          relationship: _model.signDropDownValue,
+                          status: _model.childrenDropDownValue,
+                          drivingLicense: _model.switchValue3,
+                          occupation: _model.occupationDropDownValue,
+                          tattoo: _model.tattooDropDownValue,
+                          birthday:
+                              '${_model.dateFieldTextController.text}/${_model.monthFieldTextController.text}/${_model.yearFieldTextController.text}',
+                          userRef: currentUserReference,
+                          astrologicalSign: _model.signDropDownValue,
+                          createdAt: getCurrentTimestamp,
+                          mixedNationality: _model.mixNationalityDropDownValue,
+                        ),
+                        ...mapToFirestore(
+                          {
+                            'faceBodyMedia': _model.mandatoryImages,
+                            'socialLinks': functions.newCustomFunction(
+                                _model.socialMediaLinkField1TextController.text,
+                                _model
+                                    .socialMediaLinkField2TextController.text),
                           },
+                        ),
+                      });
+                      _model.individualUser =
+                          IndividualUserRecord.getDocumentFromData({
+                        ...createIndividualUserRecordData(
+                          username: _model.userNameFieldTextController.text,
+                          firstName: _model.firstNameFieldTextController.text,
+                          lastName: _model.lastNameFieldTextController.text,
+                          gender: _model.genderDropDownValue,
+                          profilePhoto: _model.uploadedFileUrl1,
+                          nationality: _model.nationalityDropDownValue,
+                          height: _model.heightDropDownValue,
+                          weight: _model.weightDropDownValue,
+                          ethinicity: _model.ethnicityFieldTextController.text,
+                          eyeColor: _model.eyeDropDownValue,
+                          hairColor: _model.hairDropDownValue,
+                          hairStyle: _model.hairStyleDropDownValue,
+                          planet: _model.planetDropDownValue,
+                          location: _model.placePickerValue.country,
+                          address: _model.addressFieldTextController.text,
+                          language: _model.languageDropDownValue,
+                          religion: _model.religionDropDownValue,
+                          description: _model.addressFieldTextController.text,
+                          privateProfile: _model.switchValue1,
+                          hideFriends: _model.switchValue2,
+                          relationship: _model.signDropDownValue,
+                          status: _model.childrenDropDownValue,
+                          drivingLicense: _model.switchValue3,
+                          occupation: _model.occupationDropDownValue,
+                          tattoo: _model.tattooDropDownValue,
+                          birthday:
+                              '${_model.dateFieldTextController.text}/${_model.monthFieldTextController.text}/${_model.yearFieldTextController.text}',
+                          userRef: currentUserReference,
+                          astrologicalSign: _model.signDropDownValue,
+                          createdAt: getCurrentTimestamp,
+                          mixedNationality: _model.mixNationalityDropDownValue,
+                        ),
+                        ...mapToFirestore(
+                          {
+                            'faceBodyMedia': _model.mandatoryImages,
+                            'socialLinks': functions.newCustomFunction(
+                                _model.socialMediaLinkField1TextController.text,
+                                _model
+                                    .socialMediaLinkField2TextController.text),
+                          },
+                        ),
+                      }, individualUserRecordReference);
+
+                      await currentUserReference!.update(createUsersRecordData(
+                        individualUserRef: _model.individualUser?.reference,
+                        role: UserRole.IndividualUser.name,
+                        displayName:
+                            '${_model.firstNameFieldTextController.text} ${_model.lastNameFieldTextController.text}',
+                        photoUrl: _model.uploadedFileUrl1,
+                      ));
+
+                      context.pushNamed('userDashboard');
+
+                      safeSetState(() {});
+                    },
                     text: FFLocalizations.of(context).getText(
-                      'sdaqmyxm' /* Create Profile */,
+                      '7z0wfsbj' /* Create Profile */,
                     ),
                     options: FFButtonOptions(
                       width: MediaQuery.sizeOf(context).width * 1.0,
@@ -3174,7 +2546,6 @@ class _CreateprofiluserWidgetState extends State<CreateprofiluserWidget> {
                               ),
                       elevation: 3.0,
                       borderRadius: BorderRadius.circular(28.0),
-                      disabledColor: FlutterFlowTheme.of(context).secondaryText,
                     ),
                   ),
                 ].divide(const SizedBox(height: 24.0)),

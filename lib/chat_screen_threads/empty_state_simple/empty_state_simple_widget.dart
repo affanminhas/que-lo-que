@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'empty_state_simple_model.dart';
 export 'empty_state_simple_model.dart';
 
@@ -60,7 +61,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
               widget.title,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     color: FlutterFlowTheme.of(context).primaryText,
                     letterSpacing: 0.0,
                   ),
@@ -72,7 +73,7 @@ class _EmptyStateSimpleWidgetState extends State<EmptyStateSimpleWidget> {
               widget.body,
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).labelMedium.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     letterSpacing: 0.0,
                   ),
             ),

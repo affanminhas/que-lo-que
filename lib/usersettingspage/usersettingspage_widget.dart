@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'usersettingspage_model.dart';
 export 'usersettingspage_model.dart';
 
@@ -104,7 +105,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   fontSize: 34.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w600,
@@ -182,13 +183,13 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           children: [
                                             Text(
                                               '${usersettingspageIndividualUserRecord.firstName} ${usersettingspageIndividualUserRecord.lastName}',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .headlineSmall
+                                                  .override(
+                                                    font: GoogleFonts.outfit(),
+                                                    letterSpacing: 0.0,
+                                                  ),
                                             ),
                                             Text(
                                               currentUserEmail,
@@ -196,8 +197,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
+                                                        font: GoogleFonts
+                                                            .plusJakartaSans(),
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -231,7 +232,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Plus Jakarta Sans',
+                                            font: GoogleFonts.plusJakartaSans(),
                                             color: Colors.black,
                                             letterSpacing: 0.0,
                                           ),
@@ -270,7 +271,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -294,7 +295,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
+                                                font: GoogleFonts
+                                                    .plusJakartaSans(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -338,7 +340,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -362,7 +364,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
+                                                font: GoogleFonts
+                                                    .plusJakartaSans(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -395,7 +398,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
+                                                font: GoogleFonts
+                                                    .plusJakartaSans(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -439,7 +443,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -463,7 +467,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
+                                                font: GoogleFonts
+                                                    .plusJakartaSans(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -488,7 +493,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -512,7 +518,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -536,7 +543,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: 'Plus Jakarta Sans',
+                                              font:
+                                                  GoogleFonts.plusJakartaSans(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -579,7 +587,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          fontFamily: 'Outfit',
+                                          font: GoogleFonts.outfit(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -603,7 +611,8 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: 'Plus Jakarta Sans',
+                                                font: GoogleFonts
+                                                    .plusJakartaSans(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -643,7 +652,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -699,7 +708,7 @@ class _UsersettingspageWidgetState extends State<UsersettingspageWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       color: FlutterFlowTheme.of(context).error,
                                       letterSpacing: 0.0,
                                     ),

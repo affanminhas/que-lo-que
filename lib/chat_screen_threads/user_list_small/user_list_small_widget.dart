@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'user_list_small_model.dart';
 export 'user_list_small_model.dart';
 
@@ -106,7 +107,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                           'Ghost User',
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              font: GoogleFonts.plusJakartaSans(),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
                             ),
@@ -121,7 +122,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Plus Jakarta Sans',
+                                    font: GoogleFonts.plusJakartaSans(),
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
@@ -153,7 +154,7 @@ class _UserListSmallWidgetState extends State<UserListSmallWidget> {
                         ),
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              font: GoogleFonts.plusJakartaSans(),
                               letterSpacing: 0.0,
                             ),
                       ),

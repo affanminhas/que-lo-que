@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'chat_details_overlay_model.dart';
 export 'chat_details_overlay_model.dart';
 
@@ -102,7 +103,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         )
                       ],
                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Outfit',
+                            font: GoogleFonts.outfit(),
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -115,7 +116,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       'eow63y2z' /* In this chat */,
                     ),
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                          fontFamily: 'Outfit',
+                          font: GoogleFonts.outfit(),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -220,7 +221,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Plus Jakarta Sans',
+                                        font: GoogleFonts.plusJakartaSans(),
                                         color:
                                             FlutterFlowTheme.of(context).info,
                                         letterSpacing: 0.0,
@@ -273,7 +274,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       textStyle:
                           FlutterFlowTheme.of(context).titleLarge.override(
-                                fontFamily: 'Outfit',
+                                font: GoogleFonts.outfit(),
                                 fontSize: 18.0,
                                 letterSpacing: 0.0,
                               ),

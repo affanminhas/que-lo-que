@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'contact_support_model.dart';
 export 'contact_support_model.dart';
 
@@ -83,7 +84,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                         'kt5w9caf' /* Contact Support */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
+                            font: GoogleFonts.poppins(),
                             fontSize: 34.0,
                             letterSpacing: 0.0,
                             fontWeight: FontWeight.w600,
@@ -97,7 +98,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
+                        font: GoogleFonts.plusJakartaSans(),
                         color: FlutterFlowTheme.of(context).primaryBackground,
                         fontSize: 13.0,
                         letterSpacing: 0.0,
@@ -112,7 +113,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                       'etb1kmmu' /* Email Support: */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -133,7 +134,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                       'ct2pxnn2' /*  quitappinfo@gmail.com  */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                           fontStyle: FontStyle.italic,
@@ -147,7 +148,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                       'y0l2q2n6' /* Call Support: */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           fontSize: 16.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -167,7 +168,7 @@ class _ContactSupportWidgetState extends State<ContactSupportWidget> {
                       'qgs7g9wd' /* +1 (514) 619-2522 */,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(),
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                           fontStyle: FontStyle.italic,

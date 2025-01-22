@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'delete_dialog_model.dart';
 export 'delete_dialog_model.dart';
 
@@ -110,7 +111,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                     ),
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).labelMedium.override(
-                          fontFamily: 'Outfit',
+                          font: GoogleFonts.outfit(),
                           letterSpacing: 0.0,
                         ),
                   ),
@@ -167,7 +168,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Plus Jakarta Sans',
+                                        font: GoogleFonts.plusJakartaSans(),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -236,7 +237,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Plus Jakarta Sans',
+                                        font: GoogleFonts.plusJakartaSans(),
                                         color:
                                             FlutterFlowTheme.of(context).error,
                                         letterSpacing: 0.0,
@@ -296,7 +297,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
-                                            fontFamily: 'Outfit',
+                                            font: GoogleFonts.outfit(),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -311,7 +312,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Plus Jakarta Sans',
+                                            font: GoogleFonts.plusJakartaSans(),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -329,7 +330,7 @@ class _DeleteDialogWidgetState extends State<DeleteDialogWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       color: FlutterFlowTheme.of(context).error,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,

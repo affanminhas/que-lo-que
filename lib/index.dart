@@ -99,3 +99,6 @@ export '/profile/contact_support/contact_support_widget.dart'
     show ContactSupportWidget;
 export '/profile/edit_user_profile/edit_user_profile_widget.dart'
     show EditUserProfileWidget;
+export '/terms_of_use/terms_of_use_widget.dart' show TermsOfUseWidget;
+export '/createprofiluser_copy/createprofiluser_copy_widget.dart'
+    show CreateprofiluserCopyWidget;

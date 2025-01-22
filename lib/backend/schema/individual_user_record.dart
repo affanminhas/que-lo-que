@@ -196,6 +196,71 @@ class IndividualUserRecord extends FirestoreRecord {
   List<DocumentReference> get blockedUsers => _blockedUsers ?? const [];
   bool hasBlockedUsers() => _blockedUsers != null;
 
+  // "mixedNationality" field.
+  String? _mixedNationality;
+  String get mixedNationality => _mixedNationality ?? '';
+  bool hasMixedNationality() => _mixedNationality != null;
+
+  // "glasses" field.
+  String? _glasses;
+  String get glasses => _glasses ?? '';
+  bool hasGlasses() => _glasses != null;
+
+  // "beard" field.
+  String? _beard;
+  String get beard => _beard ?? '';
+  bool hasBeard() => _beard != null;
+
+  // "mustache" field.
+  String? _mustache;
+  String get mustache => _mustache ?? '';
+  bool hasMustache() => _mustache != null;
+
+  // "lipThickness" field.
+  String? _lipThickness;
+  String get lipThickness => _lipThickness ?? '';
+  bool hasLipThickness() => _lipThickness != null;
+
+  // "bodyType" field.
+  String? _bodyType;
+  String get bodyType => _bodyType ?? '';
+  bool hasBodyType() => _bodyType != null;
+
+  // "disability" field.
+  String? _disability;
+  String get disability => _disability ?? '';
+  bool hasDisability() => _disability != null;
+
+  // "clothingStyle" field.
+  List<String>? _clothingStyle;
+  List<String> get clothingStyle => _clothingStyle ?? const [];
+  bool hasClothingStyle() => _clothingStyle != null;
+
+  // "personalValues" field.
+  List<String>? _personalValues;
+  List<String> get personalValues => _personalValues ?? const [];
+  bool hasPersonalValues() => _personalValues != null;
+
+  // "activity" field.
+  String? _activity;
+  String get activity => _activity ?? '';
+  bool hasActivity() => _activity != null;
+
+  // "musicType" field.
+  String? _musicType;
+  String get musicType => _musicType ?? '';
+  bool hasMusicType() => _musicType != null;
+
+  // "danceType" field.
+  String? _danceType;
+  String get danceType => _danceType ?? '';
+  bool hasDanceType() => _danceType != null;
+
+  // "agreeTermsOfUse" field.
+  bool? _agreeTermsOfUse;
+  bool get agreeTermsOfUse => _agreeTermsOfUse ?? false;
+  bool hasAgreeTermsOfUse() => _agreeTermsOfUse != null;
+
   void _initializeFields() {
     _username = snapshotData['username'] as String?;
     _firstName = snapshotData['firstName'] as String?;
@@ -233,6 +298,19 @@ class IndividualUserRecord extends FirestoreRecord {
     _friendRequests = getDataList(snapshotData['friendRequests']);
     _createdAt = snapshotData['createdAt'] as DateTime?;
     _blockedUsers = getDataList(snapshotData['blockedUsers']);
+    _mixedNationality = snapshotData['mixedNationality'] as String?;
+    _glasses = snapshotData['glasses'] as String?;
+    _beard = snapshotData['beard'] as String?;
+    _mustache = snapshotData['mustache'] as String?;
+    _lipThickness = snapshotData['lipThickness'] as String?;
+    _bodyType = snapshotData['bodyType'] as String?;
+    _disability = snapshotData['disability'] as String?;
+    _clothingStyle = getDataList(snapshotData['clothingStyle']);
+    _personalValues = getDataList(snapshotData['personalValues']);
+    _activity = snapshotData['activity'] as String?;
+    _musicType = snapshotData['musicType'] as String?;
+    _danceType = snapshotData['danceType'] as String?;
+    _agreeTermsOfUse = snapshotData['agreeTermsOfUse'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -299,6 +377,17 @@ Map<String, dynamic> createIndividualUserRecordData({
   DocumentReference? userRef,
   String? astrologicalSign,
   DateTime? createdAt,
+  String? mixedNationality,
+  String? glasses,
+  String? beard,
+  String? mustache,
+  String? lipThickness,
+  String? bodyType,
+  String? disability,
+  String? activity,
+  String? musicType,
+  String? danceType,
+  bool? agreeTermsOfUse,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -331,6 +420,17 @@ Map<String, dynamic> createIndividualUserRecordData({
       'userRef': userRef,
       'astrologicalSign': astrologicalSign,
       'createdAt': createdAt,
+      'mixedNationality': mixedNationality,
+      'glasses': glasses,
+      'beard': beard,
+      'mustache': mustache,
+      'lipThickness': lipThickness,
+      'bodyType': bodyType,
+      'disability': disability,
+      'activity': activity,
+      'musicType': musicType,
+      'danceType': danceType,
+      'agreeTermsOfUse': agreeTermsOfUse,
     }.withoutNulls,
   );
 
@@ -379,7 +479,20 @@ class IndividualUserRecordDocumentEquality
         listEquality.equals(e1?.friends, e2?.friends) &&
         listEquality.equals(e1?.friendRequests, e2?.friendRequests) &&
         e1?.createdAt == e2?.createdAt &&
-        listEquality.equals(e1?.blockedUsers, e2?.blockedUsers);
+        listEquality.equals(e1?.blockedUsers, e2?.blockedUsers) &&
+        e1?.mixedNationality == e2?.mixedNationality &&
+        e1?.glasses == e2?.glasses &&
+        e1?.beard == e2?.beard &&
+        e1?.mustache == e2?.mustache &&
+        e1?.lipThickness == e2?.lipThickness &&
+        e1?.bodyType == e2?.bodyType &&
+        e1?.disability == e2?.disability &&
+        listEquality.equals(e1?.clothingStyle, e2?.clothingStyle) &&
+        listEquality.equals(e1?.personalValues, e2?.personalValues) &&
+        e1?.activity == e2?.activity &&
+        e1?.musicType == e2?.musicType &&
+        e1?.danceType == e2?.danceType &&
+        e1?.agreeTermsOfUse == e2?.agreeTermsOfUse;
   }
 
   @override
@@ -419,7 +532,20 @@ class IndividualUserRecordDocumentEquality
         e?.friends,
         e?.friendRequests,
         e?.createdAt,
-        e?.blockedUsers
+        e?.blockedUsers,
+        e?.mixedNationality,
+        e?.glasses,
+        e?.beard,
+        e?.mustache,
+        e?.lipThickness,
+        e?.bodyType,
+        e?.disability,
+        e?.clothingStyle,
+        e?.personalValues,
+        e?.activity,
+        e?.musicType,
+        e?.danceType,
+        e?.agreeTermsOfUse
       ]);
 
   @override

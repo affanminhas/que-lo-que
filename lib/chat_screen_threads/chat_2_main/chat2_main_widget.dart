@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'chat2_main_model.dart';
 export 'chat2_main_model.dart';
 
@@ -53,7 +54,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
               'znuc17cx' /* My Chats */,
             ),
             style: FlutterFlowTheme.of(context).headlineLarge.override(
-                  fontFamily: 'Outfit',
+                  font: GoogleFonts.outfit(),
                   letterSpacing: 0.0,
                 ),
           ),
@@ -102,7 +103,7 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                     '2xxuxxu4' /* Below are your chats and group... */,
                   ),
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -321,8 +322,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                        font: GoogleFonts
+                                                                            .plusJakartaSans(),
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -383,8 +384,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
+                                                                  font: GoogleFonts
+                                                                      .outfit(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -424,8 +425,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Outfit',
+                                                                      font: GoogleFonts
+                                                                          .outfit(),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -695,8 +696,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                           context)
                                                                       .bodyLarge
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Plus Jakarta Sans',
+                                                                        font: GoogleFonts
+                                                                            .plusJakartaSans(),
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -757,8 +758,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                     .of(context)
                                                                 .labelMedium
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
+                                                                  font: GoogleFonts
+                                                                      .outfit(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -800,8 +801,8 @@ class _Chat2MainWidgetState extends State<Chat2MainWidget> {
                                                                         context)
                                                                     .labelSmall
                                                                     .override(
-                                                                      fontFamily:
-                                                                          'Outfit',
+                                                                      font: GoogleFonts
+                                                                          .outfit(),
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),

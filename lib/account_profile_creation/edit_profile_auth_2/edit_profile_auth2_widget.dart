@@ -9,6 +9,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'edit_profile_auth2_model.dart';
 export 'edit_profile_auth2_model.dart';
 
@@ -75,7 +76,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             child: Text(
               widget.title,
               style: FlutterFlowTheme.of(context).displaySmall.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     letterSpacing: 0.0,
                   ),
             ),
@@ -87,7 +88,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 'uueid6oj' /* Adjust the content below to up... */,
               ),
               style: FlutterFlowTheme.of(context).labelLarge.override(
-                    fontFamily: 'Outfit',
+                    font: GoogleFonts.outfit(),
                     letterSpacing: 0.0,
                   ),
             ),
@@ -220,7 +221,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
+                        font: GoogleFonts.plusJakartaSans(),
                         letterSpacing: 0.0,
                       ),
                   elevation: 1.0,
@@ -247,18 +248,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     '27j0wtm4' /* Full Name */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
                     'nqnholxq' /* Your full name... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         letterSpacing: 0.0,
                       ),
                   errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
+                        font: GoogleFonts.plusJakartaSans(),
                         color: FlutterFlowTheme.of(context).error,
                         letterSpacing: 0.0,
                       ),
@@ -296,7 +297,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Plus Jakarta Sans',
+                      font: GoogleFonts.plusJakartaSans(),
                       letterSpacing: 0.0,
                     ),
                 cursorColor: FlutterFlowTheme.of(context).primary,
@@ -336,7 +337,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 width: double.infinity,
                 height: 44.0,
                 textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Plus Jakarta Sans',
+                      font: GoogleFonts.plusJakartaSans(),
                       letterSpacing: 0.0,
                     ),
                 hintText: FFLocalizations.of(context).getText(
@@ -372,18 +373,18 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     'v559lsr6' /* Short Description */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
                     'ruu2l0v3' /* A little about you... */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Outfit',
+                        font: GoogleFonts.outfit(),
                         letterSpacing: 0.0,
                       ),
                   errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
+                        font: GoogleFonts.plusJakartaSans(),
                         color: FlutterFlowTheme.of(context).error,
                         letterSpacing: 0.0,
                       ),
@@ -421,7 +422,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Plus Jakarta Sans',
+                      font: GoogleFonts.plusJakartaSans(),
                       letterSpacing: 0.0,
                     ),
                 textAlign: TextAlign.start,
@@ -455,7 +456,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       content: Text(
                         'Profile has been updated!',
                         style: FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              font: GoogleFonts.plusJakartaSans(),
                               color: FlutterFlowTheme.of(context).info,
                               letterSpacing: 0.0,
                             ),
@@ -475,7 +476,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Plus Jakarta Sans',
+                        font: GoogleFonts.plusJakartaSans(),
                         letterSpacing: 0.0,
                       ),
                   elevation: 3.0,

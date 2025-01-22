@@ -17,6 +17,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -74,6 +76,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? const AuthCheckViewWidget()
           : const WelcomeVideoViewWidget(),
@@ -386,6 +389,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'EditUserProfile',
           path: '/editUserProfile',
           builder: (context, params) => const EditUserProfileWidget(),
+        ),
+        FFRoute(
+          name: 'termsOfUse',
+          path: '/termsOfUse',
+          builder: (context, params) => const TermsOfUseWidget(),
+        ),
+        FFRoute(
+          name: 'createprofiluserCopy',
+          path: '/createprofiluserCopy',
+          builder: (context, params) => const CreateprofiluserCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

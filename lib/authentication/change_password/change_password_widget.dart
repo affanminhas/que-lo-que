@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'change_password_model.dart';
 export 'change_password_model.dart';
 
@@ -94,7 +95,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                           'jl6ycqn9' /* Update Password */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Plus Jakarta Sans',
+                              font: GoogleFonts.plusJakartaSans(),
                               fontSize: 32.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w600,
@@ -119,7 +120,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
-                                  fontFamily: 'Outfit',
+                                  font: GoogleFonts.outfit(),
                                   color: FlutterFlowTheme.of(context).info,
                                   letterSpacing: 0.0,
                                 ),
@@ -144,7 +145,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Outfit',
+                                    font: GoogleFonts.outfit(),
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -182,7 +183,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       letterSpacing: 0.0,
                                     ),
                             keyboardType: TextInputType.visiblePassword,
@@ -211,7 +212,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                               labelStyle: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    fontFamily: 'Outfit',
+                                    font: GoogleFonts.outfit(),
                                     letterSpacing: 0.0,
                                   ),
                               enabledBorder: OutlineInputBorder(
@@ -249,7 +250,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      fontFamily: 'Plus Jakarta Sans',
+                                      font: GoogleFonts.plusJakartaSans(),
                                       letterSpacing: 0.0,
                                     ),
                             keyboardType: TextInputType.visiblePassword,
@@ -293,7 +294,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Plus Jakarta Sans',
+                                  font: GoogleFonts.plusJakartaSans(),
                                   color: Colors.black,
                                   letterSpacing: 0.0,
                                 ),

@@ -1,10 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'createprofiluser_widget.dart' show CreateprofiluserWidget;
+import 'createprofiluser_copy_widget.dart' show CreateprofiluserCopyWidget;
 import 'package:flutter/material.dart';
 
-class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
+class CreateprofiluserCopyModel
+    extends FlutterFlowModel<CreateprofiluserCopyWidget> {
   ///  Local state fields for this page.
 
   List<FFUploadedFile> mandatoryPhoto = [];
@@ -30,7 +31,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'pxo5d7s9' /* Username is required */,
+        'sn1zz5u7' /* Username is required */,
       );
     }
 
@@ -49,7 +50,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '6aql9gvt' /* First name is required */,
+        'wiy88vsf' /* First name is required */,
       );
     }
 
@@ -64,7 +65,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'k352kgow' /* Last name is required */,
+        'twmenafy' /* Last name is required */,
       );
     }
 
@@ -96,7 +97,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
   String? _dateFieldTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'd6707ib7' /* required */,
+        'ajvgjd6m' /* required */,
       );
     }
 
@@ -111,7 +112,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'dap9ggn8' /* required */,
+        'p8it78w2' /* required */,
       );
     }
 
@@ -125,7 +126,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
   String? _yearFieldTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'qqhio50h' /* required */,
+        'ktj78ynb' /* required */,
       );
     }
 
@@ -147,7 +148,7 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'rwmzn273' /* Ethnicity is required */,
+        'uoh5yl4c' /* Ethnicity is required */,
       );
     }
 
@@ -178,33 +179,6 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
   // State field(s) for ReligionDropDown widget.
   String? religionDropDownValue;
   FormFieldController<String>? religionDropDownValueController;
-  // State field(s) for GlassesDropDown widget.
-  String? glassesDropDownValue;
-  FormFieldController<String>? glassesDropDownValueController;
-  // State field(s) for BeardDropDown widget.
-  String? beardDropDownValue;
-  FormFieldController<String>? beardDropDownValueController;
-  // State field(s) for MustacheDropDown widget.
-  String? mustacheDropDownValue;
-  FormFieldController<String>? mustacheDropDownValueController;
-  // State field(s) for LipDropDown widget.
-  String? lipDropDownValue;
-  FormFieldController<String>? lipDropDownValueController;
-  // State field(s) for BodyTypeDropDown widget.
-  String? bodyTypeDropDownValue;
-  FormFieldController<String>? bodyTypeDropDownValueController;
-  // State field(s) for DisabilityDropDown widget.
-  String? disabilityDropDownValue;
-  FormFieldController<String>? disabilityDropDownValueController;
-  // State field(s) for ClothingDropDown widget.
-  List<String>? clothingDropDownValue;
-  FormFieldController<List<String>>? clothingDropDownValueController;
-  // State field(s) for PersonalDropDown widget.
-  List<String>? personalDropDownValue;
-  FormFieldController<List<String>>? personalDropDownValueController;
-  // State field(s) for ActivityDropDown widget.
-  String? activityDropDownValue;
-  FormFieldController<String>? activityDropDownValueController;
   // State field(s) for SocialMediaLinkField1 widget.
   FocusNode? socialMediaLinkField1FocusNode;
   TextEditingController? socialMediaLinkField1TextController;
@@ -241,14 +215,6 @@ class CreateprofiluserModel extends FlutterFlowModel<CreateprofiluserWidget> {
   // State field(s) for TattooDropDown widget.
   String? tattooDropDownValue;
   FormFieldController<String>? tattooDropDownValueController;
-  // State field(s) for MusicTypeDropDown widget.
-  String? musicTypeDropDownValue;
-  FormFieldController<String>? musicTypeDropDownValueController;
-  // State field(s) for DanceTypeDropDown widget.
-  String? danceTypeDropDownValue;
-  FormFieldController<String>? danceTypeDropDownValueController;
-  // State field(s) for TermOfUseCheckbox widget.
-  bool? termOfUseCheckboxValue;
   // Stores action output result for [Custom Action - uploadMediaListToCustomFolder] action in Button widget.
   List<String>? mandatoryImages;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
